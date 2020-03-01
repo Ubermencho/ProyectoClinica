@@ -5,6 +5,8 @@
  */
 package proyectoclinica;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author oflor
@@ -27,35 +29,70 @@ public class FormPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        PanelPrincipal = new javax.swing.JPanel();
+        MenuBarra = new javax.swing.JMenuBar();
+        Modulos = new javax.swing.JMenu();
+        IngresarATA = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clinica UNICAH");
         setExtendedState(MAXIMIZED_BOTH);
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
+        PanelPrincipal.setLayout(PanelPrincipalLayout);
+        PanelPrincipalLayout.setHorizontalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 707, Short.MAX_VALUE)
+        );
+        PanelPrincipalLayout.setVerticalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 339, Short.MAX_VALUE)
+        );
+
+        Modulos.setText("Modulos");
+
+        IngresarATA.setText("Ingreso ATA");
+        IngresarATA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresarATAActionPerformed(evt);
+            }
+        });
+        Modulos.add(IngresarATA);
+
+        MenuBarra.add(Modulos);
 
         jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        MenuBarra.add(jMenu2);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MenuBarra);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void IngresarATAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarATAActionPerformed
+        // TODO add your handling code here:
+        IngresoATA ata = new IngresoATA();
+        //JOptionPane.showMessageDialog(jMenu2, this.getSize());
+        ata.setSize(1380,730);
+        ata.setLocation(this.getLocation());
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(ata);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_IngresarATAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,8 +130,10 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem IngresarATA;
+    private javax.swing.JMenuBar MenuBarra;
+    private javax.swing.JMenu Modulos;
+    private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
