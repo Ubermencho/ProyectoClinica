@@ -31,9 +31,12 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         PanelPrincipal = new javax.swing.JPanel();
         MenuBarra = new javax.swing.JMenuBar();
-        Modulos = new javax.swing.JMenu();
+        Archivo = new javax.swing.JMenu();
+        MainMenu = new javax.swing.JMenuItem();
         IngresarATA = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        Consultas = new javax.swing.JMenu();
+        Mantenimiento = new javax.swing.JMenu();
+        Ayuda = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clinica UNICAH");
@@ -50,7 +53,15 @@ public class FormPrincipal extends javax.swing.JFrame {
             .addGap(0, 339, Short.MAX_VALUE)
         );
 
-        Modulos.setText("Modulos");
+        Archivo.setText("Archivo");
+
+        MainMenu.setText("Menu Principal");
+        MainMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MainMenuActionPerformed(evt);
+            }
+        });
+        Archivo.add(MainMenu);
 
         IngresarATA.setText("Ingreso ATA");
         IngresarATA.addActionListener(new java.awt.event.ActionListener() {
@@ -58,12 +69,18 @@ public class FormPrincipal extends javax.swing.JFrame {
                 IngresarATAActionPerformed(evt);
             }
         });
-        Modulos.add(IngresarATA);
+        Archivo.add(IngresarATA);
 
-        MenuBarra.add(Modulos);
+        MenuBarra.add(Archivo);
 
-        jMenu2.setText("Edit");
-        MenuBarra.add(jMenu2);
+        Consultas.setText("Consultas");
+        MenuBarra.add(Consultas);
+
+        Mantenimiento.setText("Mantenimiento");
+        MenuBarra.add(Mantenimiento);
+
+        Ayuda.setText("Ayuda");
+        MenuBarra.add(Ayuda);
 
         setJMenuBar(MenuBarra);
 
@@ -93,6 +110,14 @@ public class FormPrincipal extends javax.swing.JFrame {
         PanelPrincipal.revalidate();
         PanelPrincipal.repaint();
     }//GEN-LAST:event_IngresarATAActionPerformed
+
+    private void MainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainMenuActionPerformed
+        // TODO add your handling code here:
+        PanelPrincipal.removeAll();
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+        
+    }//GEN-LAST:event_MainMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,10 +155,13 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Archivo;
+    private javax.swing.JMenu Ayuda;
+    private javax.swing.JMenu Consultas;
     private javax.swing.JMenuItem IngresarATA;
+    private javax.swing.JMenuItem MainMenu;
+    private javax.swing.JMenu Mantenimiento;
     private javax.swing.JMenuBar MenuBarra;
-    private javax.swing.JMenu Modulos;
-    private javax.swing.JPanel PanelPrincipal;
-    private javax.swing.JMenu jMenu2;
+    public static javax.swing.JPanel PanelPrincipal;
     // End of variables declaration//GEN-END:variables
 }
