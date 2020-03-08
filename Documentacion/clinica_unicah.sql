@@ -1,13 +1,19 @@
-CREATE DATABASE `clinica_unicah` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE SCHEMA `clinica_unicah` ;
+alter USER 'userClinica'@'localhost' IDENTIFIED WITH mysql_native_password BY 'clinica';
+GRANT ALL ON clinica_unicah.* TO 'userClinica'@'localhost';
 
 USE `clinica_unicah`;
 
 CREATE TABLE `ata` (
   `idata` int(11) NOT NULL AUTO_INCREMENT,
-  `idmedicamento` int(11) NOT NULL,
+  `Id_Paciente` varchar(15) NOT NULL,
+  `Prescripcion` varchar(100) NOT NULL,
   `nombre_paciente_ata` varchar(50) NOT NULL,
+   `apellido_paciente_ata` varchar(50) NOT NULL,
+    `edad_paciente_ata` int NOT NULL,
   `carrera_paciente_ata` varchar(45) NOT NULL,
-  `sintoma_paciente_ata` varchar(100) NOT NULL,
+  `sintomas_paciente_ata` varchar(100) NOT NULL,
+   `fecha_ata` date NOT NULL,
   PRIMARY KEY (`idata`),
   UNIQUE KEY `idata_UNIQUE` (`idata`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
