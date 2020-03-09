@@ -39,24 +39,20 @@ CREATE TABLE `paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `ata` (
-  `idata` int(11) NOT NULL AUTO_INCREMENT,
-  `idpaciente` varchar(15) NOT NULL,
+  `idata` int(11) NOT NULL AUTO_INCREMENT,  
   `iddoctor` varchar(15) NOT NULL,
   `idmedicamento` int(11) NOT NULL,
   `nombre_paciente_ata` varchar(50) NOT NULL,
   `apellido_paciente_ata` varchar(50) NOT NULL,
-  `edad_paciente_ata` int(11) NOT NULL,
-  `carrera_paciente_ata` varchar(45) NOT NULL,
+  `edad_paciente_ata` int(11) NOT NULL,  
   `sintomas_paciente_ata` varchar(100) NOT NULL,
   `fecha_ata` date NOT NULL,
   PRIMARY KEY (`idata`),
   UNIQUE KEY `idata_UNIQUE` (`idata`),
-  KEY `idpaciente_idx` (`idpaciente`),
   KEY `iddoctor_idx` (`iddoctor`),
   KEY `idmedicamento_idx` (`idmedicamento`),
   CONSTRAINT `iddoctor` FOREIGN KEY (`iddoctor`) REFERENCES `doctor` (`iddoctor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `idmedicamento` FOREIGN KEY (`idmedicamento`) REFERENCES `medicamento` (`idmedicamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `idpaciente` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idpaciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `idmedicamento` FOREIGN KEY (`idmedicamento`) REFERENCES `medicamento` (`idmedicamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `expediente` (
@@ -87,14 +83,14 @@ CREATE TABLE `expediente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `tipo_usuario` (
-  `idtipo_usuario` int(11) NOT NULL,
+  `idtipo_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion_tipo_usuario` varchar(45) NOT NULL,
   PRIMARY KEY (`idtipo_usuario`),
   UNIQUE KEY `idtipo_usuario_UNIQUE` (`idtipo_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `usuario` (
-  `idusuario` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion_usuario` varchar(45) NOT NULL,
   `password_usuario` varchar(45) NOT NULL,
   `fecha_creacion_usuario` datetime NOT NULL,
@@ -105,4 +101,5 @@ CREATE TABLE `usuario` (
   KEY `idtipo_usuario_idx` (`idtipo_usuario`),
   CONSTRAINT `idtipo_usuario` FOREIGN KEY (`idtipo_usuario`) REFERENCES `tipo_usuario` (`idtipo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
