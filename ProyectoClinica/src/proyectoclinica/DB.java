@@ -25,9 +25,23 @@ public class DB {
       }
       return cnx;
    }
+   
+   /*
+   public static int Login(String user,String pass)
+   {
+       try{
+       
+          }
+       catch{
+               return 0;
+        }
+   }
+   */
+   
    public static void cerrar() throws SQLException {
       if (cnx != null) {
          cnx.close();
       }
    }
+   
 }

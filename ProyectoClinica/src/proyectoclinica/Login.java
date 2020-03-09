@@ -155,6 +155,13 @@ public class Login extends javax.swing.JFrame {
                this.setVisible(false);
                main.setVisible(true);
             }
+            /*if(DB.Login(txtUser.getText(),txtContra.getText())==1)
+            {
+               JOptionPane.showMessageDialog(null,"Bienvenido");
+               FormPrincipal main = new FormPrincipal();
+               this.setVisible(false);
+               main.setVisible(true);
+            }*/
             else{
             JOptionPane.showMessageDialog(null,"Usuario o Contraseña Incorrecto");
             
