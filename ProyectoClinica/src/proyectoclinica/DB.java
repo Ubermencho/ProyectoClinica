@@ -7,7 +7,10 @@ package proyectoclinica;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class DB {
@@ -26,17 +29,44 @@ public class DB {
       return cnx;
    }
    
-   /*
-   public static int Login(String user,String pass)
+   
+   public static int Login(String user,String pass) throws ClassNotFoundException
    {
+       int res = 0;
+       String usuRes = "", passRes = "";
+       String sql="";
+       sql=("select descripcion_usuario, password_usuario from usuario where descripcion_usuario='"+user+"' and password_usuario='"+pass+"'");
        try{
-       
+              DB.conexion();
+              Statement s = cnx.createStatement();
+              //PreparedStatement s=cnx.prepareStatement(sql);
+              ResultSet rs = s.executeQuery(sql);
+              //JOptionPane.showMessageDialog(null, res);
+              JOptionPane.showMessageDialog(null, rs);
+              if(rs.next()){
+                usuRes = rs.getString("descripcion_usuario");
+                passRes = rs.getString("password_usuario");
+                res = 1;
+              } else {
+                  return 0;
+              }
+              /*rs.beforeFirst();
+              if(rs!=null){
+                  if(rs.next())
+                     res =rs.getInt(1);
+              }*/
+              rs.close();
+              s.close();
+              DB.cerrar();   
+              return res;
           }
-       catch{
-               return 0;
+       catch(SQLException ex){
+           
+           res=0;    
+           return res;
         }
    }
-   */
+   
    
    public static void cerrar() throws SQLException {
       if (cnx != null) {
