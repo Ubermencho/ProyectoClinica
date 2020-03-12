@@ -34,6 +34,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -693,6 +694,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnCerrar;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cmbCarrera;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
