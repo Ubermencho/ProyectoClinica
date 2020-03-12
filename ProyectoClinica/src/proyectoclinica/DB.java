@@ -39,10 +39,7 @@ public class DB {
        try{
               DB.conexion();
               Statement s = cnx.createStatement();
-              //PreparedStatement s=cnx.prepareStatement(sql);
               ResultSet rs = s.executeQuery(sql);
-              //JOptionPane.showMessageDialog(null, res);
-              JOptionPane.showMessageDialog(null, rs);
               if(rs.next()){
                 usuRes = rs.getString("descripcion_usuario");
                 passRes = rs.getString("password_usuario");
@@ -50,11 +47,6 @@ public class DB {
               } else {
                   return 0;
               }
-              /*rs.beforeFirst();
-              if(rs!=null){
-                  if(rs.next())
-                     res =rs.getInt(1);
-              }*/
               rs.close();
               s.close();
               DB.cerrar();   
