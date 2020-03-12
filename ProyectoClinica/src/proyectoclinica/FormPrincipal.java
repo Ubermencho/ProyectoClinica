@@ -34,6 +34,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         Archivo = new javax.swing.JMenu();
         MainMenu = new javax.swing.JMenuItem();
         IngresarATA = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         Consultas = new javax.swing.JMenu();
         Mantenimiento = new javax.swing.JMenu();
         Ayuda = new javax.swing.JMenu();
@@ -71,6 +72,14 @@ public class FormPrincipal extends javax.swing.JFrame {
         });
         Archivo.add(IngresarATA);
 
+        jMenuItem1.setText("Ingreso Expediente");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        Archivo.add(jMenuItem1);
+
         MenuBarra.add(Archivo);
 
         Consultas.setText("Consultas");
@@ -101,7 +110,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void IngresarATAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarATAActionPerformed
         // TODO add your handling code here:
         IngresoATA ata = new IngresoATA();
-        //JOptionPane.showMessageDialog(jMenu2, this.getSize());
         ata.setSize(1380,730);
         ata.setLocation(this.getLocation());
         
@@ -118,6 +126,17 @@ public class FormPrincipal extends javax.swing.JFrame {
         PanelPrincipal.repaint();
         
     }//GEN-LAST:event_MainMenuActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        IngresoExpediente expediente = new IngresoExpediente();
+        expediente.setSize(1380,730);
+        expediente.setLocation(this.getLocation());
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(expediente);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();       
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,5 +182,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu Mantenimiento;
     private javax.swing.JMenuBar MenuBarra;
     public static javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
