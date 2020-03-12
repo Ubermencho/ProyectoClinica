@@ -7,6 +7,7 @@ package proyectoclinica;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -31,5 +32,29 @@ public class DB {
       }
    }
    
-
+   public static int guardarBase(String idexpediente,String idpaciente, String fecha_expediente, String hora_ingreso, 
+           String hora_egreso, String sintoma_principal, String hea, double peso_paciente, double talla_paciente,
+           double frecuencia_cardiaca_paciente, double frecuencia_respiratoria_paciente, double presion_arterial_paciente,
+           double temperatura_paciente, String color_piel_paciente, String llenado_capilar_paciente, String datos_contribuyentes_paciente,
+           String diagnostico, String tratamiento, String interconsulta, String comentario_adicional) throws ClassNotFoundException{
+        int correcto = 0;
+        PreparedStatement insertar = null;
+        try{
+            String sql = "insert into expediente (idexpediente,idpaciente,fecha_expediente,hora_ingreso,hora_egreso,sintoma_principal,"
+                    + "hea,peso_paciente,talla_paciente,frecuencia_cardiaca_paciente,frecuencia_respiratoria_paciente,presion_arterial_paciente,"
+                    + "temperatura_paciente,color_piel_paciente,llenado_capilar_paciente,datos_contribuyentes_paciente,diagnostico,"
+                    + "tratamiento,interconsulta,comentario_adicional)"
+                    + " values ('"+idexpediente+"','"+idpaciente+"','"+fecha_expediente+"','"+hora_ingreso+"','"+hora_egreso+"',"
+                    + "'"+sintoma_principal+"','"+hea+"',"+peso_paciente+","+talla_paciente+","+frecuencia_cardiaca_paciente+","
+                    + frecuencia_respiratoria_paciente+","+presion_arterial_paciente+","+temperatura_paciente+",'"+color_piel_paciente+"',"
+                    + "'"+llenado_capilar_paciente+"','"+datos_contribuyentes_paciente+"','"+diagnostico+"','"+tratamiento+"',"
+                    + "'"+interconsulta+"','"+comentario_adicional+"');";
+            insertar = DB.conexion().prepareStatement(sql);
+            correcto = insertar.executeUpdate();
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+            correcto = 0;
+        }
+        return correcto;
+    }
 }
