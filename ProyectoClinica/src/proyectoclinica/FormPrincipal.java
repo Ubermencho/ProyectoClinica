@@ -5,6 +5,8 @@
  */
 package proyectoclinica;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -109,14 +111,18 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void IngresarATAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarATAActionPerformed
         // TODO add your handling code here:
-        IngresoATA ata = new IngresoATA();
-        ata.setSize(1380,730);
-        ata.setLocation(this.getLocation());
-        
-        PanelPrincipal.removeAll();
+        IngresoATA ata;
+        try {
+            ata = new IngresoATA();
+            ata.setSize(1380,730);
+            ata.setLocation(this.getLocation());
+            PanelPrincipal.removeAll();
         PanelPrincipal.add(ata);
         PanelPrincipal.revalidate();
         PanelPrincipal.repaint();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }       
     }//GEN-LAST:event_IngresarATAActionPerformed
 
     private void MainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainMenuActionPerformed

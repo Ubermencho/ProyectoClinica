@@ -6,7 +6,9 @@
 package proyectoclinica;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
@@ -17,15 +19,15 @@ import javax.swing.JOptionPane;
  */
 public class ATA {
     
-    public static int Ingresarata(String pac,String pre, String nom, String ape, int edad, String car, String sin)throws ClassNotFoundException{
+    public static int Ingresarata(String pac,String doc, String nom, String ape, int edad, int car, String sin)throws ClassNotFoundException{
         int correcto = 0;
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
         LocalDateTime now = LocalDateTime.now();  
         //JOptionPane.showMessageDialog(null, dtf.format(now));
         PreparedStatement insertar = null;
         try{
-            String sql = "insert into ata (Id_Paciente,Prescripcion,nombre_paciente_ata,apellido_paciente_ata, edad_paciente_ata,carrera_paciente_ata,sintomas_paciente_ata, fecha_ata )"
-                    + " values ('"+pac+"','"+pre+"','"+nom+"','"+ape+"',"+Math.toIntExact(edad)+",'"+car+"','"+sin+"','"+dtf.format(now)+"');";
+            String sql = "insert into ata (idpaciente,iddoctor,nombre_paciente_ata,apellido_paciente_ata,edad_paciente_ata,idcarrera,sintomas_paciente_ata,fecha_ata )"
+                    + " values ('"+pac+"','"+doc+"','"+nom+"','"+ape+"',"+Math.toIntExact(edad)+",'"+car+"','"+sin+"','"+dtf.format(now)+"');";
             System.out.println(sql);
             insertar = DB.conexion().prepareStatement(sql);
             correcto = insertar.executeUpdate();
@@ -34,6 +36,19 @@ public class ATA {
             correcto = 0;
         }
         return correcto;
+    }
+    
+    public static int obtenercodCar(String Car) throws ClassNotFoundException{
+        int cod=0;
+        try{            
+            Statement combo = DB.conexion().createStatement();
+            ResultSet rs = combo.executeQuery("select * from carrera where nombre_carrera= '"+Car+"'");
+            rs.next();
+            cod = rs.getInt("idcarrera");
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return cod;
     }
     
 }
