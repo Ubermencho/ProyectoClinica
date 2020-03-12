@@ -34,6 +34,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         Archivo = new javax.swing.JMenu();
         MainMenu = new javax.swing.JMenuItem();
         IngresarATA = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         Consultas = new javax.swing.JMenu();
         Mantenimiento = new javax.swing.JMenu();
         Ayuda = new javax.swing.JMenu();
@@ -70,6 +71,9 @@ public class FormPrincipal extends javax.swing.JFrame {
             }
         });
         Archivo.add(IngresarATA);
+
+        jMenuItem1.setText("Ingreso Expediente");
+        Archivo.add(jMenuItem1);
 
         MenuBarra.add(Archivo);
 
@@ -163,5 +167,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu Mantenimiento;
     private javax.swing.JMenuBar MenuBarra;
     public static javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
