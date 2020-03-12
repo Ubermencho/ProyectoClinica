@@ -38,6 +38,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         IngresarATA = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         Consultas = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         Mantenimiento = new javax.swing.JMenu();
         Ayuda = new javax.swing.JMenu();
 
@@ -85,6 +86,15 @@ public class FormPrincipal extends javax.swing.JFrame {
         MenuBarra.add(Archivo);
 
         Consultas.setText("Consultas");
+
+        jMenuItem2.setText("Consultas");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        Consultas.add(jMenuItem2);
+
         MenuBarra.add(Consultas);
 
         Mantenimiento.setText("Mantenimiento");
@@ -116,10 +126,10 @@ public class FormPrincipal extends javax.swing.JFrame {
             ata = new IngresoATA();
             ata.setSize(1380,730);
             ata.setLocation(this.getLocation());
-            PanelPrincipal.removeAll();
-        PanelPrincipal.add(ata);
-        PanelPrincipal.revalidate();
-        PanelPrincipal.repaint();
+          PanelPrincipal.removeAll();
+          PanelPrincipal.add(ata);
+          PanelPrincipal.revalidate();
+          PanelPrincipal.repaint();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }       
@@ -143,6 +153,21 @@ public class FormPrincipal extends javax.swing.JFrame {
         PanelPrincipal.revalidate();
         PanelPrincipal.repaint();       
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        Consultas con;
+        con = new Consultas();
+        con.setSize(1380,730);
+        con.setLocation(this.getLocation());
+        this.hide();
+        con.show();
+        /*PanelPrincipal.removeAll();
+        PanelPrincipal.add(con);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();*/
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,5 +214,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar MenuBarra;
     public static javax.swing.JPanel PanelPrincipal;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

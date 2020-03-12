@@ -285,11 +285,26 @@
             <Component class="javax.swing.JComboBox" name="cmbCarrera">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="19">
+                    <StringItem index="0" value="No Definido"/>
+                    <StringItem index="1" value="Ingeniera en Sistemas"/>
+                    <StringItem index="2" value="Ingeniera Civil"/>
+                    <StringItem index="3" value="Ingeniera Industrial"/>
+                    <StringItem index="4" value="Ingeniera Ambiental"/>
+                    <StringItem index="5" value="Arquitectura"/>
+                    <StringItem index="6" value="Medicina"/>
+                    <StringItem index="7" value="Cirugia Dental"/>
+                    <StringItem index="8" value="Enfermeria"/>
+                    <StringItem index="9" value="Psicologia"/>
+                    <StringItem index="10" value="Mercadotecnia"/>
+                    <StringItem index="11" value="Adm. de Empresas"/>
+                    <StringItem index="12" value="Finanzas"/>
+                    <StringItem index="13" value="Relaciones Internacionales"/>
+                    <StringItem index="14" value="Ciencias en Comunicacion"/>
+                    <StringItem index="15" value="Derecho"/>
+                    <StringItem index="16" value="Teologia"/>
+                    <StringItem index="17" value="Postgrado"/>
+                    <StringItem index="18" value="Otro"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -310,8 +325,9 @@
             <Component class="javax.swing.JFormattedTextField" name="txtIdentidad">
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="###-####-#####" subtype="-1" type="5"/>
+                  <Format format="####-####-#####" subtype="-1" type="5"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="    -    -     "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JFormattedTextField" name="txtExpediente">
