@@ -144,17 +144,18 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel7.setText("Carrera:");
 
-        cmbCarrera.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCarrera.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Definido", "Ingeniera en Sistemas", "Ingeniera Civil", "Ingeniera Industrial", "Ingeniera Ambiental", "Arquitectura", "Medicina", "Cirugia Dental", "Enfermeria", "Psicologia", "Mercadotecnia", "Adm. de Empresas", "Finanzas", "Relaciones Internacionales", "Ciencias en Comunicacion", "Derecho", "Teologia", "Postgrado", "Otro" }));
 
         jLabel8.setText("Síntoma Principal:");
 
         jLabel27.setText("# Expediente");
 
         try {
-            txtIdentidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-####-#####")));
+            txtIdentidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####-#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtIdentidad.setText("    -    -     ");
 
         txtExpediente.setEditable(false);
         try {
