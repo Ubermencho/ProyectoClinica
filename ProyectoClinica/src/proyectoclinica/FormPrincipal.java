@@ -5,6 +5,8 @@
  */
 package proyectoclinica;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -41,6 +43,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         Mantenimiento = new javax.swing.JMenu();
         Ayuda = new javax.swing.JMenu();
+        ModAyuda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clinica UNICAH");
@@ -101,6 +104,15 @@ public class FormPrincipal extends javax.swing.JFrame {
         MenuBarra.add(Mantenimiento);
 
         Ayuda.setText("Ayuda");
+
+        ModAyuda.setText("Modulo de Ayuda");
+        ModAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModAyudaActionPerformed(evt);
+            }
+        });
+        Ayuda.add(ModAyuda);
+
         MenuBarra.add(Ayuda);
 
         setJMenuBar(MenuBarra);
@@ -125,7 +137,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         try {
             ata = new IngresoATA();
             ata.setSize(1380,730);
-            ata.setLocation(this.getLocation());
           PanelPrincipal.removeAll();
           PanelPrincipal.add(ata);
           PanelPrincipal.revalidate();
@@ -146,7 +157,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         IngresoExpediente expediente = new IngresoExpediente();
         expediente.setSize(1380,730);
-        expediente.setLocation(this.getLocation());
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(expediente);
@@ -159,7 +169,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         PanelConsultas con;
         con = new PanelConsultas();
         con.setSize(1380,730);
-        con.setLocation(this.getLocation());
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(con);
@@ -168,6 +177,18 @@ public class FormPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void ModAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModAyudaActionPerformed
+        // TODO add your handling code here:
+        File file = new File("Clinica_UNICAH.chm");
+        try
+        {
+            Runtime.getRuntime().exec("HH.EXE ms-its:" + file.getAbsolutePath() + "::/TOPIC_ID.html");
+        }   catch (IOException e1)
+        {
+            e1.printStackTrace();
+        }
+    }//GEN-LAST:event_ModAyudaActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -211,6 +232,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MainMenu;
     private javax.swing.JMenu Mantenimiento;
     private javax.swing.JMenuBar MenuBarra;
+    private javax.swing.JMenuItem ModAyuda;
     public static javax.swing.JPanel PanelPrincipal;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
