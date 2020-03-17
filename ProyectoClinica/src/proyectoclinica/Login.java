@@ -6,6 +6,8 @@
 package proyectoclinica;
 
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -142,23 +144,26 @@ public class Login extends javax.swing.JFrame {
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         String user= txtUser.getText();
         String contra= txtContra.getText();
-        
-       
-        if(user.isEmpty() || contra.isEmpty())
-            JOptionPane.showMessageDialog(null,"Campo Vacío Revise");
+        try{
             
-        else
-            if(user.equals("admin") && contra.equals("admin"))
-            {
-               JOptionPane.showMessageDialog(null,"Bienvenido");
-                FormPrincipal main = new FormPrincipal();
-               this.setVisible(false);
-               main.setVisible(true);
-            }
-            else{
-            JOptionPane.showMessageDialog(null,"Usuario o Contraseña Incorrecto");
+            if(user.isEmpty() || contra.isEmpty())
+                JOptionPane.showMessageDialog(null,"Campo Vacío Revise");
             
-            }
+            else
+                if(DB.Login(user,contra)==1)
+                {
+                    JOptionPane.showMessageDialog(null,"Bienvenido");
+                    FormPrincipal main = new FormPrincipal();
+                    this.setVisible(false);
+                    main.setVisible(true);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"Usuario o Contraseña Incorrecto");
+                    
+                }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_btnIngresarActionPerformed
 

@@ -156,16 +156,15 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        Consultas con;
-        con = new Consultas();
+        PanelConsultas con;
+        con = new PanelConsultas();
         con.setSize(1380,730);
         con.setLocation(this.getLocation());
-        this.hide();
-        con.show();
-        /*PanelPrincipal.removeAll();
+        
+        PanelPrincipal.removeAll();
         PanelPrincipal.add(con);
         PanelPrincipal.revalidate();
-        PanelPrincipal.repaint();*/
+        PanelPrincipal.repaint();
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
