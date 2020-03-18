@@ -32,15 +32,15 @@ CREATE TABLE `paciente` (
   `idpaciente` varchar(15) NOT NULL,
   `idcarrera` varchar(30) NOT NULL,
   `nombre_paciente` varchar(30) NOT NULL,
-  `apellido_paciente` int(11) NOT NULL,
+  `apellido_paciente` varchar(30) NOT NULL,
   `edad_paciente` int(11) NOT NULL,
+  `genero_paciente` varchar(10) NOT NULL,
   PRIMARY KEY (`idpaciente`),
   UNIQUE KEY `idpaciente_UNIQUE` (`idpaciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `ata` (
   `idata` int(11) NOT NULL AUTO_INCREMENT,
-  `idpaciente` varchar(15) NOT NULL,
   `iddoctor` varchar(15) NOT NULL,
   `nombre_paciente_ata` varchar(50) NOT NULL,
   `apellido_paciente_ata` varchar(50) NOT NULL,
