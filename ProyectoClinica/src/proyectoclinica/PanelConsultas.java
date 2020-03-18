@@ -5,7 +5,15 @@
  */
 package proyectoclinica;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import static proyectoclinica.DB.conexion;
 
 /**
  *
@@ -18,6 +26,11 @@ public class PanelConsultas extends javax.swing.JPanel {
      */
     public PanelConsultas() {
         initComponents();
+        txtIdentidad.setEnabled(false);
+        txtExpediente.setEnabled(false);
+        CmbCarrera.setEnabled(false);
+        CmbGenero.setEnabled(false);
+        txtEdad.setEnabled(false);
     }
 
     /**
@@ -47,13 +60,13 @@ public class PanelConsultas extends javax.swing.JPanel {
         txtEdad = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        tblMedicamentos = new javax.swing.JTable();
+        tblDatos = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel11.setText("Paciente:");
 
-        cmbCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carrera", "Edad", "Expediente", "Género", "Pacientes por Fecha", "Peso" }));
+        cmbCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carrera", "Edad", "Expediente", "Género", "Identidad", " " }));
         cmbCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbComboActionPerformed(evt);
@@ -88,7 +101,7 @@ public class PanelConsultas extends javax.swing.JPanel {
             ex.printStackTrace();
         }
 
-        CmbCarrera.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Definido", "Ingeniera en Sistemas", "Ingeniera Civil", "Ingeniera Industrial", "Ingeniera Ambiental", "Arquitectura", "Medicina", "Cirugia Dental", "Enfermeria", "Psicologia", "Mercadotecnia", "Adm. de Empresas", "Finanzas", "Relaciones Internacionales", "Ciencias en Comunicacion", "Derecho", "Teologia", "Postgrado", "Otro" }));
+        CmbCarrera.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingeniera en Sistemas", "Ingeniera Civil", "Ingeniera Industrial", "Ingeniera Ambiental", "Arquitectura", "Medicina", "Cirugia Dental", "Enfermeria", "Psicologia", "Mercadotecnia", "Adm. de Empresas", "Finanzas", "Relaciones Internacionales", "Ciencias en Comunicacion", "Derecho", "Teologia", "Postgrado", "Otro" }));
 
         CmbGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "Indefinido" }));
         CmbGenero.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +181,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                 .addGap(47, 47, 47))
         );
 
-        tblMedicamentos.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -179,7 +192,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(tblMedicamentos);
+        jScrollPane5.setViewportView(tblDatos);
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel10.setText("Ingreso de Datos:");
@@ -244,6 +257,46 @@ public class PanelConsultas extends javax.swing.JPanel {
 
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
         // TODO add your handling code here:
+        String opc=(String)cmbCombo.getSelectedItem();
+        
+        if(opc=="Carrera"){
+            CmbCarrera.setEnabled(true);
+            txtIdentidad.setEnabled(false);
+            txtExpediente.setEnabled(false);
+            CmbGenero.setEnabled(false);
+            txtEdad.setEnabled(false);
+        }
+        else 
+          if(opc=="Edad"){
+            CmbCarrera.setEnabled(false);
+            txtIdentidad.setEnabled(false);
+            txtExpediente.setEnabled(false);
+            CmbGenero.setEnabled(false);
+            txtEdad.setEnabled(true);
+        }
+          else 
+              if(opc=="Expediente"){
+              CmbCarrera.setEnabled(false);
+            txtIdentidad.setEnabled(false);
+            txtExpediente.setEnabled(true);
+            CmbGenero.setEnabled(false);
+            txtEdad.setEnabled(false);
+          }
+        else
+            if(opc=="Género"){
+               CmbCarrera.setEnabled(false);
+            txtIdentidad.setEnabled(false);
+            txtExpediente.setEnabled(false);
+            CmbGenero.setEnabled(true);
+            txtEdad.setEnabled(false);
+            }
+            else{
+                CmbCarrera.setEnabled(false);
+            txtIdentidad.setEnabled(true);
+            txtExpediente.setEnabled(false);
+            CmbGenero.setEnabled(false);
+            txtEdad.setEnabled(false);
+            }
 
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
@@ -253,10 +306,49 @@ public class PanelConsultas extends javax.swing.JPanel {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
+        String opc=(String)cmbCombo.getSelectedItem();
         int x;
         x = Integer.parseInt(txtEdad.getText());
         if(x < 0)
-        JOptionPane.showConfirmDialog(null, "Revisar edad ingresada");
+        JOptionPane.showMessageDialog(null, "Revisar edad ingresada");
+        if(opc=="Edad")
+        {
+            
+            Statement s = null;
+            try {
+                s = DB.conexion().createStatement();
+            } catch (SQLException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            ResultSet rs = null;
+            try {
+                rs = s.executeQuery("select * from usuario");
+            } catch (SQLException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            DefaultTableModel modelo = new DefaultTableModel();
+            JTable tabla = new JTable(modelo);
+            modelo.addColumn("id");
+            modelo.addColumn("user");
+            modelo.addColumn("contra");
+            try {
+                while (rs.next()){
+                    Object [] fila = new Object[3];
+                    
+                    for (int i=0;i<3;i++)
+                        fila[i] = rs.getObject(i+1);
+                    
+                    
+                    modelo.addRow(fila);
+                }     } catch (SQLException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        }
+        
+        
 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -278,7 +370,7 @@ public class PanelConsultas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable tblMedicamentos;
+    private javax.swing.JTable tblDatos;
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtExpediente;
     private javax.swing.JFormattedTextField txtIdentidad;
