@@ -202,8 +202,8 @@
                                   <Component id="btnBuscar1" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="txtExpediente1" min="-2" pref="84" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                      <Component id="txtExpediente" min="-2" pref="110" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
@@ -239,7 +239,7 @@
                               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtExpediente1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtExpediente" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="136" max="32767" attributes="0"/>
                               <Component id="btnBuscar1" min="-2" pref="44" max="-2" attributes="0"/>
@@ -267,7 +267,7 @@
                 <Property name="text" type="java.lang.String" value="Nu. Expediente: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtExpediente1">
+            <Component class="javax.swing.JTextField" name="txtExpediente">
             </Component>
             <Component class="javax.swing.JButton" name="btnBuscar1">
               <Properties>
@@ -328,21 +328,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnBuscar2" min="-2" pref="109" max="-2" attributes="0"/>
-                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="CmbCarrera1" min="-2" pref="132" max="-2" attributes="0"/>
-                      <EmptySpace pref="46" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane7" min="-2" pref="321" max="-2" attributes="0"/>
-                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -356,6 +341,23 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="CmbCarrera" min="-2" pref="142" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="btnBuscar2" min="-2" pref="109" max="-2" attributes="0"/>
+                      <EmptySpace pref="183" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane7" min="-2" pref="321" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -363,24 +365,26 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" pref="34" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnBuscar2" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane7" min="-2" pref="195" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="CmbCarrera1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CmbCarrera" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnBuscar2" min="-2" pref="44" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
+                              <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane7" min="-2" pref="195" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="197" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -402,7 +406,7 @@
                 <Property name="text" type="java.lang.String" value="Carrera: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="CmbCarrera1">
+            <Component class="javax.swing.JComboBox" name="CmbCarrera">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="18">
@@ -502,7 +506,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                      <Component id="CmbGenero1" min="-2" pref="88" max="-2" attributes="0"/>
+                                      <Component id="CmbGenero" min="-2" pref="88" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="btnBuscar3" min="-2" pref="109" max="-2" attributes="0"/>
@@ -534,7 +538,7 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CmbGenero1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CmbGenero" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnBuscar3" min="-2" pref="44" max="-2" attributes="0"/>
@@ -563,7 +567,7 @@
                 <Property name="text" type="java.lang.String" value="G&#xe9;nero:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="CmbGenero1">
+            <Component class="javax.swing.JComboBox" name="CmbGenero">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -574,7 +578,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CmbGenero1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CmbGeneroActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -654,7 +658,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                              <Component id="txtEdad1" min="-2" pref="85" max="-2" attributes="0"/>
+                                              <Component id="txtEdad" min="-2" pref="85" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
@@ -693,7 +697,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane9" min="-2" pref="195" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtEdad1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtEdad" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -721,7 +725,7 @@
                 <Property name="text" type="java.lang.String" value="Edad: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEdad1">
+            <Component class="javax.swing.JTextField" name="txtEdad">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>

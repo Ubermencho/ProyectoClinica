@@ -50,7 +50,7 @@ public class PanelConsultas extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        txtExpediente1 = new javax.swing.JTextField();
+        txtExpediente = new javax.swing.JTextField();
         btnBuscar1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -59,7 +59,7 @@ public class PanelConsultas extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        CmbCarrera1 = new javax.swing.JComboBox<>();
+        CmbCarrera = new javax.swing.JComboBox<>();
         btnBuscar2 = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         tblDatos2 = new javax.swing.JTable();
@@ -68,7 +68,7 @@ public class PanelConsultas extends javax.swing.JPanel {
         jPanel5 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        CmbGenero1 = new javax.swing.JComboBox<>();
+        CmbGenero = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         tblDatos3 = new javax.swing.JTable();
@@ -77,7 +77,7 @@ public class PanelConsultas extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        txtEdad1 = new javax.swing.JTextField();
+        txtEdad = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         tblDatos4 = new javax.swing.JTable();
@@ -228,8 +228,8 @@ public class PanelConsultas extends javax.swing.JPanel {
                             .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
-                                .addGap(53, 53, 53)
-                                .addComponent(txtExpediente1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(27, 27, 27)
+                                .addComponent(txtExpediente, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(82, 82, 82)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,7 +256,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                         .addGap(48, 48, 48)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel15)
-                            .addComponent(txtExpediente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtExpediente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                         .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(229, Short.MAX_VALUE))
@@ -270,7 +270,7 @@ public class PanelConsultas extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("Carrera: ");
 
-        CmbCarrera1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingeniera en Sistemas", "Ingeniera Civil", "Ingeniera Industrial", "Ingeniera Ambiental", "Arquitectura", "Medicina", "Cirugia Dental", "Enfermeria", "Psicologia", "Mercadotecnia", "Adm. de Empresas", "Finanzas", "Relaciones Internacionales", "Ciencias en Comunicacion", "Derecho", "Teologia", "Postgrado", "Otro" }));
+        CmbCarrera.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingeniera en Sistemas", "Ingeniera Civil", "Ingeniera Industrial", "Ingeniera Ambiental", "Arquitectura", "Medicina", "Cirugia Dental", "Enfermeria", "Psicologia", "Mercadotecnia", "Adm. de Empresas", "Finanzas", "Relaciones Internacionales", "Ciencias en Comunicacion", "Derecho", "Teologia", "Postgrado", "Otro" }));
 
         btnBuscar2.setText("Buscar");
         btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
@@ -302,18 +302,6 @@ public class PanelConsultas extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CmbCarrera1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
-                .addGap(58, 58, 58))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -323,26 +311,42 @@ public class PanelConsultas extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jLabel24)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addGap(32, 32, 32)
+                .addComponent(CmbCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(59, 59, 59))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel24)
+                        .addGap(48, 48, 48)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel10)
+                            .addComponent(CmbCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 120, Short.MAX_VALUE)
                         .addComponent(jLabel19)
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(CmbCarrera1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel10)))))
-                .addContainerGap(197, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(162, 162, 162))
         );
 
         jTabbedPane1.addTab("Carrera", jPanel4);
@@ -353,10 +357,10 @@ public class PanelConsultas extends javax.swing.JPanel {
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Género:");
 
-        CmbGenero1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "Indefinido" }));
-        CmbGenero1.addActionListener(new java.awt.event.ActionListener() {
+        CmbGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "Indefinido" }));
+        CmbGenero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CmbGenero1ActionPerformed(evt);
+                CmbGeneroActionPerformed(evt);
             }
         });
 
@@ -401,7 +405,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel16)
                                 .addGap(64, 64, 64)
-                                .addComponent(CmbGenero1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(CmbGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(btnBuscar3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(193, 193, 193)
@@ -425,7 +429,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(CmbGenero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CmbGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBuscar3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -484,7 +488,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(jLabel17)
                                         .addGap(78, 78, 78)
-                                        .addComponent(txtEdad1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(123, 123, 123)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -511,7 +515,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtEdad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel17)))))
                 .addContainerGap(213, Short.MAX_VALUE))
         );
@@ -610,22 +614,31 @@ public class PanelConsultas extends javax.swing.JPanel {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        String sql="select idusuario,descripcion_usuario,password_usuario from usuario";
+        String id=txtIdentidad.getText();
+        
+        String sql="select paciente.idpaciente,paciente.nombre_paciente,paciente.apellido_paciente,paciente.edad_paciente,expediente.diagnostico,expediente.sintoma_principal from paciente,expediente where paciente.idpaciente=expediente.idpaciente and expediente.idpaciente = '"+id+"'";
+       
         Statement st;
         DefaultTableModel model= new DefaultTableModel();
-        model.addColumn("id");
-        model.addColumn("Des");
-        model.addColumn("Pass");
+        model.addColumn("ID");
+        model.addColumn("Nombre");
+        model.addColumn("Apellido");
+        model.addColumn("Edad");
+        model.addColumn("Diagnostico");
+        model.addColumn("Sintoma");
         tblDatos.setModel(model);
 
-        String [] dato= new String[3];
+        String [] dato= new String[6];
             try {
                 st=DB.conexion().createStatement();
                 ResultSet rs=st.executeQuery(sql);
                 while(rs.next()){
-                    dato[0]=Integer.toString(rs.getInt(1));
-                    dato[1]=rs.getString("descripcion_usuario");
-                    dato[2]=rs.getString("password_usuario");
+                    dato[0]=rs.getString("idpaciente");
+                    dato[1]=rs.getString("nombre_paciente");
+                    dato[2]=rs.getString("apellido_paciente");
+                    dato[3]=rs.getString("edad_paciente");
+                    dato[4]=rs.getString("diagnostico");
+                    dato[5]=rs.getString("sintoma_principal");
                     model.addRow(dato);
                 }
             } catch (SQLException ex) {
@@ -637,24 +650,153 @@ public class PanelConsultas extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void CmbGenero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbGenero1ActionPerformed
+    private void CmbGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbGeneroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CmbGenero1ActionPerformed
+    }//GEN-LAST:event_CmbGeneroActionPerformed
 
     private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
         // TODO add your handling code here:
+        String exp= txtExpediente.getText();
+        
+        String sql="select expediente.idexpediente,paciente.nombre_paciente,paciente.apellido_paciente,paciente.edad_paciente,expediente.diagnostico,expediente.sintoma_principal from paciente,expediente where paciente.idpaciente=expediente.idpaciente and expediente.idexpediente = '"+exp+"'";
+       
+        Statement st;
+        DefaultTableModel model= new DefaultTableModel();
+        model.addColumn("ID Expediente");
+        model.addColumn("Nombre");
+        model.addColumn("Apellido");
+        model.addColumn("Edad");
+        model.addColumn("Diagnostico");
+        model.addColumn("Sintoma");
+        tblDatos1.setModel(model);
+
+        String [] dato= new String[6];
+            try {
+                st=DB.conexion().createStatement();
+                ResultSet rs=st.executeQuery(sql);
+                while(rs.next()){
+                    dato[0]=rs.getString("idexpediente");
+                    dato[1]=rs.getString("nombre_paciente");
+                    dato[2]=rs.getString("apellido_paciente");
+                    dato[3]=rs.getString("edad_paciente");
+                    dato[4]=rs.getString("diagnostico");
+                    dato[5]=rs.getString("sintoma_principal");
+                    model.addRow(dato);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
     }//GEN-LAST:event_btnBuscar1ActionPerformed
 
     private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
         // TODO add your handling code here:
+        String carr=(String)CmbCarrera.getSelectedItem();
+        
+        String sql="select nombre_paciente_ata,apellido_paciente_ata,sintomas_paciente_ata,fecha_ata from ata,carrera where ata.idcarrera=carrera.idcarrera and nombre_carrera='"+carr+"'";
+       
+        Statement st;
+        DefaultTableModel model= new DefaultTableModel();
+        
+        model.addColumn("Nombre");
+        model.addColumn("Apellido");
+        model.addColumn("Sintoma");
+        model.addColumn("Fecha");
+        
+        
+        tblDatos2.setModel(model);
+
+        String [] dato= new String[4];
+            try {
+                st=DB.conexion().createStatement();
+                ResultSet rs=st.executeQuery(sql);
+                while(rs.next()){
+                    dato[0]=rs.getString("nombre_paciente_ata");
+                    dato[1]=rs.getString("apellido_paciente_ata");
+                    dato[2]=rs.getString("sintomas_paciente_ata");
+                    dato[3]=rs.getString("fecha_ata");
+                    model.addRow(dato);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }//GEN-LAST:event_btnBuscar2ActionPerformed
 
     private void btnBuscar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar3ActionPerformed
         // TODO add your handling code here:
+        String gen=(String) CmbGenero.getSelectedItem();
+        
+        String sql="select expediente.idexpediente,paciente.idpaciente,paciente.nombre_paciente,paciente.apellido_paciente,paciente.edad_paciente,expediente.diagnostico,expediente.sintoma_principal from paciente,expediente where paciente.idpaciente=expediente.idpaciente and paciente.genero_paciente = '"+gen+"'";
+       
+        Statement st;
+        DefaultTableModel model= new DefaultTableModel();
+        model.addColumn("ID Expediente");
+        model.addColumn("ID");
+        model.addColumn("Nombre");
+        model.addColumn("Apellido");
+        model.addColumn("Edad");
+        model.addColumn("Diagnostico");
+        model.addColumn("Sintoma");
+        tblDatos3.setModel(model);
+
+        String [] dato= new String[7];
+            try {
+                st=DB.conexion().createStatement();
+                ResultSet rs=st.executeQuery(sql);
+                while(rs.next()){
+                    dato[0]=rs.getString("idexpediente");
+                    dato[1]=rs.getString("idpaciente");
+                    dato[2]=rs.getString("nombre_paciente");
+                    dato[3]=rs.getString("apellido_paciente");
+                    dato[4]=rs.getString("edad_paciente");
+                    dato[5]=rs.getString("diagnostico");
+                    dato[6]=rs.getString("sintoma_principal");
+                    model.addRow(dato);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }//GEN-LAST:event_btnBuscar3ActionPerformed
 
     private void btnBuscar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar4ActionPerformed
         // TODO add your handling code here:
+        String ed= txtEdad.getText();
+        
+        String sql="select nombre_paciente_ata,apellido_paciente_ata,sintomas_paciente_ata,fecha_ata from ata where edad_paciente_ata= '"+ed+"'";
+        
+        Statement st;
+        DefaultTableModel model= new DefaultTableModel();
+        
+        model.addColumn("Nombre");
+        model.addColumn("Apellido");
+        model.addColumn("Sintoma");
+        model.addColumn("Fecha");
+        
+        
+        tblDatos4.setModel(model);
+
+        String [] dato= new String[4];
+            try {
+                st=DB.conexion().createStatement();
+                ResultSet rs=st.executeQuery(sql);
+                while(rs.next()){
+                    dato[0]=rs.getString("nombre_paciente_ata");
+                    dato[1]=rs.getString("apellido_paciente_ata");
+                    dato[2]=rs.getString("sintomas_paciente_ata");
+                    dato[3]=rs.getString("fecha_ata");
+                    model.addRow(dato);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }//GEN-LAST:event_btnBuscar4ActionPerformed
 
     private void btnBuscar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar5ActionPerformed
@@ -663,8 +805,8 @@ public class PanelConsultas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> CmbCarrera1;
-    private javax.swing.JComboBox<String> CmbGenero1;
+    private javax.swing.JComboBox<String> CmbCarrera;
+    private javax.swing.JComboBox<String> CmbGenero;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscar2;
@@ -713,8 +855,8 @@ public class PanelConsultas extends javax.swing.JPanel {
     private javax.swing.JTable tblDatos3;
     private javax.swing.JTable tblDatos4;
     private javax.swing.JTable tblDatos5;
-    private javax.swing.JTextField txtEdad1;
-    private javax.swing.JTextField txtExpediente1;
+    private javax.swing.JTextField txtEdad;
+    private javax.swing.JTextField txtExpediente;
     private javax.swing.JFormattedTextField txtIdentidad;
     // End of variables declaration//GEN-END:variables
 }
