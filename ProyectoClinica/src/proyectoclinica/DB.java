@@ -79,13 +79,59 @@ public class DB {
               }
               rs.close();
               s.close();
-              //DB.cerrar();   
               return res;
           }
-       catch(SQLException ex){
-           
+       catch(SQLException ex){           
            res=0;    
            return res;
         }
    }
+   
+   public static int agregarPaciente(String idpaciente, int idcarrera, String nombre_paciente, 
+           String apellido_paciente, int edad_paciente, String genero_paciente) throws ClassNotFoundException{
+       int correcto = 0;
+       PreparedStatement insertar = null;
+       try{
+           String sql = "insert into doctor values('"+idpaciente+"', "+idcarrera+", '"+nombre_paciente+"', '"+apellido_paciente+"',"
+                   + edad_paciente + ",'"+genero_paciente+"')";
+           insertar = DB.conexion().prepareStatement(sql);
+           correcto = insertar.executeUpdate();
+           return correcto;
+       }
+       catch(SQLException e){
+            return 0;
+       }
+   }
+   
+   public static int agregarDoctor(String iddoctor, String nombre_doctor, 
+           String apellido_doctor, int edad_doctor) throws ClassNotFoundException{
+       int correcto = 0;
+       PreparedStatement insertar = null;
+       try{
+           String sql = "insert into doctor values('"+iddoctor+"', '"+nombre_doctor+"', '"+apellido_doctor+"', "+edad_doctor+")";
+           insertar = DB.conexion().prepareStatement(sql);
+           correcto = insertar.executeUpdate();
+           return correcto;
+       }
+       catch(SQLException e){
+            return 0;
+       }
+   }
+   
+   public static int modificarDoctor(String iddoctor, String nombre_doctor, 
+           String apellido_doctor, int edad_doctor) throws ClassNotFoundException{
+       int correcto = 0;
+       PreparedStatement modificar = null;
+       try{
+           String sql = "update doctor set nombre_doctor = '"+nombre_doctor+"', apellido_doctor = '"+apellido_doctor+
+                   "', edad_doctor = "+ edad_doctor +" where iddoctor = '"+iddoctor+"'";
+           modificar = DB.conexion().prepareStatement(sql);
+           correcto = modificar.executeUpdate();
+           return correcto;
+       }
+       catch(SQLException e){
+            return 0;
+       }
+   }
+   
 }
