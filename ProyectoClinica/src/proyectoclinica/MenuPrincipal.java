@@ -5,6 +5,10 @@
  */
 package proyectoclinica;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static proyectoclinica.FormPrincipal.PanelPrincipal;
+
 /**
  *
  * @author Javier Rivera
@@ -28,7 +32,6 @@ public class MenuPrincipal extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         abrirATA = new javax.swing.JButton();
         abrirExpediente = new javax.swing.JButton();
@@ -36,8 +39,6 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 0, 36)); // NOI18N
         jLabel1.setText("Bienvenido al Sistema Clinica Unicah");
-
-        jButton1.setText("Salir");
 
         jLabel2.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel2.setText("¿Qué desea hacer?");
@@ -52,34 +53,40 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
         abrirExpediente.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         abrirExpediente.setText("Ingresar un nuevo expediente");
+        abrirExpediente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrirExpedienteActionPerformed(evt);
+            }
+        });
 
         abrirConsultas.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         abrirConsultas.setText("Busqueda de información");
+        abrirConsultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrirConsultasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(45, 45, 45))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(189, 189, 189)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(abrirExpediente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(abrirATA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(abrirConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(208, 208, 208)
-                                .addComponent(jLabel2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(207, 207, 207)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(abrirExpediente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(abrirATA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(abrirConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(226, 226, 226)
+                        .addComponent(jLabel2)))
+                .addContainerGap(248, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,22 +101,52 @@ public class MenuPrincipal extends javax.swing.JPanel {
                 .addComponent(abrirExpediente, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(abrirConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(84, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void abrirATAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirATAActionPerformed
         // TODO add your handling code here:
+        IngresoATA ata;
+        try {
+            ata = new IngresoATA();
+            ata.setSize(1380, 730);
+            PanelPrincipal.removeAll();
+            PanelPrincipal.add(ata);
+            PanelPrincipal.revalidate();
+            PanelPrincipal.repaint();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_abrirATAActionPerformed
+
+    private void abrirExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirExpedienteActionPerformed
+        // TODO add your handling code here:
+        IngresoExpediente expediente = new IngresoExpediente();
+        expediente.setSize(1380, 730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(expediente);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_abrirExpedienteActionPerformed
+
+    private void abrirConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirConsultasActionPerformed
+        // TODO add your handling code here:
+        PanelConsultas pc = new PanelConsultas();
+        pc.setSize(1380, 730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(pc);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_abrirConsultasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton abrirATA;
     private javax.swing.JButton abrirConsultas;
     private javax.swing.JButton abrirExpediente;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
