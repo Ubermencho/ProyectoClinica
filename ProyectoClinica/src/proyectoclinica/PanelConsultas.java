@@ -8,6 +8,8 @@ package proyectoclinica;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -90,6 +92,7 @@ public class PanelConsultas extends javax.swing.JPanel {
         tblDatos5 = new javax.swing.JTable();
         btnBuscar5 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
+        fecha = new com.toedter.calendar.JCalendar();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Búsqueda de Información");
@@ -561,10 +564,12 @@ public class PanelConsultas extends javax.swing.JPanel {
                         .addGap(222, 222, 222)
                         .addComponent(jLabel14))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBuscar5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel27))))
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnBuscar5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel27)))))
                 .addContainerGap(242, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -590,6 +595,8 @@ public class PanelConsultas extends javax.swing.JPanel {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addComponent(jLabel27)
+                        .addGap(35, 35, 35)
+                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBuscar5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(211, Short.MAX_VALUE))
@@ -801,6 +808,35 @@ public class PanelConsultas extends javax.swing.JPanel {
 
     private void btnBuscar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar5ActionPerformed
         // TODO add your handling code here:
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        
+        String x = df.format(fecha.getDate());
+        String sql="select ata.fecha_ata, ata.nombre_paciente_ata, ata.apellido_paciente_ata, ata.sintomas_paciente_ata from ata where ata.fecha_ata = '"+x+"'";
+        
+        Statement st;
+        DefaultTableModel model= new DefaultTableModel();
+        model.addColumn("Fecha");
+        model.addColumn("Nombre");
+        model.addColumn("Apellido");
+        model.addColumn("Sintoma");
+        tblDatos5.setModel(model);
+
+        String [] dato= new String[4];
+            try {
+                st=DB.conexion().createStatement();
+                ResultSet rs=st.executeQuery(sql);
+                while(rs.next()){
+                    dato[0]=rs.getString("fecha_ata");
+                    dato[1]=rs.getString("nombre_paciente_ata");
+                    dato[2]=rs.getString("apellido_paciente_ata");
+                    dato[3]=rs.getString("sintomas_paciente_ata");
+                    model.addRow(dato);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }//GEN-LAST:event_btnBuscar5ActionPerformed
 
 
@@ -813,6 +849,7 @@ public class PanelConsultas extends javax.swing.JPanel {
     private javax.swing.JButton btnBuscar3;
     private javax.swing.JButton btnBuscar4;
     private javax.swing.JButton btnBuscar5;
+    private com.toedter.calendar.JCalendar fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
