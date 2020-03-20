@@ -136,6 +136,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         IngresoATA ata;
         try {
             ata = new IngresoATA();
+<<<<<<< Updated upstream
             ata.setSize(1380,730);
           PanelPrincipal.removeAll();
           PanelPrincipal.add(ata);
@@ -144,6 +145,18 @@ public class FormPrincipal extends javax.swing.JFrame {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }       
+=======
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ata.setSize(1380,730);
+        ata.setLocation(this.getLocation());
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(ata);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+>>>>>>> Stashed changes
     }//GEN-LAST:event_IngresarATAActionPerformed
 
     private void MainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainMenuActionPerformed
