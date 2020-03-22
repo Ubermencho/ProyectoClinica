@@ -173,7 +173,11 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void MainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainMenuActionPerformed
         // TODO add your handling code here:
+        MenuPrincipal mp = new MenuPrincipal();
+        mp.setSize(1380, 730);
+        
         PanelPrincipal.removeAll();
+        PanelPrincipal.add(mp);
         PanelPrincipal.revalidate();
         PanelPrincipal.repaint();
         
