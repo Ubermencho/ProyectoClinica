@@ -45,7 +45,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         Mantenimiento = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         Ayuda = new javax.swing.JMenu();
@@ -125,9 +124,6 @@ public class FormPrincipal extends javax.swing.JFrame {
             }
         });
         Mantenimiento.add(jMenuItem4);
-
-        jMenuItem8.setText("Carreras");
-        Mantenimiento.add(jMenuItem8);
 
         jMenuItem5.setText("Pacientes");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -329,6 +325,5 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     // End of variables declaration//GEN-END:variables
 }

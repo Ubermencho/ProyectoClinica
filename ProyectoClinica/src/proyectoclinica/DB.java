@@ -167,4 +167,45 @@ public class DB {
        }
    }
    
+   public static int modificarUsuario(String descripcion_usuario, String password_usuario, int idtipo_usuario) throws ClassNotFoundException{
+       int correcto = 0;
+       PreparedStatement insertar = null;
+       try{
+           String sql = "update usuario set password_usuario = '"+password_usuario+"',idtipo_usuario = "+idtipo_usuario+" where descripcion_usuario = '"+descripcion_usuario+"';";
+           insertar = conexion().prepareStatement(sql);
+           correcto = insertar.executeUpdate();
+           return correcto;
+       }
+       catch(SQLException e){
+            return 0;
+       }
+   }
+   
+   public static int agregarMedicamento(String idmedicamento, String descripcion_medicamento, String tipo_medicamento) throws ClassNotFoundException{
+       int correcto = 0;
+       PreparedStatement insertar = null;
+       try{
+           String sql = "insert into medicamento values('"+idmedicamento+"', '"+descripcion_medicamento+"', '"+tipo_medicamento+"')";
+           insertar = conexion().prepareStatement(sql);
+           correcto = insertar.executeUpdate();
+           return correcto;
+       }
+       catch(SQLException e){
+            return 0;
+       }
+   }
+   
+   public static int modificarMedicamento(String idmedicamento, String descripcion_medicamento, String tipo_medicamento) throws ClassNotFoundException{
+       int correcto = 0;
+       PreparedStatement insertar = null;
+       try{
+           String sql = "update medicamento set descripcion_medicamento = '"+descripcion_medicamento+"', tipo_medicamento = '"+tipo_medicamento+"' where idmedicamento = '"+idmedicamento+"')";
+           insertar = conexion().prepareStatement(sql);
+           correcto = insertar.executeUpdate();
+           return correcto;
+       }
+       catch(SQLException e){
+            return 0;
+       }
+   }
 }
