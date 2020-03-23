@@ -21,8 +21,8 @@ public class ATA {
     
     public static int Ingresarata(String pac,String doc, String nom, String ape, int edad, int car, String sin)throws ClassNotFoundException{
         int correcto = 0;
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
-        LocalDateTime now = LocalDateTime.now();  
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
         //JOptionPane.showMessageDialog(null, dtf.format(now));
         PreparedStatement insertar = null;
         try{

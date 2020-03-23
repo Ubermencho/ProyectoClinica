@@ -393,7 +393,7 @@ public class Doctores extends javax.swing.JPanel {
        catch(SQLException ex){           
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Doctores.class.getName()).log(Level.SEVERE, null, ex);
-        }      
+        }
     }//GEN-LAST:event_btnBuscarModActionPerformed
 
     private void btnBuscarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarActionPerformed

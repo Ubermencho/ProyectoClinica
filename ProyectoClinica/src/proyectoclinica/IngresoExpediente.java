@@ -20,8 +20,10 @@ public class IngresoExpediente extends javax.swing.JPanel {
     /**
      * Creates new form IngresoExpediente
      */
+    String contribuyentes = "";
+    
     public IngresoExpediente() {
-        initComponents();
+        initComponents();      
     }
 
     /**
@@ -111,50 +113,51 @@ public class IngresoExpediente extends javax.swing.JPanel {
         txtPiel = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         txtCapilar = new javax.swing.JTextField();
+        btnCalcular = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         txtDiagnostico = new javax.swing.JTextArea();
         jLabel28 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
+        rdbNormal1 = new javax.swing.JRadioButton();
+        rdbAlterado1 = new javax.swing.JRadioButton();
+        txtValoracion1 = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jTextField2 = new javax.swing.JTextField();
+        rdbNormal2 = new javax.swing.JRadioButton();
+        rdbAlterado2 = new javax.swing.JRadioButton();
+        txtValoracion2 = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jTextField4 = new javax.swing.JTextField();
+        rdbNormal3 = new javax.swing.JRadioButton();
+        rdbAlterado3 = new javax.swing.JRadioButton();
+        txtValoracion3 = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jTextField5 = new javax.swing.JTextField();
+        rdbNormal4 = new javax.swing.JRadioButton();
+        rdbAlterado4 = new javax.swing.JRadioButton();
+        txtValoracion4 = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
-        jRadioButton13 = new javax.swing.JRadioButton();
-        jRadioButton14 = new javax.swing.JRadioButton();
-        jTextField7 = new javax.swing.JTextField();
+        rdbNormal5 = new javax.swing.JRadioButton();
+        rdbAlterado5 = new javax.swing.JRadioButton();
+        txtValoracion5 = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        jRadioButton15 = new javax.swing.JRadioButton();
-        jRadioButton16 = new javax.swing.JRadioButton();
-        jTextField8 = new javax.swing.JTextField();
+        rdbNormal6 = new javax.swing.JRadioButton();
+        rdbAlterado6 = new javax.swing.JRadioButton();
+        txtValoracion6 = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jRadioButton17 = new javax.swing.JRadioButton();
-        jRadioButton18 = new javax.swing.JRadioButton();
-        jTextField9 = new javax.swing.JTextField();
+        rdbNormal7 = new javax.swing.JRadioButton();
+        rdbAlterado7 = new javax.swing.JRadioButton();
+        txtValoracion7 = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        jRadioButton19 = new javax.swing.JRadioButton();
-        jRadioButton20 = new javax.swing.JRadioButton();
-        jTextField10 = new javax.swing.JTextField();
+        rdbNormal8 = new javax.swing.JRadioButton();
+        rdbAlterado8 = new javax.swing.JRadioButton();
+        txtValoracion8 = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
-        jRadioButton21 = new javax.swing.JRadioButton();
-        jRadioButton22 = new javax.swing.JRadioButton();
-        jTextField11 = new javax.swing.JTextField();
+        rdbNormal9 = new javax.swing.JRadioButton();
+        rdbAlterado9 = new javax.swing.JRadioButton();
+        txtValoracion9 = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
-        jRadioButton23 = new javax.swing.JRadioButton();
-        jRadioButton24 = new javax.swing.JRadioButton();
-        jTextField12 = new javax.swing.JTextField();
+        rdbNormal10 = new javax.swing.JRadioButton();
+        rdbAlterado10 = new javax.swing.JRadioButton();
+        txtValoracion10 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -415,17 +418,17 @@ public class IngresoExpediente extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtFC))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addGap(14, 14, 14)
-                        .addComponent(txtPA))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(11, 11, 11)
-                        .addComponent(txtFR))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addGap(14, 14, 14)
-                        .addComponent(txtT)))
+                        .addComponent(txtT, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15))
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPA)
+                            .addComponent(txtFR))))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -540,6 +543,13 @@ public class IngresoExpediente extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -550,9 +560,11 @@ public class IngresoExpediente extends javax.swing.JPanel {
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnCalcular))
                 .addContainerGap(166, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -566,9 +578,11 @@ public class IngresoExpediente extends javax.swing.JPanel {
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCalcular)
+                        .addGap(16, 16, 16)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Examen Físico", jPanel2);
@@ -581,103 +595,203 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel28.setText("Cabeza:");
 
-        buttonGroup3.add(jRadioButton1);
-        jRadioButton1.setText("Normal");
+        buttonGroup3.add(rdbNormal1);
+        rdbNormal1.setText("Normal");
+        rdbNormal1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal1ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup3.add(jRadioButton2);
-        jRadioButton2.setText("Alterado");
+        buttonGroup3.add(rdbAlterado1);
+        rdbAlterado1.setText("Alterado");
+        rdbAlterado1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado1ActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setEnabled(false);
+        txtValoracion1.setEnabled(false);
 
         jLabel29.setText("ORL:");
 
-        buttonGroup4.add(jRadioButton3);
-        jRadioButton3.setText("Normal");
+        buttonGroup4.add(rdbNormal2);
+        rdbNormal2.setText("Normal");
+        rdbNormal2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal2ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup4.add(jRadioButton4);
-        jRadioButton4.setText("Alterado");
+        buttonGroup4.add(rdbAlterado2);
+        rdbAlterado2.setText("Alterado");
+        rdbAlterado2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado2ActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setEnabled(false);
+        txtValoracion2.setEnabled(false);
 
         jLabel31.setText("Cuello:");
 
-        buttonGroup5.add(jRadioButton7);
-        jRadioButton7.setText("Normal");
+        buttonGroup5.add(rdbNormal3);
+        rdbNormal3.setText("Normal");
+        rdbNormal3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal3ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup5.add(jRadioButton8);
-        jRadioButton8.setText("Alterado");
+        buttonGroup5.add(rdbAlterado3);
+        rdbAlterado3.setText("Alterado");
+        rdbAlterado3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado3ActionPerformed(evt);
+            }
+        });
 
-        jTextField4.setEnabled(false);
+        txtValoracion3.setEnabled(false);
 
         jLabel32.setText("Respiratorio:");
 
-        buttonGroup6.add(jRadioButton9);
-        jRadioButton9.setText("Normal");
+        buttonGroup6.add(rdbNormal4);
+        rdbNormal4.setText("Normal");
+        rdbNormal4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal4ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup6.add(jRadioButton10);
-        jRadioButton10.setText("Alterado");
+        buttonGroup6.add(rdbAlterado4);
+        rdbAlterado4.setText("Alterado");
+        rdbAlterado4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado4ActionPerformed(evt);
+            }
+        });
 
-        jTextField5.setEnabled(false);
+        txtValoracion4.setEnabled(false);
 
         jLabel34.setText("Corazón:");
 
-        buttonGroup7.add(jRadioButton13);
-        jRadioButton13.setText("Normal");
+        buttonGroup7.add(rdbNormal5);
+        rdbNormal5.setText("Normal");
+        rdbNormal5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal5ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup7.add(jRadioButton14);
-        jRadioButton14.setText("Alterado");
+        buttonGroup7.add(rdbAlterado5);
+        rdbAlterado5.setText("Alterado");
+        rdbAlterado5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado5ActionPerformed(evt);
+            }
+        });
 
-        jTextField7.setEnabled(false);
+        txtValoracion5.setEnabled(false);
 
         jLabel35.setText("Abdomen:");
 
-        buttonGroup8.add(jRadioButton15);
-        jRadioButton15.setText("Normal");
+        buttonGroup8.add(rdbNormal6);
+        rdbNormal6.setText("Normal");
+        rdbNormal6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal6ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup8.add(jRadioButton16);
-        jRadioButton16.setText("Alterado");
+        buttonGroup8.add(rdbAlterado6);
+        rdbAlterado6.setText("Alterado");
+        rdbAlterado6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado6ActionPerformed(evt);
+            }
+        });
 
-        jTextField8.setEnabled(false);
+        txtValoracion6.setEnabled(false);
 
         jLabel36.setText("Genitales:");
 
-        buttonGroup9.add(jRadioButton17);
-        jRadioButton17.setText("Normal");
+        buttonGroup9.add(rdbNormal7);
+        rdbNormal7.setText("Normal");
+        rdbNormal7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal7ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup9.add(jRadioButton18);
-        jRadioButton18.setText("Alterado");
+        buttonGroup9.add(rdbAlterado7);
+        rdbAlterado7.setText("Alterado");
+        rdbAlterado7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado7ActionPerformed(evt);
+            }
+        });
 
-        jTextField9.setEnabled(false);
+        txtValoracion7.setEnabled(false);
 
         jLabel37.setText("Extremidades:");
 
-        buttonGroup10.add(jRadioButton19);
-        jRadioButton19.setText("Normal");
+        buttonGroup10.add(rdbNormal8);
+        rdbNormal8.setText("Normal");
+        rdbNormal8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal8ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup10.add(jRadioButton20);
-        jRadioButton20.setText("Alterado");
+        buttonGroup10.add(rdbAlterado8);
+        rdbAlterado8.setText("Alterado");
+        rdbAlterado8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado8ActionPerformed(evt);
+            }
+        });
 
-        jTextField10.setEnabled(false);
+        txtValoracion8.setEnabled(false);
 
         jLabel38.setText("Piel:");
 
-        buttonGroup11.add(jRadioButton21);
-        jRadioButton21.setText("Normal");
+        buttonGroup11.add(rdbNormal9);
+        rdbNormal9.setText("Normal");
+        rdbNormal9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal9ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup11.add(jRadioButton22);
-        jRadioButton22.setText("Alterado");
+        buttonGroup11.add(rdbAlterado9);
+        rdbAlterado9.setText("Alterado");
+        rdbAlterado9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado9ActionPerformed(evt);
+            }
+        });
 
-        jTextField11.setEnabled(false);
+        txtValoracion9.setEnabled(false);
 
         jLabel39.setText("Neurológico:");
 
-        buttonGroup12.add(jRadioButton23);
-        jRadioButton23.setText("Normal");
+        buttonGroup12.add(rdbNormal10);
+        rdbNormal10.setText("Normal");
+        rdbNormal10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNormal10ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup12.add(jRadioButton24);
-        jRadioButton24.setText("Alterado");
+        buttonGroup12.add(rdbAlterado10);
+        rdbAlterado10.setText("Alterado");
+        rdbAlterado10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbAlterado10ActionPerformed(evt);
+            }
+        });
 
-        jTextField12.setEnabled(false);
+        txtValoracion10.setEnabled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -689,7 +803,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane4))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel39)
@@ -705,68 +819,67 @@ public class IngresoExpediente extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton23)
+                                .addComponent(rdbNormal10)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton24)
+                                .addComponent(rdbAlterado10)
                                 .addGap(6, 6, 6)
-                                .addComponent(jTextField12))
+                                .addComponent(txtValoracion10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton13)
+                                .addComponent(rdbNormal5)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton14)
+                                .addComponent(rdbAlterado5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField7))
+                                .addComponent(txtValoracion5))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jRadioButton1)
+                                        .addComponent(rdbNormal1)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton2))
+                                        .addComponent(rdbAlterado1))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jRadioButton3)
+                                        .addComponent(rdbNormal2)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton4)))
+                                        .addComponent(rdbAlterado2)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1)
-                                    .addComponent(jTextField2)))
+                                    .addComponent(txtValoracion1)
+                                    .addComponent(txtValoracion2)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton7)
+                                .addComponent(rdbNormal3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton8)
+                                .addComponent(rdbAlterado3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField4))
+                                .addComponent(txtValoracion3))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton9)
+                                .addComponent(rdbNormal4)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton10)
+                                .addComponent(rdbAlterado4)
                                 .addGap(6, 6, 6)
-                                .addComponent(jTextField5))
+                                .addComponent(txtValoracion4))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton15)
+                                .addComponent(rdbNormal6)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton16)
+                                .addComponent(rdbAlterado6)
                                 .addGap(6, 6, 6)
-                                .addComponent(jTextField8))
+                                .addComponent(txtValoracion6))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton17)
+                                .addComponent(rdbNormal7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton18)
+                                .addComponent(rdbAlterado7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField9))
+                                .addComponent(txtValoracion7))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGap(0, 2, Short.MAX_VALUE)
-                                .addComponent(jRadioButton21)
+                                .addComponent(rdbNormal9)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton19)
+                                .addComponent(rdbAlterado9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jRadioButton20)
+                                .addComponent(txtValoracion9, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(rdbNormal8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                .addComponent(rdbAlterado8)
                                 .addGap(6, 6, 6)
-                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtValoracion8, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(174, 174, 174))
         );
         jPanel3Layout.setVerticalGroup(
@@ -775,63 +888,63 @@ public class IngresoExpediente extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal1)
+                    .addComponent(rdbAlterado1)
+                    .addComponent(txtValoracion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal2)
+                    .addComponent(rdbAlterado2)
+                    .addComponent(txtValoracion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(jRadioButton7)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal3)
+                    .addComponent(rdbAlterado3)
+                    .addComponent(txtValoracion3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(jRadioButton9)
-                    .addComponent(jRadioButton10)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal4)
+                    .addComponent(rdbAlterado4)
+                    .addComponent(txtValoracion4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
-                    .addComponent(jRadioButton13)
-                    .addComponent(jRadioButton14)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal5)
+                    .addComponent(rdbAlterado5)
+                    .addComponent(txtValoracion5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
-                    .addComponent(jRadioButton15)
-                    .addComponent(jRadioButton16)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal6)
+                    .addComponent(rdbAlterado6)
+                    .addComponent(txtValoracion6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
-                    .addComponent(jRadioButton17)
-                    .addComponent(jRadioButton18)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal7)
+                    .addComponent(rdbAlterado7)
+                    .addComponent(txtValoracion7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
-                    .addComponent(jRadioButton19)
-                    .addComponent(jRadioButton20)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal8)
+                    .addComponent(rdbAlterado8)
+                    .addComponent(txtValoracion8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
-                    .addComponent(jRadioButton21)
-                    .addComponent(jRadioButton22)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal9)
+                    .addComponent(rdbAlterado9)
+                    .addComponent(txtValoracion9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
-                    .addComponent(jRadioButton23)
-                    .addComponent(jRadioButton24)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbNormal10)
+                    .addComponent(rdbAlterado10)
+                    .addComponent(txtValoracion10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -940,7 +1053,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
         LocalDateTime now = LocalDateTime.now();
         
-        String sexo = "", contribuyentes = "";
+        String sexo = "";
         
         if(rdbMasculino.isSelected())
             sexo = "Masculino";
@@ -949,22 +1062,159 @@ public class IngresoExpediente extends javax.swing.JPanel {
         else
             sexo = "Otro";
         
-        contribuyentes = "";
+        if(rdbNormal1.isSelected())
+            contribuyentes += "Cabeza: Normal, ";
+        else if (rdbAlterado1.isSelected())
+            contribuyentes += "Cabeza: Alterado (" + txtValoracion1.getText() + "), ";
+        
+        if(rdbNormal2.isSelected())
+            contribuyentes += "ORL: Normal, ";
+        else if (rdbAlterado2.isSelected())
+            contribuyentes += "ORL: Alterado (" + txtValoracion2.getText() + "), ";
+        
+        if(rdbNormal3.isSelected())
+            contribuyentes += "Cuello: Normal, ";
+        else if (rdbAlterado3.isSelected())
+            contribuyentes += "Cuello: Alterado (" + txtValoracion3.getText() + "), ";
+        
+        if(rdbNormal4.isSelected())
+            contribuyentes += "Respiratorio: Normal, ";
+        else if (rdbAlterado4.isSelected())
+            contribuyentes += "Respiratorio: Alterado (" + txtValoracion4.getText() + "), ";
+        
+        if(rdbNormal5.isSelected())
+            contribuyentes += "Corazón: Normal, ";
+        else if (rdbAlterado5.isSelected())
+            contribuyentes += "Corazón: Alterado (" + txtValoracion5.getText() + "), ";
+        
+        if(rdbNormal6.isSelected())
+            contribuyentes += "Abdomen: Normal, ";
+        else if (rdbAlterado6.isSelected())
+            contribuyentes += "Abdomen: Alterado (" + txtValoracion6.getText() + "), ";
+        
+        if(rdbNormal7.isSelected())
+            contribuyentes += "Genitales: Normal, ";
+        else if (rdbAlterado7.isSelected())
+            contribuyentes += "Genitales: Alterado (" + txtValoracion7.getText() + "), ";
+        
+        if(rdbNormal8.isSelected())
+            contribuyentes += "Extremidades: Normal, ";
+        else if (rdbAlterado8.isSelected())
+            contribuyentes += "Extremidades: Alterado (" + txtValoracion8.getText() + "), ";
+        
+        if(rdbNormal9.isSelected())
+            contribuyentes += "Piel: Normal, ";
+        else if (rdbAlterado9.isSelected())
+            contribuyentes += "Piel: Alterado (" + txtValoracion9.getText() + "), ";
+
+        if(rdbNormal10.isSelected())
+            contribuyentes += "Neurológico: Normal.";
+        else if (rdbAlterado10.isSelected())
+            contribuyentes += "Neurológico: Alterado (" + txtValoracion10.getText() + ").";
         
         try {
-            DB.guardarBase(txtExpediente.getText(), txtIdentidad.getText(), dtf.format(now), dtf.format(now), dtf.format(now),
+            if(DB.agregarPaciente(txtIdentidad.getText(), cmbCarrera.getSelectedIndex(), txtNombre.getText(), 
+                    txtApellido.getText(), Integer.parseInt(spnEdad.getValue().toString()), sexo) != 0){
+                DB.guardarBase(txtExpediente.getText(), txtIdentidad.getText(), dtf.format(now), dtf.format(now), dtf.format(now),
                     txtSintoma.getText(), txtHEA.getText(), Double.parseDouble(txtPeso.getText()), Double.parseDouble(txtTalla.getText()),
                     Double.parseDouble(txtFC.getText()), Double.parseDouble(txtFR.getText()), Double.parseDouble(txtPA.getText()),
                     Double.parseDouble(txtT.getText()), txtPiel.getText(), txtCapilar.getText(), contribuyentes, txtDiagnostico.getText(),
                     txtTratamiento.getText(), txtInterconsulta.getText(), txtComentario.getText());
+            }            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(IngresoExpediente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAceptarActionPerformed
 
+    private void rdbNormal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal1ActionPerformed
+        txtValoracion1.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal1ActionPerformed
+
+    private void rdbNormal2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal2ActionPerformed
+        txtValoracion2.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal2ActionPerformed
+
+    private void rdbNormal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal3ActionPerformed
+        txtValoracion3.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal3ActionPerformed
+
+    private void rdbNormal4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal4ActionPerformed
+        txtValoracion4.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal4ActionPerformed
+
+    private void rdbNormal5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal5ActionPerformed
+        txtValoracion5.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal5ActionPerformed
+
+    private void rdbNormal6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal6ActionPerformed
+        txtValoracion6.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal6ActionPerformed
+
+    private void rdbNormal7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal7ActionPerformed
+        txtValoracion7.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal7ActionPerformed
+
+    private void rdbNormal8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal8ActionPerformed
+        txtValoracion8.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal8ActionPerformed
+
+    private void rdbNormal9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal9ActionPerformed
+        txtValoracion9.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal9ActionPerformed
+
+    private void rdbNormal10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNormal10ActionPerformed
+        txtValoracion10.setEnabled(false);
+    }//GEN-LAST:event_rdbNormal10ActionPerformed
+
+    private void rdbAlterado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado1ActionPerformed
+        txtValoracion1.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado1ActionPerformed
+
+    private void rdbAlterado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado2ActionPerformed
+        txtValoracion2.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado2ActionPerformed
+
+    private void rdbAlterado3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado3ActionPerformed
+        txtValoracion3.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado3ActionPerformed
+
+    private void rdbAlterado4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado4ActionPerformed
+        txtValoracion4.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado4ActionPerformed
+
+    private void rdbAlterado5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado5ActionPerformed
+        txtValoracion5.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado5ActionPerformed
+
+    private void rdbAlterado6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado6ActionPerformed
+        txtValoracion6.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado6ActionPerformed
+
+    private void rdbAlterado7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado7ActionPerformed
+        txtValoracion7.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado7ActionPerformed
+
+    private void rdbAlterado8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado8ActionPerformed
+        txtValoracion8.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado8ActionPerformed
+
+    private void rdbAlterado9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado9ActionPerformed
+        txtValoracion9.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado9ActionPerformed
+
+    private void rdbAlterado10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbAlterado10ActionPerformed
+        txtValoracion10.setEnabled(true);
+    }//GEN-LAST:event_rdbAlterado10ActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        double imc = Double.parseDouble(txtPeso.getText()) / (Double.parseDouble(txtTalla.getText()) * Double.parseDouble(txtTalla.getText()));
+        txtIMC.setText(Double.toString(imc));
+    }//GEN-LAST:event_btnCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnCerrar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup10;
@@ -1026,30 +1276,10 @@ public class IngresoExpediente extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
     private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton14;
-    private javax.swing.JRadioButton jRadioButton15;
-    private javax.swing.JRadioButton jRadioButton16;
-    private javax.swing.JRadioButton jRadioButton17;
-    private javax.swing.JRadioButton jRadioButton18;
-    private javax.swing.JRadioButton jRadioButton19;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton20;
-    private javax.swing.JRadioButton jRadioButton21;
-    private javax.swing.JRadioButton jRadioButton22;
-    private javax.swing.JRadioButton jRadioButton23;
-    private javax.swing.JRadioButton jRadioButton24;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1058,20 +1288,30 @@ public class IngresoExpediente extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JRadioButton rdbAlterado1;
+    private javax.swing.JRadioButton rdbAlterado10;
+    private javax.swing.JRadioButton rdbAlterado2;
+    private javax.swing.JRadioButton rdbAlterado3;
+    private javax.swing.JRadioButton rdbAlterado4;
+    private javax.swing.JRadioButton rdbAlterado5;
+    private javax.swing.JRadioButton rdbAlterado6;
+    private javax.swing.JRadioButton rdbAlterado7;
+    private javax.swing.JRadioButton rdbAlterado8;
+    private javax.swing.JRadioButton rdbAlterado9;
     private javax.swing.JRadioButton rdbFemenino;
     private javax.swing.JRadioButton rdbMasculino;
+    private javax.swing.JRadioButton rdbNormal1;
+    private javax.swing.JRadioButton rdbNormal10;
+    private javax.swing.JRadioButton rdbNormal2;
+    private javax.swing.JRadioButton rdbNormal3;
+    private javax.swing.JRadioButton rdbNormal4;
+    private javax.swing.JRadioButton rdbNormal5;
+    private javax.swing.JRadioButton rdbNormal6;
+    private javax.swing.JRadioButton rdbNormal7;
+    private javax.swing.JRadioButton rdbNormal8;
+    private javax.swing.JRadioButton rdbNormal9;
     private javax.swing.JRadioButton rdbOtro;
     private javax.swing.JSpinner spnEdad;
     private javax.swing.JTextField txtApellido;
@@ -1098,5 +1338,15 @@ public class IngresoExpediente extends javax.swing.JPanel {
     private javax.swing.JTextField txtT;
     private javax.swing.JTextField txtTalla;
     private javax.swing.JTextArea txtTratamiento;
+    private javax.swing.JTextField txtValoracion1;
+    private javax.swing.JTextField txtValoracion10;
+    private javax.swing.JTextField txtValoracion2;
+    private javax.swing.JTextField txtValoracion3;
+    private javax.swing.JTextField txtValoracion4;
+    private javax.swing.JTextField txtValoracion5;
+    private javax.swing.JTextField txtValoracion6;
+    private javax.swing.JTextField txtValoracion7;
+    private javax.swing.JTextField txtValoracion8;
+    private javax.swing.JTextField txtValoracion9;
     // End of variables declaration//GEN-END:variables
 }

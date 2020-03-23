@@ -118,12 +118,27 @@ public class FormPrincipal extends javax.swing.JFrame {
         Mantenimiento.add(jMenuItem3);
 
         jMenuItem4.setText("Medicamento");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         Mantenimiento.add(jMenuItem4);
 
         jMenuItem5.setText("Pacientes");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         Mantenimiento.add(jMenuItem5);
 
         jMenuItem7.setText("Usuarios");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         Mantenimiento.add(jMenuItem7);
 
         MenuBarra.add(Mantenimiento);
@@ -228,6 +243,39 @@ public class FormPrincipal extends javax.swing.JFrame {
         PanelPrincipal.revalidate();
         PanelPrincipal.repaint();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        Pacientes px;
+        px = new Pacientes();
+        px.setSize(1380,730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(px);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Medicamentos med;
+        med = new Medicamentos();
+        med.setSize(1380,730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(med);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        Usuarios user;
+        user = new Usuarios();
+        user.setSize(1380,730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(user);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
     
     /**
      * @param args the command line arguments
