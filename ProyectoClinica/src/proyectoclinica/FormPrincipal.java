@@ -22,6 +22,13 @@ public class FormPrincipal extends javax.swing.JFrame {
      */
     public FormPrincipal() {
         initComponents();
+        MenuPrincipal mp = new MenuPrincipal();
+        mp.setSize(1380, 730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(mp);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
     }
 
     /**
