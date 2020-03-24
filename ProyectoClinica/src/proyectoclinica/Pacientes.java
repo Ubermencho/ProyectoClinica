@@ -375,7 +375,7 @@ public class Pacientes extends javax.swing.JPanel {
 
     private void btnBuscarModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarModActionPerformed
        String sql="";
-       sql=("select idcarrera, nombre_paciente, apellido_paciente, edad_paciente, genero_paciente from doctor where iddoctor='"+txtIdentidadMod.getText()+"'");
+       sql=("select idcarrera, nombre_paciente, apellido_paciente, edad_paciente, genero_paciente from paciente where idpaciente='"+txtIdentidadMod.getText()+"'");
        try{
               Statement s = DB.conexion().createStatement();
               ResultSet rs = s.executeQuery(sql);
