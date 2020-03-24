@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="33a8f5e3-daa7-464b-a36e-11c15c4200a2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fecha" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     CONCAT(ata.`nombre_paciente_ata` ," ",ata.`apellido_paciente_ata`) AS Nombre_del_Paciente,
+     ata.`edad_paciente_ata` AS Edad,
+     ata.`sintomas_paciente_ata` AS Sintomas,
+     carrera.`nombre_carrera` AS Carrera,
+    CONCAT( doctor.`nombre_doctor`, " ", doctor.`apellido_doctor`) AS Medico
+FROM
+     `carrera` carrera INNER JOIN `ata` ata ON carrera.`idcarrera` = ata.`idcarrera`
+     INNER JOIN `doctor` doctor ON ata.`iddoctor` = doctor.`iddoctor`
+ where fecha_ata = $P{fecha}]]>
+	</queryString>
+	<field name="Nombre_del_Paciente" class="java.lang.String"/>
+	<field name="Edad" class="java.lang.Integer"/>
+	<field name="Sintomas" class="java.lang.String"/>
+	<field name="Carrera" class="java.lang.String"/>
+	<field name="Medico" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="bfbb7693-6545-4b66-8767-bb76c9e39699"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="f1a642d5-0f4f-409d-a076-e74683e9841a"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[HOJA ATA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="284" y="63" width="180" height="20" forecolor="#FFFFFF" uuid="55c8063b-1656-4c95-8521-4146933402da"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Para la fecha: ]]></text>
+				</staticText>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="475" y="70" width="100" height="13" uuid="d4f65050-dc20-4c24-bb6f-7d70f0ea2bbf"/>
+					<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="3d8133cd-13b4-4442-9c5c-25d5511b65bd"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="166" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2dfaca93-363e-4af6-bdc2-787e1c9a1a1c"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre_del_Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="166" y="0" width="56" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="68cc4768-1b73-49b3-aeb1-d04b332549c1"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="222" y="0" width="122" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="cac1b799-3b8e-400c-a477-7157a2c0a41f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sintomas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="344" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="db1d8f59-6e54-4597-a828-94c34642b901"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Carrera]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="455" y="0" width="120" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="38f753db-c0d1-4f7d-a6de-61c76a36661a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medico]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="38a34c27-504a-4843-beeb-5f52a42a0710"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="166" height="20" uuid="74f4a2ba-79b3-4315-9061-447d9718601f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre_del_Paciente}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="166" y="0" width="56" height="20" uuid="ce7e4db4-5b83-482c-84de-b9425d3adb56"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Edad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="222" y="0" width="122" height="20" uuid="32bcadad-b15e-4e21-881d-dee7b292b276"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Sintomas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="344" y="0" width="111" height="20" uuid="d1874340-d3e1-4894-8397-3b267ab16d46"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Carrera}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="455" y="0" width="120" height="20" uuid="8936890b-631f-4d7f-81f7-1dc323b8d0d7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Medico}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="85bb3ddc-a777-48d0-b4ad-7172a4b6825f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="2baf3f99-02f4-49aa-967e-4a2240aa5f0e"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

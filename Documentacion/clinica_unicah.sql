@@ -1,5 +1,5 @@
 CREATE SCHEMA `clinica_unicah` ;
-CREATE USER 'userClinica'@'localhost' IDENTIFIED WITH mysql_native_password BY 'clinica';
+create USER 'userClinica'@'localhost' IDENTIFIED WITH mysql_native_password BY 'clinica';
 GRANT ALL ON clinica_unicah.* TO 'userClinica'@'localhost';
 
 USE `clinica_unicah`;
@@ -30,28 +30,40 @@ CREATE TABLE `medicamento` (
 
 CREATE TABLE `paciente` (
   `idpaciente` varchar(15) NOT NULL,
-  `idcarrera` varchar(30) NOT NULL,
+  `idcarrera` int(11) NOT NULL,
   `nombre_paciente` varchar(30) NOT NULL,
-  `apellido_paciente` int(11) NOT NULL,
+  `apellido_paciente` varchar(30) NOT NULL,
   `edad_paciente` int(11) NOT NULL,
+  `genero_paciente` varchar(10) NOT NULL,
   PRIMARY KEY (`idpaciente`),
-  UNIQUE KEY `idpaciente_UNIQUE` (`idpaciente`)
+  UNIQUE KEY `idpaciente_UNIQUE` (`idpaciente`),
+  KEY `idcarrera_idcarrera` (`idcarrera`),
+  CONSTRAINT `idcarreraPaciente` FOREIGN KEY (`idcarrera`) REFERENCES `carrera` (`idcarrera`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `ata` (
-  `idata` int(11) NOT NULL AUTO_INCREMENT,  
+  `idata` int(11) NOT NULL AUTO_INCREMENT,
   `iddoctor` varchar(15) NOT NULL,
-  `idmedicamento` int(11) NOT NULL,
   `nombre_paciente_ata` varchar(50) NOT NULL,
   `apellido_paciente_ata` varchar(50) NOT NULL,
-  `edad_paciente_ata` int(11) NOT NULL,  
+  `edad_paciente_ata` int(11) NOT NULL,
+  `idcarrera` int(11) NOT NULL,
   `sintomas_paciente_ata` varchar(100) NOT NULL,
   `fecha_ata` date NOT NULL,
   PRIMARY KEY (`idata`),
   UNIQUE KEY `idata_UNIQUE` (`idata`),
   KEY `iddoctor_idx` (`iddoctor`),
-  KEY `idmedicamento_idx` (`idmedicamento`),
-  CONSTRAINT `iddoctor` FOREIGN KEY (`iddoctor`) REFERENCES `doctor` (`iddoctor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  KEY `idcarrera` (`idcarrera`),
+  CONSTRAINT `idcarrera` FOREIGN KEY (`idcarrera`) REFERENCES `carrera` (`idcarrera`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `iddoctor` FOREIGN KEY (`iddoctor`) REFERENCES `doctor` (`iddoctor`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `ata_medicamentos` (
+  `idmedicamento` int(11) NOT NULL,
+  `idata` int(11) NOT NULL,
+  PRIMARY KEY (`idmedicamento`,`idata`),
+  KEY `idata` (`idata`),
+  CONSTRAINT `idata` FOREIGN KEY (`idata`) REFERENCES `ata` (`idata`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `idmedicamento` FOREIGN KEY (`idmedicamento`) REFERENCES `medicamento` (`idmedicamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -83,14 +95,14 @@ CREATE TABLE `expediente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `tipo_usuario` (
-  `idtipo_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `idtipo_usuario` int(11) NOT NULL,
   `descripcion_tipo_usuario` varchar(45) NOT NULL,
   PRIMARY KEY (`idtipo_usuario`),
   UNIQUE KEY `idtipo_usuario_UNIQUE` (`idtipo_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `usuario` (
-  `idusuario` int(11) NOT NULL AUTO_INCREMENT,
+  `idusuario` int(11) NOT NULL,
   `descripcion_usuario` varchar(45) NOT NULL,
   `password_usuario` varchar(45) NOT NULL,
   `fecha_creacion_usuario` datetime NOT NULL,
@@ -101,5 +113,3 @@ CREATE TABLE `usuario` (
   KEY `idtipo_usuario_idx` (`idtipo_usuario`),
   CONSTRAINT `idtipo_usuario` FOREIGN KEY (`idtipo_usuario`) REFERENCES `tipo_usuario` (`idtipo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-

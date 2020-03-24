@@ -22,6 +22,13 @@ public class FormPrincipal extends javax.swing.JFrame {
      */
     public FormPrincipal() {
         initComponents();
+        MenuPrincipal mp = new MenuPrincipal();
+        mp.setSize(1380, 730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(mp);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
     }
 
     /**
@@ -33,17 +40,25 @@ public class FormPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem6 = new javax.swing.JMenuItem();
         PanelPrincipal = new javax.swing.JPanel();
         MenuBarra = new javax.swing.JMenuBar();
         Archivo = new javax.swing.JMenu();
         MainMenu = new javax.swing.JMenuItem();
         IngresarATA = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        reportes = new javax.swing.JMenuItem();
         Consultas = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         Mantenimiento = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         Ayuda = new javax.swing.JMenu();
         ModAyuda = new javax.swing.JMenuItem();
+
+        jMenuItem6.setText("jMenuItem6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clinica UNICAH");
@@ -86,6 +101,14 @@ public class FormPrincipal extends javax.swing.JFrame {
         });
         Archivo.add(jMenuItem1);
 
+        reportes.setText("Reportes");
+        reportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportesActionPerformed(evt);
+            }
+        });
+        Archivo.add(reportes);
+
         MenuBarra.add(Archivo);
 
         Consultas.setText("Consultas");
@@ -101,6 +124,39 @@ public class FormPrincipal extends javax.swing.JFrame {
         MenuBarra.add(Consultas);
 
         Mantenimiento.setText("Mantenimiento");
+
+        jMenuItem3.setText("Doctores");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        Mantenimiento.add(jMenuItem3);
+
+        jMenuItem4.setText("Medicamento");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        Mantenimiento.add(jMenuItem4);
+
+        jMenuItem5.setText("Pacientes");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        Mantenimiento.add(jMenuItem5);
+
+        jMenuItem7.setText("Usuarios");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        Mantenimiento.add(jMenuItem7);
+
         MenuBarra.add(Mantenimiento);
 
         Ayuda.setText("Ayuda");
@@ -148,7 +204,11 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void MainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainMenuActionPerformed
         // TODO add your handling code here:
+        MenuPrincipal mp = new MenuPrincipal();
+        mp.setSize(1380, 730);
+        
         PanelPrincipal.removeAll();
+        PanelPrincipal.add(mp);
         PanelPrincipal.revalidate();
         PanelPrincipal.repaint();
         
@@ -188,6 +248,62 @@ public class FormPrincipal extends javax.swing.JFrame {
             e1.printStackTrace();
         }
     }//GEN-LAST:event_ModAyudaActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Doctores doc;
+        doc = new Doctores();
+        doc.setSize(1380,730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(doc);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        Pacientes px;
+        px = new Pacientes();
+        px.setSize(1380,730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(px);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Medicamentos med;
+        med = new Medicamentos();
+        med.setSize(1380,730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(med);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        Usuarios user;
+        user = new Usuarios();
+        user.setSize(1380,730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(user);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void reportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportesActionPerformed
+        // TODO add your handling code here:
+        Reportes rep;
+         rep = new Reportes();
+        rep.setSize(1380,730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(rep);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_reportesActionPerformed
     
     /**
      * @param args the command line arguments
@@ -236,5 +352,11 @@ public class FormPrincipal extends javax.swing.JFrame {
     public static javax.swing.JPanel PanelPrincipal;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem reportes;
     // End of variables declaration//GEN-END:variables
 }
