@@ -92,7 +92,7 @@ public class DB {
        int correcto = 0;
        PreparedStatement insertar = null;
        try{
-           String sql = "insert into doctor values('"+idpaciente+"', "+idcarrera+", '"+nombre_paciente+"', '"+apellido_paciente+"',"
+           String sql = "insert into paciente values('"+idpaciente+"', "+idcarrera+", '"+nombre_paciente+"', '"+apellido_paciente+"',"
                    + edad_paciente + ",'"+genero_paciente+"')";
            insertar = conexion().prepareStatement(sql);
            correcto = insertar.executeUpdate();

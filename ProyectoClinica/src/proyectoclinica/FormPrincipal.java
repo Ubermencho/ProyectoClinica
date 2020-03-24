@@ -47,6 +47,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         MainMenu = new javax.swing.JMenuItem();
         IngresarATA = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        reportes = new javax.swing.JMenuItem();
         Consultas = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         Mantenimiento = new javax.swing.JMenu();
@@ -99,6 +100,14 @@ public class FormPrincipal extends javax.swing.JFrame {
             }
         });
         Archivo.add(jMenuItem1);
+
+        reportes.setText("Reportes");
+        reportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportesActionPerformed(evt);
+            }
+        });
+        Archivo.add(reportes);
 
         MenuBarra.add(Archivo);
 
@@ -283,6 +292,18 @@ public class FormPrincipal extends javax.swing.JFrame {
         PanelPrincipal.revalidate();
         PanelPrincipal.repaint();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void reportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportesActionPerformed
+        // TODO add your handling code here:
+        Reportes rep;
+         rep = new Reportes();
+        rep.setSize(1380,730);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(rep);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_reportesActionPerformed
     
     /**
      * @param args the command line arguments
@@ -336,5 +357,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem reportes;
     // End of variables declaration//GEN-END:variables
 }
