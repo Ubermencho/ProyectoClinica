@@ -5,12 +5,20 @@
  */
 package proyectoclinica;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -126,7 +134,25 @@ public class Reportes extends javax.swing.JPanel {
         switch (res){
             case "Hoja ATA por fecha":
             {
-                JOptionPane.showMessageDialog(null, res);
+                String fecha = JOptionPane.showInputDialog(this, "Ingrese la fecha para la que desea generar la hoja ATA (en formato YYYY--MM-DD), incluya los guiones");
+                try{
+                String jrxmlFile = "src/Reportes/Hoja_ATA.jrxml";
+                Connection con = DB.conexion();
+                HashMap param = new HashMap();
+                param.put("fecha",fecha);
+                JasperReport JRpt =JasperCompileManager.compileReport(jrxmlFile);
+                JasperPrint JPrint = JasperFillManager.fillReport(JRpt, param,con);
+
+                JasperViewer.viewReport(JPrint, false);
+            }
+
+            catch(JRException e){
+                JOptionPane.showMessageDialog(this, e);
+            } catch (SQLException ex) {
+                Logger.getLogger(Reportes.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Reportes.class.getName()).log(Level.SEVERE, null, ex);
+            } 
             }
             break;
         }
