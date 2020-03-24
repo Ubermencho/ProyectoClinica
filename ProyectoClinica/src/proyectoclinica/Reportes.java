@@ -42,10 +42,19 @@ public class Reportes extends javax.swing.JPanel {
 
         jLabel1.setText("Reportes Disponibles:");
 
-        cmbReportes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pacientes por Carrera", "Medicamentos Usados" }));
-        cmbReportes.setSelectedIndex(-1);
+        cmbReportes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pacientes por Carrera", "Medicamentos Usados", "Hoja ATA por fecha" }));
+        cmbReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbReportesActionPerformed(evt);
+            }
+        });
 
         btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         btnExpediente.setText("Sacar Expediente");
         btnExpediente.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +118,23 @@ public class Reportes extends javax.swing.JPanel {
              Logger.getLogger(Doctores.class.getName()).log(Level.SEVERE, null, ex);
          }
     }//GEN-LAST:event_btnExpedienteActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        // TODO add your handling code here:
+        String res = this.cmbReportes.getSelectedItem().toString();
+        
+        switch (res){
+            case "Hoja ATA por fecha":
+            {
+                JOptionPane.showMessageDialog(null, res);
+            }
+            break;
+        }
+    }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void cmbReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbReportesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbReportesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
