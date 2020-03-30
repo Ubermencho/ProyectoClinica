@@ -617,20 +617,23 @@ public class PanelConsultas extends javax.swing.JPanel {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         String id=txtIdentidad.getText();
+        if(id.equals("    -    -     "))
+            JOptionPane.showMessageDialog(null, "Identidad Vacía Compruebe");
+        else{
         
-        String sql="select paciente.idpaciente,paciente.nombre_paciente,paciente.apellido_paciente,paciente.edad_paciente,expediente.diagnostico,expediente.sintoma_principal from paciente,expediente where paciente.idpaciente=expediente.idpaciente and expediente.idpaciente = '"+id+"'";
+         String sql="select paciente.idpaciente,paciente.nombre_paciente,paciente.apellido_paciente,paciente.edad_paciente,expediente.diagnostico,expediente.sintoma_principal from paciente,expediente where paciente.idpaciente=expediente.idpaciente and expediente.idpaciente = '"+id+"'";
        
-        Statement st;
-        DefaultTableModel model= new DefaultTableModel();
-        model.addColumn("ID");
-        model.addColumn("Nombre");
-        model.addColumn("Apellido");
-        model.addColumn("Edad");
-        model.addColumn("Diagnostico");
-        model.addColumn("Sintoma");
-        tblDatos.setModel(model);
+         Statement st;
+         DefaultTableModel model= new DefaultTableModel();
+         model.addColumn("ID");
+         model.addColumn("Nombre");
+         model.addColumn("Apellido");
+         model.addColumn("Edad");
+         model.addColumn("Diagnostico");
+         model.addColumn("Sintoma");
+         tblDatos.setModel(model);
 
-        String [] dato= new String[6];
+         String [] dato= new String[6];
             try {
                 st=DB.conexion().createStatement();
                 ResultSet rs=st.executeQuery(sql);
@@ -648,7 +651,7 @@ public class PanelConsultas extends javax.swing.JPanel {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
             }
-        
+        }
 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -659,7 +662,10 @@ public class PanelConsultas extends javax.swing.JPanel {
     private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
         // TODO add your handling code here:
         String exp= txtExpediente.getText();
-        
+        if(exp.isEmpty())
+            JOptionPane.showMessageDialog(null, "Expediente Vacío Llene el Campo");
+        else{
+            
         String sql="select expediente.idexpediente,paciente.nombre_paciente,paciente.apellido_paciente,paciente.edad_paciente,expediente.diagnostico,expediente.sintoma_principal from paciente,expediente where paciente.idpaciente=expediente.idpaciente and expediente.idexpediente = '"+exp+"'";
        
         Statement st;
@@ -689,8 +695,9 @@ public class PanelConsultas extends javax.swing.JPanel {
                 Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
+       
             }
-        
+        }   
     }//GEN-LAST:event_btnBuscar1ActionPerformed
 
     private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
@@ -768,8 +775,11 @@ public class PanelConsultas extends javax.swing.JPanel {
 
     private void btnBuscar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar4ActionPerformed
         // TODO add your handling code here:
-        String ed= txtEdad.getText();
         
+        String ed= txtEdad.getText();
+        if(ed.equals(""))
+            JOptionPane.showMessageDialog(null,"Revise Campo Edad");
+        else{
         String sql="select nombre_paciente_ata,apellido_paciente_ata,sintomas_paciente_ata,fecha_ata from ata where edad_paciente_ata= '"+ed+"'";
         
         Statement st;
@@ -799,6 +809,7 @@ public class PanelConsultas extends javax.swing.JPanel {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }      
     }//GEN-LAST:event_btnBuscar4ActionPerformed
 
     private void btnBuscar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar5ActionPerformed
