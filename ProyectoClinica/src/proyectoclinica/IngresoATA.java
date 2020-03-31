@@ -56,8 +56,8 @@ public class IngresoATA extends javax.swing.JPanel {
     }
     
     DefaultTableModel modelo;
-    Medicamento medicamentoTemp = new Medicamento();
-    ArrayList<Medicamento> MedicamentosATA = new ArrayList<Medicamento>();
+    
+    ArrayList<Integer> MedicamentosATA = new ArrayList<Integer>();
     
     private void Clean(){
         txtNombre.setText("");
@@ -347,10 +347,13 @@ public class IngresoATA extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Medicamento med = new Medicamento();
+        int ata=0;
        if(txtIdentidadMed.getText()!="" && txtNombre.getText()!="" && txtApellido.getText()!="" && Integer.parseInt(spEdad.getValue().toString())>0 && cmbCarreras.getSelectedItem().toString()!="" && txtSintomas.getText()!=""){
         try {
             if(ATA.Ingresarata(txtIdentidadMed.getText(), txtNombre.getText(), txtApellido.getText(),Integer.parseInt(spEdad.getValue().toString()),ATA.obtenercodCar(cmbCarreras.getSelectedItem().toString()), txtSintomas.getText())!=0){
                 JOptionPane.showMessageDialog(null, "Ingresado Correctamente!");
+                ata = med.obteneridATA(txtIdentidadMed.getText(), txtNombre.getText(), txtApellido.getText(),Integer.parseInt(spEdad.getValue().toString()),ATA.obtenercodCar(cmbCarreras.getSelectedItem().toString()), txtSintomas.getText());
                 Clean();
             }
         } catch (ClassNotFoundException ex) {
@@ -358,6 +361,16 @@ public class IngresoATA extends javax.swing.JPanel {
         }
        }else{
            JOptionPane.showMessageDialog(null, "Ha dejado campos vacios, reviselos por favor!");
+       }
+       
+       for(int x=0; x<=MedicamentosATA.size();x++){
+           int name = MedicamentosATA.get(x);
+            try {
+                ATA.Ingresarata_med(name, ata);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(IngresoATA.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           //JOptionPane.showMessageDialog(null, name);
        }
             
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -373,7 +386,15 @@ public class IngresoATA extends javax.swing.JPanel {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
         Medicamento med = new Medicamento();
-        MedicamentosATA.add(medicamentoTemp);
+        Medicamento medicamentoTemp = null;
+        
+
+        
+        try {
+            MedicamentosATA.add(med.obtenercodMed(this.cmbMedicinas.getSelectedItem().toString()));
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(IngresoATA.class.getName()).log(Level.SEVERE, null, ex);
+        }
         try {
             modelo.addRow(new Object[]{med.obtenercodMed(this.cmbMedicinas.getSelectedItem().toString()),this.cmbMedicinas.getSelectedItem().toString()});
         } catch (ClassNotFoundException ex) {
