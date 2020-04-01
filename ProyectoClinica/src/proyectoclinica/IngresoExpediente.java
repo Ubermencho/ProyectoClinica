@@ -1114,7 +1114,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
         
         try {
             if(DB.agregarPaciente(txtIdentidad.getText(), cmbCarrera.getSelectedIndex(), txtNombre.getText(), 
-                    txtApellido.getText(), Integer.parseInt(spnEdad.getValue().toString()), sexo) != 0){
+                    txtApellido.getText(), Integer.parseInt(spnEdad.getValue().toString()), sexo, 1) != 0){
                 DB.guardarBase(txtExpediente.getText(), txtIdentidad.getText(), dtf.format(now), dtf.format(now), dtf.format(now),
                     txtSintoma.getText(), txtHEA.getText(), Double.parseDouble(txtPeso.getText()), Double.parseDouble(txtTalla.getText()),
                     Double.parseDouble(txtFC.getText()), Double.parseDouble(txtFR.getText()), Double.parseDouble(txtPA.getText()),

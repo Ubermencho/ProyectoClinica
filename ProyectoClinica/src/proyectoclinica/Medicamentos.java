@@ -212,6 +212,11 @@ public class Medicamentos extends javax.swing.JPanel {
 
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
+        btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarEliminarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Tipo:");
 
@@ -224,6 +229,11 @@ public class Medicamentos extends javax.swing.JPanel {
         jLabel9.setText("Código:");
 
         btnBuscarEliminar.setText("Buscar");
+        btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -301,7 +311,7 @@ public class Medicamentos extends javax.swing.JPanel {
 
     private void btnAceptarAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarAgregarActionPerformed
         try {
-            if(DB.agregarMedicamento(txtCodigoAgregar.getText(), txtDescripcionAgregar.getText(), txtTipoAgregar.getText()) != 0)
+            if(DB.agregarMedicamento(txtCodigoAgregar.getText(), txtDescripcionAgregar.getText(), txtTipoAgregar.getText(),1) != 0)
                 JOptionPane.showMessageDialog(this, "Agregado Exitosamente");            
             else
                 JOptionPane.showMessageDialog(this, "Algo ha pasado");
@@ -317,13 +327,13 @@ public class Medicamentos extends javax.swing.JPanel {
               Statement s = DB.conexion().createStatement();
               ResultSet rs = s.executeQuery(sql);
               if(rs.next()){
-                txtDescripcionAgregar.setText(rs.getString("descripcion_medicamento"));
-                txtTipoAgregar.setText(rs.getString("tipo_medicamento"));                
+                txtDescripcionMod.setText(rs.getString("descripcion_medicamento"));
+                txtTipoMod.setText(rs.getString("tipo_medicamento"));                
               }
               rs.close();
               s.close();
-              txtDescripcionAgregar.setEnabled(true);
-              txtTipoAgregar.setEnabled(true);              
+              txtDescripcionMod.setEnabled(true);
+              txtTipoMod.setEnabled(true);              
               btnAceptarMod.setEnabled(true);
           }
        catch(SQLException ex){           
@@ -334,16 +344,48 @@ public class Medicamentos extends javax.swing.JPanel {
 
     private void btnAceptarModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarModActionPerformed
         try {
-            if(DB.modificarMedicamento(txtCodigoAgregar.getText(), txtDescripcionAgregar.getText(), txtTipoAgregar.getText()) != 0){
+            if(DB.modificarMedicamento(txtCodigoMod.getText(), txtDescripcionMod.getText(), txtTipoMod.getText()) != 0){
                 JOptionPane.showMessageDialog(this, "Modificado Exitosamente"); 
-                txtDescripcionAgregar.setEnabled(false);
-              txtTipoAgregar.setEnabled(false);              
+                txtDescripcionMod.setEnabled(false);
+              txtTipoMod.setEnabled(false);              
               btnAceptarMod.setEnabled(false);
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Medicamentos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAceptarModActionPerformed
+
+    private void btnBuscarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarActionPerformed
+         String sql="";
+       sql=("select descripcion_medicamento, tipo_medicamento from medicamento where idmedicamento='"+txtCodigoEliminar.getText()+"'");
+       try{
+              Statement s = DB.conexion().createStatement();
+              ResultSet rs = s.executeQuery(sql);
+              if(rs.next()){
+                txtDescripcionEliminar.setText(rs.getString("descripcion_medicamento"));
+                txtTipoEliminar.setText(rs.getString("tipo_medicamento"));                
+              }
+              rs.close();
+              s.close();             
+              btnAceptarEliminar.setEnabled(true);
+          }
+       catch(SQLException ex){           
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Doctores.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnBuscarEliminarActionPerformed
+
+    private void btnAceptarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarEliminarActionPerformed
+        try {
+            if(DB.eliminarMedicamento(txtCodigoEliminar.getText()) != 0){
+                JOptionPane.showMessageDialog(this, "Eliminado Exitosamente");
+                btnAceptarEliminar.setEnabled(false);
+            } else 
+                JOptionPane.showMessageDialog(this, "Algo ha pasado");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Medicamentos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnAceptarEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

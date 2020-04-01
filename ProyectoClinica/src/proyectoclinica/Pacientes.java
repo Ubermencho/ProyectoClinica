@@ -228,6 +228,11 @@ public class Pacientes extends javax.swing.JPanel {
         }
 
         btnBuscarEliminar.setText("Buscar");
+        btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarEliminarActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Nombres:");
 
@@ -260,6 +265,11 @@ public class Pacientes extends javax.swing.JPanel {
 
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
+        btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarEliminarActionPerformed(evt);
+            }
+        });
 
         btnLimpiarEliminar.setText("Limpiar");
 
@@ -431,6 +441,49 @@ public class Pacientes extends javax.swing.JPanel {
             Logger.getLogger(Pacientes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAceptarModActionPerformed
+
+    private void btnBuscarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarActionPerformed
+        String sql="";
+       sql=("select idcarrera, nombre_paciente, apellido_paciente, edad_paciente, genero_paciente from paciente where idpaciente='"+txtIdentidadMod.getText()+"'");
+       try{
+              Statement s = DB.conexion().createStatement();
+              ResultSet rs = s.executeQuery(sql);
+              if(rs.next()){
+                cmbCarreraEliminar.setSelectedIndex(rs.getInt("idcarrera"));
+                txtNombreEliminar.setText(rs.getString("nombre_paciente"));
+                txtApellidoEliminar.setText(rs.getString("apellido_paciente"));
+                spnEdadEliminar.setValue(rs.getInt("edad_paciente"));
+                sexo = rs.getString("genero_paciente");
+              }
+              rs.close();
+              s.close();
+              
+              if(sexo.equals("Masculino"))
+                  rdbMasculinoEliminar.setSelected(true);
+              else if (sexo.equals("Femenino"))
+                  rdbFemeninoEliminar.setSelected(true);
+              else
+                  rdbOtroEliminar.setSelected(true);
+              
+              btnAceptarEliminar.setEnabled(true);
+          }
+        catch(SQLException ex){           
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Doctores.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnBuscarEliminarActionPerformed
+
+    private void btnAceptarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarEliminarActionPerformed
+        try {
+            if(DB.eliminarPaciente(txtIdentidadEliminar.getText()) != 0){
+                JOptionPane.showMessageDialog(this, "Eliminado Exitosamente");
+                btnAceptarEliminar.setEnabled(false);
+            } else 
+                JOptionPane.showMessageDialog(this, "Algo ha pasado");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Pacientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnAceptarEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

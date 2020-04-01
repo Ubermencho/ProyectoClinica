@@ -60,12 +60,12 @@ public class Usuarios extends javax.swing.JPanel {
         cmbTipoMod = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
+        btnAceptarEliminar = new javax.swing.JButton();
         txtUsuarioEliminar = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         btnBuscarEliminar = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rdbActivo = new javax.swing.JRadioButton();
+        rdbInactivo = new javax.swing.JRadioButton();
 
         jLabel1.setText("Nombre de Usuario:");
 
@@ -237,20 +237,30 @@ public class Usuarios extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Modificar", jPanel2);
 
-        jButton6.setText("Aceptar");
-        jButton6.setEnabled(false);
+        btnAceptarEliminar.setText("Aceptar");
+        btnAceptarEliminar.setEnabled(false);
+        btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarEliminarActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Nombre de Usuario:");
 
         btnBuscarEliminar.setText("Buscar");
+        btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarEliminarActionPerformed(evt);
+            }
+        });
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Activo");
-        jRadioButton1.setEnabled(false);
+        buttonGroup1.add(rdbActivo);
+        rdbActivo.setText("Activo");
+        rdbActivo.setEnabled(false);
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Inactivo");
-        jRadioButton2.setEnabled(false);
+        buttonGroup1.add(rdbInactivo);
+        rdbInactivo.setText("Inactivo");
+        rdbInactivo.setEnabled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -271,12 +281,12 @@ public class Usuarios extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(154, 154, 154)
-                        .addComponent(jRadioButton1)
+                        .addComponent(rdbActivo)
                         .addGap(38, 38, 38)
-                        .addComponent(jRadioButton2))
+                        .addComponent(rdbInactivo))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(198, 198, 198)
-                        .addComponent(jButton6)))
+                        .addComponent(btnAceptarEliminar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -290,10 +300,10 @@ public class Usuarios extends javax.swing.JPanel {
                 .addComponent(btnBuscarEliminar)
                 .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(rdbActivo)
+                    .addComponent(rdbInactivo))
                 .addGap(18, 18, 18)
-                .addComponent(jButton6)
+                .addComponent(btnAceptarEliminar)
                 .addContainerGap(135, Short.MAX_VALUE))
         );
 
@@ -325,7 +335,7 @@ public class Usuarios extends javax.swing.JPanel {
         try {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDateTime now = LocalDateTime.now();
-            if(DB.agregarUsuario(txtUsuarioAgregar.getText(), txtPassAgregar.getText(), dtf.format(now), cmbTipoAgregar.getSelectedIndex()) != 0)
+            if(DB.agregarUsuario(txtUsuarioAgregar.getText(), txtPassAgregar.getText(), dtf.format(now), cmbTipoAgregar.getSelectedIndex(),1) != 0)
                 JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
             else
                 JOptionPane.showMessageDialog(this, "Algo ha sucedido :'(");
@@ -371,9 +381,62 @@ public class Usuarios extends javax.swing.JPanel {
                 
     }//GEN-LAST:event_btnAceptarModActionPerformed
 
+    private void btnAceptarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarEliminarActionPerformed
+        try {
+            if(rdbActivo.isSelected()){
+                if(DB.cambioUsuario(txtUsuarioEliminar.getText(), 1) != 0){
+                JOptionPane.showMessageDialog(this, "Cambiado Exitosamente");
+                btnAceptarEliminar.setEnabled(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Algo ha pasado");
+                }
+            } else if(rdbInactivo.isSelected()){
+                if(DB.cambioUsuario(txtUsuarioEliminar.getText(), 2) != 0){
+                JOptionPane.showMessageDialog(this, "Cambiado Exitosamente");
+                btnAceptarEliminar.setEnabled(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Algo ha pasado");
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Doctores.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnAceptarEliminarActionPerformed
+
+    private void btnBuscarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarActionPerformed
+       String sql="";
+       int estado = 0;
+       sql=("select idestado from usuario where descripcion_usuario='"+txtUsuarioMod.getText()+"'");
+       try{
+              Statement s = DB.conexion().createStatement();
+              ResultSet rs = s.executeQuery(sql);
+              if(rs.next()){                
+                estado = rs.getInt("idestado");
+              }
+              rs.close();
+              s.close();
+              
+              rdbActivo.setEnabled(true);
+              rdbInactivo.setEnabled(true);
+              
+              if(estado == 1){
+                  rdbActivo.setSelected(true);
+              } else {
+                  rdbInactivo.setSelected(true);
+              }
+              
+              btnAceptarMod.setEnabled(true);
+          }
+       catch(SQLException ex){           
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Doctores.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+    }//GEN-LAST:event_btnBuscarEliminarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarAgregar;
+    private javax.swing.JButton btnAceptarEliminar;
     private javax.swing.JButton btnAceptarMod;
     private javax.swing.JButton btnBuscarEliminar;
     private javax.swing.JButton btnBuscarMod;
@@ -382,7 +445,6 @@ public class Usuarios extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cmbTipoAgregar;
     private javax.swing.JComboBox<String> cmbTipoMod;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -394,9 +456,9 @@ public class Usuarios extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JRadioButton rdbActivo;
+    private javax.swing.JRadioButton rdbInactivo;
     private javax.swing.JPasswordField txtPass2Agregar;
     private javax.swing.JPasswordField txtPassAgregar;
     private javax.swing.JPasswordField txtPassMod;

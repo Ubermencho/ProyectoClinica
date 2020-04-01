@@ -214,9 +214,7 @@ public class Doctores extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnLimpiarMod)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtNombreMod, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
+                            .addComponent(txtNombreMod, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(264, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -278,6 +276,11 @@ public class Doctores extends javax.swing.JPanel {
 
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
+        btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarEliminarActionPerformed(evt);
+            }
+        });
 
         btnLimpiarEliminar.setText("Limpiar");
 
@@ -308,9 +311,7 @@ public class Doctores extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnLimpiarEliminar)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(txtNombreEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
+                            .addComponent(txtNombreEliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(264, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -363,7 +364,7 @@ public class Doctores extends javax.swing.JPanel {
 
     private void btnAceptarAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarAgregarActionPerformed
         try {
-            if(DB.agregarDoctor(txtIdAgregar.getText(),txtNombreAgregar.getText(),txtApellidoAgregar.getText(),Integer.parseInt(spnEdadAgregar.getValue().toString())) != 0)
+            if(DB.agregarDoctor(txtIdAgregar.getText(),txtNombreAgregar.getText(),txtApellidoAgregar.getText(),Integer.parseInt(spnEdadAgregar.getValue().toString()), 1) != 0)
                 JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
             else
                 JOptionPane.showMessageDialog(this, "Ha ocurrido un error");
@@ -439,6 +440,19 @@ public class Doctores extends javax.swing.JPanel {
         txtApellidoMod.setText("");
         spnEdadMod.setValue(0);
     }//GEN-LAST:event_btnLimpiarModActionPerformed
+
+    private void btnAceptarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarEliminarActionPerformed
+        try {
+            if(DB.eliminarDoctor(txtIdEliminar.getText()) != 0){
+                JOptionPane.showMessageDialog(this, "Eliminado Exitosamente");
+                btnAceptarEliminar.setEnabled(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Algo ha pasado");
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Doctores.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnAceptarEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
