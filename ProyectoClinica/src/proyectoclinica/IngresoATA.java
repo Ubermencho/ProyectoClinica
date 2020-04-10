@@ -15,6 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
 
 /**
  *
@@ -57,9 +59,9 @@ public class IngresoATA extends javax.swing.JPanel {
     
     DefaultTableModel modelo;
     
-    ArrayList<Integer> MedicamentosATA = new ArrayList<Integer>();
+    ArrayList<String> MedicamentosATA = new ArrayList<String>();
     
-    private void Clean(){
+    private void Clean() throws ClassNotFoundException{
         txtNombre.setText("");
         txtApellido.setText("");
         spEdad.setValue(0);
@@ -68,6 +70,17 @@ public class IngresoATA extends javax.swing.JPanel {
         cmbMedicinas.setSelectedIndex(-1);
         cmbCarreras.setSelectedIndex(-1);
         modelo.setRowCount(0);
+        cmbMedicinas.removeAllItems();
+        try{            
+            Statement combo = DB.conexion().createStatement();
+            ResultSet rs = combo.executeQuery("select * from medicamento");
+            while(rs.next()){
+                this.cmbMedicinas.addItem(rs.getString("descripcion_medicamento"));
+            }
+            cmbMedicinas.setSelectedIndex(-1);
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -114,6 +127,7 @@ public class IngresoATA extends javax.swing.JPanel {
         btnAgregar = new javax.swing.JButton();
         txtIdentidadMed = new javax.swing.JFormattedTextField();
         jLabel16 = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,6 +180,12 @@ public class IngresoATA extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Apellido:");
 
+        spEdad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                spEdadKeyReleased(evt);
+            }
+        });
+
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Edad: ");
@@ -186,10 +206,25 @@ public class IngresoATA extends javax.swing.JPanel {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Nombre: ");
 
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyReleased(evt);
+            }
+        });
+
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Sintomas:");
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombreKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreKeyReleased(evt);
+            }
+        });
 
         btnVolver.setBackground(new java.awt.Color(255, 255, 0));
         btnVolver.setText("Menu Principal");
@@ -244,10 +279,22 @@ public class IngresoATA extends javax.swing.JPanel {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtIdentidadMed.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtIdentidadMedKeyReleased(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Identidad del Medico:");
+
+        btnEliminar.setText("-");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -272,7 +319,10 @@ public class IngresoATA extends javax.swing.JPanel {
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnEliminar))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -304,7 +354,7 @@ public class IngresoATA extends javax.swing.JPanel {
                                 .addComponent(jLabel10)
                                 .addGap(26, 26, 26)
                                 .addComponent(spEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,7 +386,8 @@ public class IngresoATA extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -349,7 +400,7 @@ public class IngresoATA extends javax.swing.JPanel {
         // TODO add your handling code here:
         Medicamento med = new Medicamento();
         int ata=0;
-       if(txtIdentidadMed.getText()!="" && txtNombre.getText()!="" && txtApellido.getText()!="" && Integer.parseInt(spEdad.getValue().toString())>0 && cmbCarreras.getSelectedItem().toString()!="" && txtSintomas.getText()!=""){
+       if(txtIdentidadMed.isEditValid() || txtNombre.getText().equals("") || txtApellido.getText().equals("") || Integer.parseInt(spEdad.getValue().toString())<1 || cmbCarreras.getSelectedIndex()<0 || txtSintomas.getText().equals("")){
         try {
             if(ATA.Ingresarata(txtIdentidadMed.getText(), txtNombre.getText(), txtApellido.getText(),Integer.parseInt(spEdad.getValue().toString()),ATA.obtenercodCar(cmbCarreras.getSelectedItem().toString()), txtSintomas.getText())!=0){
                 JOptionPane.showMessageDialog(null, "Ingresado Correctamente!");
@@ -363,8 +414,9 @@ public class IngresoATA extends javax.swing.JPanel {
            JOptionPane.showMessageDialog(null, "Ha dejado campos vacios, reviselos por favor!");
        }
        
-       for(int x=0; x<=MedicamentosATA.size();x++){
-           int name = MedicamentosATA.get(x);
+       
+       for(int x=0; x<MedicamentosATA.size();x++){
+           String name = MedicamentosATA.get(x);
             try {
                 ATA.Ingresarata_med(name, ata);
             } catch (ClassNotFoundException ex) {
@@ -372,6 +424,7 @@ public class IngresoATA extends javax.swing.JPanel {
             }
            //JOptionPane.showMessageDialog(null, name);
        }
+       
             
     }//GEN-LAST:event_jButton1ActionPerformed
     
@@ -397,14 +450,84 @@ public class IngresoATA extends javax.swing.JPanel {
         }
         try {
             modelo.addRow(new Object[]{med.obtenercodMed(this.cmbMedicinas.getSelectedItem().toString()),this.cmbMedicinas.getSelectedItem().toString()});
+            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(IngresoATA.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        this.cmbMedicinas.removeItemAt(cmbMedicinas.getSelectedIndex());
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreKeyPressed
+
+    private void txtNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyReleased
+        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if(Character.isDigit(car)){
+        try {
+            Document doc = txtNombre.getDocument();
+            if (doc.getLength() > 0) {
+                doc.remove(doc.getLength() - 1, 1);
+            }
+        } catch (BadLocationException ex) {
+            Logger.getLogger(IngresoATA.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        JOptionPane.showMessageDialog(null, "No puede utilizar numeros");
+        }
+    }//GEN-LAST:event_txtNombreKeyReleased
+
+    private void txtApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyReleased
+        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if(Character.isDigit(car)){
+        try {
+            Document doc = txtApellido.getDocument();
+            if (doc.getLength() > 0) {
+                doc.remove(doc.getLength() - 1, 1);
+            }
+        } catch (BadLocationException ex) {
+            Logger.getLogger(IngresoATA.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        JOptionPane.showMessageDialog(null, "No puede utilizar numeros");
+        }
+    }//GEN-LAST:event_txtApellidoKeyReleased
+
+    private void txtIdentidadMedKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdentidadMedKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdentidadMedKeyReleased
+
+    private void spEdadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_spEdadKeyReleased
+        // TODO add your handling code here: 
+    }//GEN-LAST:event_spEdadKeyReleased
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        
+   DefaultTableModel model = (DefaultTableModel) this.tblMedicamentos.getModel();
+   int[] rows = tblMedicamentos.getSelectedRows();
+   String cod = model.getValueAt(tblMedicamentos.getSelectedRow(), 0).toString();
+   //cod = "\""+cod+"\"";
+   //JOptionPane.showMessageDialog(null, cod);
+   for(int i=0;i<rows.length;i++){
+     model.removeRow(rows[i]-i);
+   }
+   
+   for(int x=0; x<MedicamentosATA.size();x++){
+       //JOptionPane.showMessageDialog(null, MedicamentosATA.get(x));
+       if(MedicamentosATA.get(x).equals(cod)){
+           MedicamentosATA.remove(x);
+       }
+   }
+  
+
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnVolver;
     private static javax.swing.JComboBox<String> cmbCarreras;
     private static javax.swing.JComboBox<String> cmbMedicinas;

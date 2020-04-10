@@ -1,5 +1,5 @@
 CREATE SCHEMA `clinica_unicah` ;
-create USER 'userClinica'@'localhost' IDENTIFIED WITH mysql_native_password BY 'clinica';
+alter USER 'userClinica'@'localhost' IDENTIFIED BY 'clinica';
 GRANT ALL ON clinica_unicah.* TO 'userClinica'@'localhost';
 
 USE `clinica_unicah`;
@@ -76,7 +76,7 @@ CREATE TABLE `ata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `ata_medicamentos` (
-  `idmedicamento` int(11) NOT NULL,
+  `idmedicamento` varchar(45) NOT NULL,
   `idata` int(11) NOT NULL,
   PRIMARY KEY (`idmedicamento`,`idata`),
   KEY `idata` (`idata`),
