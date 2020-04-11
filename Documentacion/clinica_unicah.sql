@@ -1,5 +1,5 @@
 CREATE SCHEMA `clinica_unicah` ;
-alter USER 'userClinica'@'localhost' IDENTIFIED BY 'clinica';
+CREATE USER 'userClinica'@'localhost' IDENTIFIED BY 'clinica';
 GRANT ALL ON clinica_unicah.* TO 'userClinica'@'localhost';
 
 USE `clinica_unicah`;
@@ -10,6 +10,9 @@ CREATE TABLE `estado` (
   PRIMARY KEY (`idestado`),
   UNIQUE KEY `idestado_UNIQUE` (`idestado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `clinica_unicah`.`estado` (`descripcion_estado`) VALUES ('Activo');
+INSERT INTO `clinica_unicah`.`estado` (`descripcion_estado`) VALUES ('Inactivo');
 
 CREATE TABLE `doctor` (
   `iddoctor` varchar(15) NOT NULL,
@@ -29,6 +32,24 @@ CREATE TABLE `carrera` (
   PRIMARY KEY (`idcarrera`),
   UNIQUE KEY `idcarrera_UNIQUE` (`idcarrera`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('No Definido');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Ingeniería en Ciencias de la Computación');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Ingeniería Civil');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Ingeniería Industrial');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Ingeniería Ambiental');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Arquitectura');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Licenciatura en Gestión Estratégica de Empres');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Licenciatura en Finanzas');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Mercadotecnia');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Derecho');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Ciencias de la Comunicación');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Licenciatura en Teología');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Medicina');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Odontología');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Enfermería');
+INSERT INTO `clinica_unicah`.`carrera` (`nombre_carrera`) VALUES ('Psicología');
+
 
 CREATE TABLE `medicamento` (
   `idmedicamento` varchar(45) NOT NULL,
@@ -85,26 +106,27 @@ CREATE TABLE `ata_medicamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `expediente` (
-  `idexpediente` varchar(10) NOT NULL,
-  `idpaciente` varchar(13) NOT NULL,
+  `idexpediente` int(11) NOT NULL AUTO_INCREMENT,
+  `idpaciente` varchar(15) NOT NULL,
   `fecha_expediente` datetime NOT NULL,
   `hora_ingreso` datetime NOT NULL,
   `hora_egreso` datetime NOT NULL,
   `sintoma_principal` varchar(50) NOT NULL,
-  `hea` varchar(200) NOT NULL,
+  `hea` varchar(300) NOT NULL,
   `peso_paciente` double NOT NULL,
   `talla_paciente` double NOT NULL,
-  `frecuencia_cardiaca_paciente` double NOT NULL,
-  `frecuencia_respiratoria_paciente` double NOT NULL,
-  `presion_arterial_paciente` double NOT NULL,
-  `temperatura_paciente` double NOT NULL,
+  `glasgow` double NOT NULL,
+  `frecuencia_cardiaca_paciente` varchar(15) NOT NULL,
+  `frecuencia_respiratoria_paciente` varchar(15) NOT NULL,
+  `presion_arterial_paciente` varchar(15) NOT NULL,
+  `temperatura_paciente` varchar(15) NOT NULL,
   `color_piel_paciente` varchar(15) NOT NULL,
   `llenado_capilar_paciente` varchar(15) NOT NULL,
   `datos_contribuyentes_paciente` varchar(250) NOT NULL,
-  `diagnostico` varchar(250) NOT NULL,
-  `tratamiento` varchar(250) NOT NULL,
-  `interconsulta` varchar(250) NOT NULL,
-  `comentario_adicional` varchar(250) NOT NULL,
+  `diagnostico` varchar(300) NOT NULL,
+  `tratamiento` varchar(300) NOT NULL,
+  `interconsulta` varchar(300) NOT NULL,
+  `comentario_adicional` varchar(300) NOT NULL,
   PRIMARY KEY (`idexpediente`),
   UNIQUE KEY `idexpediente_UNIQUE` (`idexpediente`),
   KEY `idpaciente_idx` (`idpaciente`),
@@ -112,14 +134,17 @@ CREATE TABLE `expediente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `tipo_usuario` (
-  `idtipo_usuario` int(11) NOT NULL,
+  `idtipo_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion_tipo_usuario` varchar(45) NOT NULL,
   PRIMARY KEY (`idtipo_usuario`),
   UNIQUE KEY `idtipo_usuario_UNIQUE` (`idtipo_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `clinica_unicah`.`tipo_usuario` (`descripcion_tipo_usuario`) VALUES ('Administrador');
+INSERT INTO `clinica_unicah`.`tipo_usuario` (`descripcion_tipo_usuario`) VALUES ('Usuario Normal');
+
 CREATE TABLE `usuario` (
-  `idusuario` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion_usuario` varchar(45) NOT NULL,
   `password_usuario` varchar(45) NOT NULL,
   `fecha_creacion_usuario` datetime NOT NULL,
@@ -134,3 +159,5 @@ CREATE TABLE `usuario` (
   CONSTRAINT `idtipo_usuario` FOREIGN KEY (`idtipo_usuario`) REFERENCES `tipo_usuario` (`idtipo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `clinica_unicah`.`usuario` (`descripcion_usuario`,`password_usuario`,`fecha_creacion_usuario`,`idtipo_usuario`,`idestado`)
+VALUES ('admin', 'admin', NOW(), 1, 1);
