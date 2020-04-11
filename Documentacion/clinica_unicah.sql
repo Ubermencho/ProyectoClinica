@@ -1,5 +1,5 @@
 CREATE SCHEMA `clinica_unicah` ;
-CREATE USER 'userClinica'@'localhost' IDENTIFIED WITH mysql_native_password BY 'clinica';
+CREATE USER 'userClinica'@'localhost' IDENTIFIED BY 'clinica';
 GRANT ALL ON clinica_unicah.* TO 'userClinica'@'localhost';
 
 USE `clinica_unicah`;
