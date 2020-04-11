@@ -1173,6 +1173,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                     ,Double.parseDouble(txtGlasgow.getText()),txtFC.getText(), txtFR.getText(), txtPA.getText(), txtT.getText(), 
                     txtPiel.getText(), txtCapilar.getText(), contribuyentes, txtDiagnostico.getText(), txtTratamiento.getText(), 
                     txtInterconsulta.getText(), txtComentario.getText());
+                JOptionPane.showMessageDialog(this, "Agregado Correctamente");
             } else {
                 JOptionPane.showMessageDialog(this, "No funciona wey");
             }
