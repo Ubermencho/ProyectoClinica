@@ -44,13 +44,13 @@ public class Medicamento {
     
     
     
-    public int obtenercodMed(String Med) throws ClassNotFoundException{
-        int cod=0;
+    public String obtenercodMed(String Med) throws ClassNotFoundException{
+        String cod="";
         try{            
             Statement combo = DB.conexion().createStatement();
             ResultSet rs = combo.executeQuery("select * from medicamento where descripcion_medicamento= '"+Med+"'");
             rs.next();
-            cod = rs.getInt("idmedicamento");
+            cod = rs.getString("idmedicamento");
         } catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }

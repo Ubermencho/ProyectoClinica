@@ -38,12 +38,12 @@ public class ATA {
         return correcto;
     }
     
-    public static void Ingresarata_med(int med, int ata)throws ClassNotFoundException{
+    public static void Ingresarata_med(String med, int ata)throws ClassNotFoundException{
         int correcto = 0;
         PreparedStatement insertar = null;
         try{
             String sql = "insert into ata_medicamentos (idmedicamento,idata)"
-                    + " values ("+med+","+ata+");";
+                    + " values ('"+med+"',"+ata+");";
             System.out.println(sql);
             insertar = DB.conexion().prepareStatement(sql);
             correcto = insertar.executeUpdate();
@@ -51,7 +51,7 @@ public class ATA {
             JOptionPane.showMessageDialog(null, e);
             correcto = 0;
         }
-        JOptionPane.showMessageDialog(null, correcto);
+        
     }
     
     public static int obtenercodCar(String Car) throws ClassNotFoundException{
