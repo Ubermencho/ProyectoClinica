@@ -19,7 +19,7 @@ public class DB {
       if (cnx == null) {
          try {
             Class.forName("com.mysql.jdbc.Driver");
-            cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/clinica_unicah", "userClinica", "clinica");
+            cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/clinica_unicah", "root", "");
          } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
          } catch (ClassNotFoundException ex) {
@@ -34,20 +34,20 @@ public class DB {
       }
    }
    
-   public static int guardarBase(String idexpediente,String idpaciente, String fecha_expediente, String hora_ingreso, 
+   public static int guardarBase(String idpaciente, String fecha_expediente, String hora_ingreso, 
            String hora_egreso, String sintoma_principal, String hea, double peso_paciente, double talla_paciente,
-           double frecuencia_cardiaca_paciente, double frecuencia_respiratoria_paciente, double presion_arterial_paciente,
-           double temperatura_paciente, String color_piel_paciente, String llenado_capilar_paciente, String datos_contribuyentes_paciente,
+            double glasgow, String frecuencia_cardiaca_paciente, String frecuencia_respiratoria_paciente, String presion_arterial_paciente,
+           String temperatura_paciente, String color_piel_paciente, String llenado_capilar_paciente, String datos_contribuyentes_paciente,
            String diagnostico, String tratamiento, String interconsulta, String comentario_adicional) throws ClassNotFoundException{
         int correcto = 0;
         PreparedStatement insertar = null;
         try{
-            String sql = "insert into expediente (idexpediente,idpaciente,fecha_expediente,hora_ingreso,hora_egreso,sintoma_principal,"
-                    + "hea,peso_paciente,talla_paciente,frecuencia_cardiaca_paciente,frecuencia_respiratoria_paciente,presion_arterial_paciente,"
+            String sql = "insert into expediente (idpaciente,fecha_expediente,hora_ingreso,hora_egreso,sintoma_principal,"
+                    + "hea,peso_paciente,talla_paciente,glasgow,frecuencia_cardiaca_paciente,frecuencia_respiratoria_paciente,presion_arterial_paciente,"
                     + "temperatura_paciente,color_piel_paciente,llenado_capilar_paciente,datos_contribuyentes_paciente,diagnostico,"
                     + "tratamiento,interconsulta,comentario_adicional)"
-                    + " values ('"+idexpediente+"','"+idpaciente+"','"+fecha_expediente+"','"+hora_ingreso+"','"+hora_egreso+"',"
-                    + "'"+sintoma_principal+"','"+hea+"',"+peso_paciente+","+talla_paciente+","+frecuencia_cardiaca_paciente+","
+                    + " values ('"+idpaciente+"','"+fecha_expediente+"','"+hora_ingreso+"','"+hora_egreso+"',"
+                    + "'"+sintoma_principal+"','"+hea+"',"+peso_paciente+","+talla_paciente+","+glasgow+","+frecuencia_cardiaca_paciente+","
                     + frecuencia_respiratoria_paciente+","+presion_arterial_paciente+","+temperatura_paciente+",'"+color_piel_paciente+"',"
                     + "'"+llenado_capilar_paciente+"','"+datos_contribuyentes_paciente+"','"+diagnostico+"','"+tratamiento+"',"
                     + "'"+interconsulta+"','"+comentario_adicional+"');";
@@ -93,7 +93,7 @@ public class DB {
        PreparedStatement insertar = null;
        try{
            String sql = "insert into paciente values('"+idpaciente+"', "+idcarrera+", '"+nombre_paciente+"', '"+apellido_paciente+"',"
-                   + edad_paciente + ",'"+genero_paciente+"', "+estado+")";
+                   + edad_paciente + ",'"+genero_paciente+"',"+estado+");";
            insertar = conexion().prepareStatement(sql);
            correcto = insertar.executeUpdate();
            return correcto;
@@ -111,7 +111,7 @@ public class DB {
        try{
            String sql = "update paciente set idcarrera = "+idcarrera+", nombre_paciente = '"+nombre_paciente+
                    "',apellido_paciente = '"+apellido_paciente+"' , edad_paciente = "+ edad_paciente + 
-                   ", genero_paciente = '"+genero_paciente+"' where idpaciente = '"+idpaciente+"'";
+                   ", genero_paciente = '"+genero_paciente+"' where idpaciente = '"+idpaciente+"';";
            modificar = conexion().prepareStatement(sql);
            correcto = modificar.executeUpdate();
            return correcto;

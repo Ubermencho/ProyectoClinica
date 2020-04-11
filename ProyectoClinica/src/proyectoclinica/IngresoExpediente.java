@@ -5,6 +5,9 @@
  */
 package proyectoclinica;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
@@ -20,10 +23,34 @@ public class IngresoExpediente extends javax.swing.JPanel {
     /**
      * Creates new form IngresoExpediente
      */
-    String contribuyentes = "";
+    String contribuyentes = "", hora, minuto, segundo;
+    DateTimeFormatter Hora = DateTimeFormatter.ofPattern("hh");
+    DateTimeFormatter Minuto = DateTimeFormatter.ofPattern("mm");
+    DateTimeFormatter Segundo = DateTimeFormatter.ofPattern("ss");
+    LocalDateTime now = LocalDateTime.now();
     
     public IngresoExpediente() {
-        initComponents();      
+        initComponents();
+        hora = Hora.format(now);
+        minuto = Minuto.format(now);
+        segundo = Segundo.format(now);
+        int numeroExpediente = 0;
+        try{
+            String sql = "select `idexpediente` from `clinica_unicah`.`expediente` ORDER BY `idexpediente` DESC LIMIT 1;";
+            Statement s = DB.conexion().createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            if(rs.next())
+                numeroExpediente = rs.getInt("idexpediente");
+            rs.close();
+            s.close();
+        }catch(SQLException ex){           
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Doctores.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(numeroExpediente == 0)
+            txtExpediente.setText("EXP-1");
+        else
+            txtExpediente.setText("EXP-" + numeroExpediente);
     }
 
     /**
@@ -94,11 +121,11 @@ public class IngresoExpediente extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        txtFC = new javax.swing.JTextField();
-        txtFR = new javax.swing.JTextField();
-        txtPA = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        txtT = new javax.swing.JTextField();
+        txtFC = new javax.swing.JFormattedTextField();
+        txtFR = new javax.swing.JFormattedTextField();
+        txtPA = new javax.swing.JFormattedTextField();
+        txtT = new javax.swing.JFormattedTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -406,6 +433,30 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel16.setText("T°:");
 
+        try {
+            txtFC.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("### lpm")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            txtFR.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("## rpm")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            txtPA.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/## mmhg")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            txtT.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.## C°")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -413,23 +464,19 @@ public class IngresoExpediente extends javax.swing.JPanel {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtFC))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addGap(14, 14, 14)
-                        .addComponent(txtT, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15))
-                        .addGap(11, 11, 11)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPA)
-                            .addComponent(txtFR))))
-                .addContainerGap())
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtT)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtFC, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFR)
+                    .addComponent(txtPA))
+                .addGap(30, 30, 30))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,7 +497,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(txtT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Score"));
@@ -473,7 +520,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                     .addComponent(jLabel17))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtGlasgow)
+                    .addComponent(txtGlasgow, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                     .addComponent(txtChoque))
                 .addContainerGap())
         );
@@ -556,15 +603,17 @@ public class IngresoExpediente extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnCalcular))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCalcular)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(166, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -572,17 +621,16 @@ public class IngresoExpediente extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCalcular)
-                        .addGap(16, 16, 16)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                        .addComponent(btnCalcular)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Examen Físico", jPanel2);
@@ -1050,10 +1098,13 @@ public class IngresoExpediente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
-        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");       
         
-        String sexo = "";
+        String sexo = "", horas, minutos, segundos;
+        
+        horas = Hora.format(now);
+        minutos = Minuto.format(now);
+        segundos = Segundo.format(now);
         
         if(rdbMasculino.isSelected())
             sexo = "Masculino";
@@ -1113,14 +1164,18 @@ public class IngresoExpediente extends javax.swing.JPanel {
             contribuyentes += "Neurológico: Alterado (" + txtValoracion10.getText() + ").";
         
         try {
-            if(DB.agregarPaciente(txtIdentidad.getText(), cmbCarrera.getSelectedIndex(), txtNombre.getText(), 
+            if(DB.agregarPaciente(txtIdentidad.getText(), cmbCarrera.getSelectedIndex() + 1, txtNombre.getText(), 
                     txtApellido.getText(), Integer.parseInt(spnEdad.getValue().toString()), sexo, 1) != 0){
-                DB.guardarBase(txtExpediente.getText(), txtIdentidad.getText(), dtf.format(now), dtf.format(now), dtf.format(now),
-                    txtSintoma.getText(), txtHEA.getText(), Double.parseDouble(txtPeso.getText()), Double.parseDouble(txtTalla.getText()),
-                    Double.parseDouble(txtFC.getText()), Double.parseDouble(txtFR.getText()), Double.parseDouble(txtPA.getText()),
-                    Double.parseDouble(txtT.getText()), txtPiel.getText(), txtCapilar.getText(), contribuyentes, txtDiagnostico.getText(),
-                    txtTratamiento.getText(), txtInterconsulta.getText(), txtComentario.getText());
-            }            
+                DB.guardarBase(txtIdentidad.getText(), dtf.format(now), 
+                    dtf.format(now) + " " + hora + ":" + minuto + ":" + segundo
+                    , dtf.format(now) + " " + horas + ":" + minutos + ":" + segundos, txtSintoma.getText(), 
+                    txtHEA.getText(), Double.parseDouble(txtPeso.getText()), Double.parseDouble(txtTalla.getText())
+                    ,Double.parseDouble(txtGlasgow.getText()),txtFC.getText(), txtFR.getText(), txtPA.getText(), txtT.getText(), 
+                    txtPiel.getText(), txtCapilar.getText(), contribuyentes, txtDiagnostico.getText(), txtTratamiento.getText(), 
+                    txtInterconsulta.getText(), txtComentario.getText());
+            } else {
+                JOptionPane.showMessageDialog(this, "No funciona wey");
+            }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(IngresoExpediente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1321,8 +1376,8 @@ public class IngresoExpediente extends javax.swing.JPanel {
     private javax.swing.JTextArea txtDiagnostico;
     private javax.swing.JTextArea txtDomicilio;
     private javax.swing.JFormattedTextField txtExpediente;
-    private javax.swing.JTextField txtFC;
-    private javax.swing.JTextField txtFR;
+    private javax.swing.JFormattedTextField txtFC;
+    private javax.swing.JFormattedTextField txtFR;
     private javax.swing.JTextField txtFrialdad;
     private javax.swing.JTextField txtGlasgow;
     private javax.swing.JTextArea txtHEA;
@@ -1330,12 +1385,12 @@ public class IngresoExpediente extends javax.swing.JPanel {
     private javax.swing.JFormattedTextField txtIdentidad;
     private javax.swing.JTextArea txtInterconsulta;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtPA;
+    private javax.swing.JFormattedTextField txtPA;
     private javax.swing.JTextField txtPeso;
     private javax.swing.JTextField txtPiel;
     private javax.swing.JTextField txtPulso;
     private javax.swing.JTextField txtSintoma;
-    private javax.swing.JTextField txtT;
+    private javax.swing.JFormattedTextField txtT;
     private javax.swing.JTextField txtTalla;
     private javax.swing.JTextArea txtTratamiento;
     private javax.swing.JTextField txtValoracion1;
