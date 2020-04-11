@@ -11,6 +11,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
 
 /**
  *
@@ -85,6 +87,18 @@ public class Doctores extends javax.swing.JPanel {
             ex.printStackTrace();
         }
 
+        txtNombreAgregar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreAgregarKeyReleased(evt);
+            }
+        });
+
+        txtApellidoAgregar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApellidoAgregarKeyReleased(evt);
+            }
+        });
+
         btnAceptarAgregar.setText("Aceptar");
         btnAceptarAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,10 +170,20 @@ public class Doctores extends javax.swing.JPanel {
         jLabel6.setText("Nombre:");
 
         txtNombreMod.setEnabled(false);
+        txtNombreMod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreModKeyReleased(evt);
+            }
+        });
 
         jLabel7.setText("Apellido:");
 
         txtApellidoMod.setEnabled(false);
+        txtApellidoMod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApellidoModKeyReleased(evt);
+            }
+        });
 
         jLabel8.setText("Edad:");
 
@@ -453,6 +477,66 @@ public class Doctores extends javax.swing.JPanel {
             Logger.getLogger(Doctores.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAceptarEliminarActionPerformed
+
+    private void txtNombreAgregarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreAgregarKeyReleased
+        char car = evt.getKeyChar();
+        if(Character.isDigit(car)){
+        try {
+            Document doc = txtNombreAgregar.getDocument();
+            if (doc.getLength() > 0) {
+                doc.remove(doc.getLength() - 1, 1);
+            }
+        } catch (BadLocationException ex) {
+            Logger.getLogger(IngresoATA.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        JOptionPane.showMessageDialog(null, "No puede utilizar numeros");
+        }
+    }//GEN-LAST:event_txtNombreAgregarKeyReleased
+
+    private void txtApellidoAgregarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoAgregarKeyReleased
+        char car = evt.getKeyChar();
+        if(Character.isDigit(car)){
+        try {
+            Document doc = txtApellidoAgregar.getDocument();
+            if (doc.getLength() > 0) {
+                doc.remove(doc.getLength() - 1, 1);
+            }
+        } catch (BadLocationException ex) {
+            Logger.getLogger(IngresoATA.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        JOptionPane.showMessageDialog(null, "No puede utilizar numeros");
+        }
+    }//GEN-LAST:event_txtApellidoAgregarKeyReleased
+
+    private void txtNombreModKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreModKeyReleased
+        char car = evt.getKeyChar();
+        if(Character.isDigit(car)){
+        try {
+            Document doc = txtNombreMod.getDocument();
+            if (doc.getLength() > 0) {
+                doc.remove(doc.getLength() - 1, 1);
+            }
+        } catch (BadLocationException ex) {
+            Logger.getLogger(IngresoATA.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        JOptionPane.showMessageDialog(null, "No puede utilizar numeros");
+        }
+    }//GEN-LAST:event_txtNombreModKeyReleased
+
+    private void txtApellidoModKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoModKeyReleased
+        char car = evt.getKeyChar();
+        if(Character.isDigit(car)){
+        try {
+            Document doc = txtApellidoMod.getDocument();
+            if (doc.getLength() > 0) {
+                doc.remove(doc.getLength() - 1, 1);
+            }
+        } catch (BadLocationException ex) {
+            Logger.getLogger(IngresoATA.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        JOptionPane.showMessageDialog(null, "No puede utilizar numeros");
+        }
+    }//GEN-LAST:event_txtApellidoModKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

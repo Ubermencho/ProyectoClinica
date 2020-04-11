@@ -47,8 +47,8 @@ public class DB {
                     + "temperatura_paciente,color_piel_paciente,llenado_capilar_paciente,datos_contribuyentes_paciente,diagnostico,"
                     + "tratamiento,interconsulta,comentario_adicional)"
                     + " values ('"+idpaciente+"','"+fecha_expediente+"','"+hora_ingreso+"','"+hora_egreso+"',"
-                    + "'"+sintoma_principal+"','"+hea+"',"+peso_paciente+","+talla_paciente+","+glasgow+","+frecuencia_cardiaca_paciente+","
-                    + frecuencia_respiratoria_paciente+","+presion_arterial_paciente+","+temperatura_paciente+",'"+color_piel_paciente+"',"
+                    + "'"+sintoma_principal+"','"+hea+"',"+peso_paciente+","+talla_paciente+","+glasgow+",'"+frecuencia_cardiaca_paciente+"','"
+                    + frecuencia_respiratoria_paciente+"','"+presion_arterial_paciente+"','"+temperatura_paciente+"','"+color_piel_paciente+"',"
                     + "'"+llenado_capilar_paciente+"','"+datos_contribuyentes_paciente+"','"+diagnostico+"','"+tratamiento+"',"
                     + "'"+interconsulta+"','"+comentario_adicional+"');";
             insertar = conexion().prepareStatement(sql);
