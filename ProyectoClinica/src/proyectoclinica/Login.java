@@ -6,9 +6,14 @@
 package proyectoclinica;
 
 import java.awt.Color;
+import java.awt.Event;
+import java.awt.event.KeyEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.InputMap;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 
 
 
@@ -24,6 +29,12 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.getContentPane().setBackground(Color.cyan);
+        InputMap map2 = txtUser.getInputMap(JTextField.WHEN_FOCUSED);
+        map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        
+        InputMap map3 = txtContra.getInputMap(JTextField.WHEN_FOCUSED);
+        map3.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+
     }
 
     /**

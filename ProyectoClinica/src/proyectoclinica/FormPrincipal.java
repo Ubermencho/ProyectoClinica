@@ -111,9 +111,9 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         MenuBarra.add(Archivo);
 
-        Consultas.setText("Consultas");
+        Consultas.setText("Búsqueda Información");
 
-        jMenuItem2.setText("Consultas");
+        jMenuItem2.setText("Búsqueda Información");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);

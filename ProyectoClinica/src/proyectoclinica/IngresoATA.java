@@ -5,6 +5,8 @@
  */
 package proyectoclinica;
 
+import java.awt.Event;
+import java.awt.event.KeyEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +15,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.InputMap;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
@@ -29,6 +34,12 @@ public class IngresoATA extends javax.swing.JPanel {
      */
     public IngresoATA() throws ClassNotFoundException {
         initComponents();
+        InputMap map2 = txtNombre.getInputMap(JTextField.WHEN_FOCUSED);
+        map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null"); 
+        InputMap map3 = txtApellido.getInputMap(JTextField.WHEN_FOCUSED);
+        map3.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map4 = txtSintomas.getInputMap(JTextField.WHEN_FOCUSED);
+        map4.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");       
         
         cmbCarreras.removeAllItems();
         cmbMedicinas.removeAllItems();

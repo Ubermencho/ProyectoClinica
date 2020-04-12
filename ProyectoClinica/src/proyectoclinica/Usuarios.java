@@ -5,6 +5,8 @@
  */
 package proyectoclinica;
 
+import java.awt.Event;
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,7 +14,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.InputMap;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -25,6 +30,17 @@ public class Usuarios extends javax.swing.JPanel {
      */
     public Usuarios() {
         initComponents();
+        InputMap map2 = txtUsuarioAgregar.getInputMap(JTextField.WHEN_FOCUSED);
+        map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map3 = txtPassAgregar.getInputMap(JTextField.WHEN_FOCUSED);
+        map3.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map4 = txtPass2Agregar.getInputMap(JTextField.WHEN_FOCUSED);
+        map4.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map5 = txtUsuarioMod.getInputMap(JTextField.WHEN_FOCUSED);
+        map5.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map6 = txtUsuarioEliminar.getInputMap(JTextField.WHEN_FOCUSED);
+        map6.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+
     }
 
     /**

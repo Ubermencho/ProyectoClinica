@@ -5,6 +5,8 @@
  */
 package proyectoclinica;
 
+import java.awt.Event;
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,7 +14,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.InputMap;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -31,6 +36,67 @@ public class IngresoExpediente extends javax.swing.JPanel {
     
     public IngresoExpediente() {
         initComponents();
+        InputMap map2 = txtNombre.getInputMap(JTextField.WHEN_FOCUSED);
+        map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map3 = txtApellido.getInputMap(JTextField.WHEN_FOCUSED);
+        map3.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map4 = txtDomicilio.getInputMap(JTextField.WHEN_FOCUSED);
+        map4.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map5 = txtSintoma.getInputMap(JTextField.WHEN_FOCUSED);
+        map5.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map6 = txtHEA.getInputMap(JTextField.WHEN_FOCUSED);
+        map6.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map7 = txtPeso.getInputMap(JTextField.WHEN_FOCUSED);
+        map7.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map8 = txtTalla.getInputMap(JTextField.WHEN_FOCUSED);
+        map8.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map9 = txtGlasgow.getInputMap(JTextField.WHEN_FOCUSED);
+        map9.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map1 = txtFC.getInputMap(JTextField.WHEN_FOCUSED);
+        map1.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map0 = txtFR.getInputMap(JTextField.WHEN_FOCUSED);
+        map0.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map10 = txtPA.getInputMap(JTextField.WHEN_FOCUSED);
+        map10.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map11 = txtT.getInputMap(JTextField.WHEN_FOCUSED);
+        map11.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map12 = txtPulso.getInputMap(JTextField.WHEN_FOCUSED);
+        map12.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map13 = txtFrialdad.getInputMap(JTextField.WHEN_FOCUSED);
+        map13.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map14 = txtPiel.getInputMap(JTextField.WHEN_FOCUSED);
+        map14.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map15 = txtCapilar.getInputMap(JTextField.WHEN_FOCUSED);
+        map15.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map16 = txtValoracion1.getInputMap(JTextField.WHEN_FOCUSED);
+        map16.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map17 = txtValoracion2.getInputMap(JTextField.WHEN_FOCUSED);
+        map17.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map18 = txtValoracion3.getInputMap(JTextField.WHEN_FOCUSED);
+        map18.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map19 = txtValoracion4.getInputMap(JTextField.WHEN_FOCUSED);
+        map19.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map20 = txtValoracion5.getInputMap(JTextField.WHEN_FOCUSED);
+        map20.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map21 = txtValoracion6.getInputMap(JTextField.WHEN_FOCUSED);
+        map21.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map22 = txtValoracion7.getInputMap(JTextField.WHEN_FOCUSED);
+        map22.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map23 = txtValoracion8.getInputMap(JTextField.WHEN_FOCUSED);
+        map23.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map24 = txtValoracion9.getInputMap(JTextField.WHEN_FOCUSED);
+        map24.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map25 = txtValoracion10.getInputMap(JTextField.WHEN_FOCUSED);
+        map25.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map26 = txtDiagnostico.getInputMap(JTextField.WHEN_FOCUSED);
+        map26.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map27 = txtTratamiento.getInputMap(JTextField.WHEN_FOCUSED);
+        map27.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map28 = txtInterconsulta.getInputMap(JTextField.WHEN_FOCUSED);
+        map28.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map29 = txtComentario.getInputMap(JTextField.WHEN_FOCUSED);
+        map29.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+
         hora = Hora.format(now);
         minuto = Minuto.format(now);
         segundo = Segundo.format(now);
@@ -247,7 +313,19 @@ public class IngresoExpediente extends javax.swing.JPanel {
         buttonGroup1.add(rdbOtro);
         rdbOtro.setText("Otro");
 
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
+
         jLabel6.setText("Edad:");
+
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyTyped(evt);
+            }
+        });
 
         jLabel7.setText("Carrera:");
 
@@ -381,6 +459,18 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel12.setText("IMC:");
 
+        txtPeso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPesoKeyTyped(evt);
+            }
+        });
+
+        txtTalla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTallaKeyTyped(evt);
+            }
+        });
+
         txtIMC.setEditable(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -506,6 +596,12 @@ public class IngresoExpediente extends javax.swing.JPanel {
         jLabel17.setText("Glasgow:");
 
         jLabel18.setText("Índice de Choque:");
+
+        txtGlasgow.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtGlasgowKeyTyped(evt);
+            }
+        });
 
         txtChoque.setEditable(false);
 
@@ -1266,6 +1362,65 @@ public class IngresoExpediente extends javax.swing.JPanel {
         double imc = Double.parseDouble(txtPeso.getText()) / (Double.parseDouble(txtTalla.getText()) * Double.parseDouble(txtTalla.getText()));
         txtIMC.setText(Double.toString(imc));
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+          if(Character.isDigit(c)) {
+              getToolkit().beep();
+              
+              evt.consume();
+          }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+          if(Character.isDigit(c)) {
+             
+              
+              evt.consume();
+          }
+    }//GEN-LAST:event_txtApellidoKeyTyped
+
+    private void txtPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+            
+        
+          if(Character.isLetter(c)) {
+             
+              
+              evt.consume();
+                            
+          }
+    }//GEN-LAST:event_txtPesoKeyTyped
+
+    private void txtTallaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTallaKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+            
+        
+          if(Character.isLetter(c)) {
+              
+              
+              evt.consume();
+                            
+          }
+    }//GEN-LAST:event_txtTallaKeyTyped
+
+    private void txtGlasgowKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGlasgowKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+            
+        
+          if(Character.isLetter(c)) {
+              
+              
+              evt.consume();
+                            
+          }
+    }//GEN-LAST:event_txtGlasgowKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
