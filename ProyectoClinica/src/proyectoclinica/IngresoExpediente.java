@@ -247,7 +247,19 @@ public class IngresoExpediente extends javax.swing.JPanel {
         buttonGroup1.add(rdbOtro);
         rdbOtro.setText("Otro");
 
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
+
         jLabel6.setText("Edad:");
+
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyTyped(evt);
+            }
+        });
 
         jLabel7.setText("Carrera:");
 
@@ -381,6 +393,18 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel12.setText("IMC:");
 
+        txtPeso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPesoKeyTyped(evt);
+            }
+        });
+
+        txtTalla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTallaKeyTyped(evt);
+            }
+        });
+
         txtIMC.setEditable(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -506,6 +530,12 @@ public class IngresoExpediente extends javax.swing.JPanel {
         jLabel17.setText("Glasgow:");
 
         jLabel18.setText("Índice de Choque:");
+
+        txtGlasgow.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtGlasgowKeyTyped(evt);
+            }
+        });
 
         txtChoque.setEditable(false);
 
@@ -1266,6 +1296,65 @@ public class IngresoExpediente extends javax.swing.JPanel {
         double imc = Double.parseDouble(txtPeso.getText()) / (Double.parseDouble(txtTalla.getText()) * Double.parseDouble(txtTalla.getText()));
         txtIMC.setText(Double.toString(imc));
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+          if(Character.isDigit(c)) {
+              getToolkit().beep();
+              
+              evt.consume();
+          }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+          if(Character.isDigit(c)) {
+             
+              
+              evt.consume();
+          }
+    }//GEN-LAST:event_txtApellidoKeyTyped
+
+    private void txtPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+            
+        
+          if(Character.isLetter(c)) {
+             
+              
+              evt.consume();
+                            
+          }
+    }//GEN-LAST:event_txtPesoKeyTyped
+
+    private void txtTallaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTallaKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+            
+        
+          if(Character.isLetter(c)) {
+              
+              
+              evt.consume();
+                            
+          }
+    }//GEN-LAST:event_txtTallaKeyTyped
+
+    private void txtGlasgowKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGlasgowKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+            
+        
+          if(Character.isLetter(c)) {
+              
+              
+              evt.consume();
+                            
+          }
+    }//GEN-LAST:event_txtGlasgowKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

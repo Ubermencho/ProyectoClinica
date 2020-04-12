@@ -447,6 +447,12 @@ public class PanelConsultas extends javax.swing.JPanel {
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Edad: ");
 
+        txtEdad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEdadKeyTyped(evt);
+            }
+        });
+
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel21.setText("Pacientes:");
 
@@ -833,6 +839,18 @@ public class PanelConsultas extends javax.swing.JPanel {
                 Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_btnBuscar5ActionPerformed
+
+    private void txtEdadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEdadKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+            
+        
+          if(Character.isLetter(c)) {
+              
+              evt.consume();
+                            
+          }
+    }//GEN-LAST:event_txtEdadKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
