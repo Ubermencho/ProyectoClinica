@@ -5,6 +5,8 @@
  */
 package proyectoclinica;
 
+import java.awt.Event;
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,8 +14,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.InputMap;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.table.DefaultTableModel;
 import static proyectoclinica.DB.conexion;
 
@@ -27,7 +32,12 @@ public class PanelConsultas extends javax.swing.JPanel {
      * Creates new form PanelConsultas
      */
     public PanelConsultas() {
-        initComponents();       
+        initComponents();  
+        InputMap map2 = txtExpediente.getInputMap(JTextField.WHEN_FOCUSED);
+        map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+        InputMap map3 = txtEdad.getInputMap(JTextField.WHEN_FOCUSED);
+        map3.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
+
     }
 
     /**
@@ -114,6 +124,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblDatos.setEnabled(false);
         jScrollPane5.setViewportView(tblDatos);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -211,6 +222,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblDatos1.setEnabled(false);
         jScrollPane6.setViewportView(tblDatos1);
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -293,6 +305,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblDatos2.setEnabled(false);
         jScrollPane7.setViewportView(tblDatos2);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -381,6 +394,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblDatos3.setEnabled(false);
         jScrollPane8.setViewportView(tblDatos3);
 
         btnBuscar3.setText("Buscar");
@@ -467,6 +481,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblDatos4.setEnabled(false);
         jScrollPane9.setViewportView(tblDatos4);
 
         btnBuscar4.setText("Buscar");
@@ -548,6 +563,7 @@ public class PanelConsultas extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblDatos5.setEnabled(false);
         jScrollPane10.setViewportView(tblDatos5);
 
         btnBuscar5.setText("Buscar");
@@ -623,7 +639,9 @@ public class PanelConsultas extends javax.swing.JPanel {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         String id=txtIdentidad.getText();
-        
+         if(id.equals("    -    -     "))
+            JOptionPane.showMessageDialog(null, "Identidad Vacía Compruebe");
+        else{
         String sql="select paciente.idpaciente,paciente.nombre_paciente,paciente.apellido_paciente,paciente.edad_paciente,expediente.diagnostico,expediente.sintoma_principal from paciente,expediente where paciente.idpaciente=expediente.idpaciente and expediente.idpaciente = '"+id+"'";
        
         Statement st;
@@ -654,7 +672,7 @@ public class PanelConsultas extends javax.swing.JPanel {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
             }
-        
+         }
 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -665,7 +683,10 @@ public class PanelConsultas extends javax.swing.JPanel {
     private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
         // TODO add your handling code here:
         String exp= txtExpediente.getText();
-        
+        if(exp.isEmpty())
+            JOptionPane.showMessageDialog(null, "Expediente Vacío Llene el Campo");
+        else{
+
         String sql="select expediente.idexpediente,paciente.nombre_paciente,paciente.apellido_paciente,paciente.edad_paciente,expediente.diagnostico,expediente.sintoma_principal from paciente,expediente where paciente.idpaciente=expediente.idpaciente and expediente.idexpediente = '"+exp+"'";
        
         Statement st;
@@ -696,7 +717,7 @@ public class PanelConsultas extends javax.swing.JPanel {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
             }
-        
+        }       
     }//GEN-LAST:event_btnBuscar1ActionPerformed
 
     private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
@@ -775,7 +796,10 @@ public class PanelConsultas extends javax.swing.JPanel {
     private void btnBuscar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar4ActionPerformed
         // TODO add your handling code here:
         String ed= txtEdad.getText();
-        
+        if(ed.equals(""))
+            JOptionPane.showMessageDialog(null,"Revise Campo Edad");
+        else{
+
         String sql="select nombre_paciente_ata,apellido_paciente_ata,sintomas_paciente_ata,fecha_ata from ata where edad_paciente_ata= '"+ed+"'";
         
         Statement st;
@@ -805,6 +829,7 @@ public class PanelConsultas extends javax.swing.JPanel {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(PanelConsultas.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
     }//GEN-LAST:event_btnBuscar4ActionPerformed
 
     private void btnBuscar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar5ActionPerformed
