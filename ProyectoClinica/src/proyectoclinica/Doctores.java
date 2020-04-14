@@ -5,6 +5,7 @@
  */
 package proyectoclinica;
 
+import java.awt.Color;
 import java.awt.Event;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
@@ -30,6 +31,7 @@ public class Doctores extends javax.swing.JPanel {
      */
     public Doctores() {
         initComponents();
+        jPanel1.setBackground(Color.cyan);
         InputMap map2 = txtNombreAgregar.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtApellidoAgregar.getInputMap(JTextField.WHEN_FOCUSED);
@@ -586,4 +588,8 @@ public class Doctores extends javax.swing.JPanel {
     private javax.swing.JTextField txtNombreEliminar;
     private javax.swing.JTextField txtNombreMod;
     // End of variables declaration//GEN-END:variables
+
+    private Object getContentPane() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -5,6 +5,7 @@
  */
 package proyectoclinica;
 
+import java.awt.Color;
 import java.awt.Event;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
@@ -28,6 +29,7 @@ public class Medicamentos extends javax.swing.JPanel {
      */
     public Medicamentos() {
         initComponents();
+        jPanel1.setBackground(Color.cyan);
         InputMap map2 = txtCodigoAgregar.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtDescripcionAgregar.getInputMap(JTextField.WHEN_FOCUSED);

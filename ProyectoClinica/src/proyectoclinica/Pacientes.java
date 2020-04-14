@@ -5,6 +5,7 @@
  */
 package proyectoclinica;
 
+import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -25,6 +26,7 @@ public class Pacientes extends javax.swing.JPanel {
      */
     public Pacientes() {
         initComponents();
+        jPanel1.setBackground(Color.cyan);
     }
     String sexo = "";
     /**

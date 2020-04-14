@@ -5,6 +5,7 @@
  */
 package proyectoclinica;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -22,6 +23,7 @@ public class FormPrincipal extends javax.swing.JFrame {
      */
     public FormPrincipal() {
         initComponents();
+        PanelPrincipal.setBackground(Color.cyan);
         MenuPrincipal mp = new MenuPrincipal();
         mp.setSize(1380, 730);
         

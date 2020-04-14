@@ -5,6 +5,7 @@
  */
 package proyectoclinica;
 
+import java.awt.Color;
 import java.awt.Event;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
@@ -30,6 +31,7 @@ public class Usuarios extends javax.swing.JPanel {
      */
     public Usuarios() {
         initComponents();
+        jPanel1.setBackground(Color.cyan);
         InputMap map2 = txtUsuarioAgregar.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtPassAgregar.getInputMap(JTextField.WHEN_FOCUSED);
