@@ -87,6 +87,7 @@ public class Medicamentos extends javax.swing.JPanel {
 
         jLabel2.setText("Tipo:");
 
+        btnAceptarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarAgregar.setText("Aceptar");
         btnAceptarAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,6 +95,7 @@ public class Medicamentos extends javax.swing.JPanel {
             }
         });
 
+        txtLimpiarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         txtLimpiarAgregar.setText("Limpiar");
 
         jLabel7.setText("Código:");
@@ -145,8 +147,10 @@ public class Medicamentos extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Agregar", jPanel1);
 
+        txtLimpiarMod.setBackground(new java.awt.Color(255, 255, 204));
         txtLimpiarMod.setText("Limpiar");
 
+        btnAceptarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarMod.setText("Aceptar");
         btnAceptarMod.setEnabled(false);
         btnAceptarMod.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +169,7 @@ public class Medicamentos extends javax.swing.JPanel {
 
         jLabel8.setText("Código:");
 
+        btnBuscarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarMod.setText("Buscar");
         btnBuscarMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,8 +231,10 @@ public class Medicamentos extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Modificar", jPanel2);
 
+        txtLimpiarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         txtLimpiarEliminar.setText("Limpiar");
 
+        btnAceptarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
         btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -246,6 +253,7 @@ public class Medicamentos extends javax.swing.JPanel {
 
         jLabel9.setText("Código:");
 
+        btnBuscarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarEliminar.setText("Buscar");
         btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

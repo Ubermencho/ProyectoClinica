@@ -57,6 +57,7 @@ public class Reportes extends javax.swing.JPanel {
             }
         });
 
+        btnAceptar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptar.setText("Aceptar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +65,7 @@ public class Reportes extends javax.swing.JPanel {
             }
         });
 
+        btnExpediente.setBackground(new java.awt.Color(255, 255, 204));
         btnExpediente.setText("Sacar Expediente");
         btnExpediente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +73,7 @@ public class Reportes extends javax.swing.JPanel {
             }
         });
 
+        btnSalir.setBackground(new java.awt.Color(255, 255, 204));
         btnSalir.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
