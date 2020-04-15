@@ -34,7 +34,7 @@ public class PanelConsultas extends javax.swing.JPanel {
      */
     public PanelConsultas() {
         initComponents();  
-        jPanel1.setBackground(Color.cyan);
+        
         InputMap map2 = txtExpediente.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtEdad.getInputMap(JTextField.WHEN_FOCUSED);
@@ -104,6 +104,13 @@ public class PanelConsultas extends javax.swing.JPanel {
         tblDatos5 = new javax.swing.JTable();
         btnBuscar5 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
+        fecha = new com.toedter.calendar.JCalendar();
+
+        setBackground(new java.awt.Color(146, 206, 235));
+
+        jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
+
+        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Búsqueda de Información");
@@ -197,6 +204,8 @@ public class PanelConsultas extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Identidad", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Búsqueda de Información");
 
@@ -281,6 +290,8 @@ public class PanelConsultas extends javax.swing.JPanel {
         );
 
         jTabbedPane1.addTab("Número de Expediente", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(146, 206, 235));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Búsqueda de Información");
@@ -371,6 +382,8 @@ public class PanelConsultas extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Carrera", jPanel4);
 
+        jPanel5.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setText("Búsqueda de Información");
 
@@ -459,6 +472,8 @@ public class PanelConsultas extends javax.swing.JPanel {
         );
 
         jTabbedPane1.addTab("Género", jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(146, 206, 235));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Búsqueda de Información");
@@ -552,6 +567,8 @@ public class PanelConsultas extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Edad", jPanel6);
 
+        jPanel7.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setText("Búsqueda de Información");
 
@@ -594,9 +611,12 @@ public class PanelConsultas extends javax.swing.JPanel {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnBuscar5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel27)
-                                .addGap(72, 72, 72)
-                                .addComponent(jLabel22)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addComponent(jLabel27)
+                                        .addGap(72, 72, 72)
+                                        .addComponent(jLabel22))
+                                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -611,9 +631,12 @@ public class PanelConsultas extends javax.swing.JPanel {
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel27)
-                        .addComponent(jLabel22))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel22))
+                        .addGap(18, 18, 18)
+                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addComponent(btnBuscar5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -888,6 +911,7 @@ public class PanelConsultas extends javax.swing.JPanel {
     private javax.swing.JButton btnBuscar3;
     private javax.swing.JButton btnBuscar4;
     private javax.swing.JButton btnBuscar5;
+    private com.toedter.calendar.JCalendar fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
