@@ -5,6 +5,7 @@
  */
 package proyectoclinica;
 
+import java.awt.Color;
 import java.awt.Event;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
@@ -30,6 +31,7 @@ public class Doctores extends javax.swing.JPanel {
      */
     public Doctores() {
         initComponents();
+        jPanel1.setBackground(Color.cyan);
         InputMap map2 = txtNombreAgregar.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtApellidoAgregar.getInputMap(JTextField.WHEN_FOCUSED);
@@ -108,6 +110,7 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
+        btnAceptarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarAgregar.setText("Aceptar");
         btnAceptarAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +118,7 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
+        btnLimpiarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         btnLimpiarAgregar.setText("Limpiar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -198,6 +202,7 @@ public class Doctores extends javax.swing.JPanel {
 
         spnEdadMod.setEnabled(false);
 
+        btnAceptarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarMod.setText("Aceptar");
         btnAceptarMod.setEnabled(false);
         btnAceptarMod.addActionListener(new java.awt.event.ActionListener() {
@@ -206,6 +211,7 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
+        btnLimpiarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnLimpiarMod.setText("Limpiar");
         btnLimpiarMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +219,7 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
+        btnBuscarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarMod.setText("Buscar");
         btnBuscarMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,6 +295,7 @@ public class Doctores extends javax.swing.JPanel {
             ex.printStackTrace();
         }
 
+        btnBuscarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarEliminar.setText("Buscar");
         btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -307,6 +315,7 @@ public class Doctores extends javax.swing.JPanel {
 
         spnEdadEliminar.setEnabled(false);
 
+        btnAceptarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
         btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -315,6 +324,7 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
+        btnLimpiarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnLimpiarEliminar.setText("Limpiar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -586,4 +596,8 @@ public class Doctores extends javax.swing.JPanel {
     private javax.swing.JTextField txtNombreEliminar;
     private javax.swing.JTextField txtNombreMod;
     // End of variables declaration//GEN-END:variables
+
+    private Object getContentPane() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

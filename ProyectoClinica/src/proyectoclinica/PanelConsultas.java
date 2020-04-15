@@ -5,6 +5,7 @@
  */
 package proyectoclinica;
 
+import java.awt.Color;
 import java.awt.Event;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
@@ -33,6 +34,7 @@ public class PanelConsultas extends javax.swing.JPanel {
      */
     public PanelConsultas() {
         initComponents();  
+        
         InputMap map2 = txtExpediente.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtEdad.getInputMap(JTextField.WHEN_FOCUSED);
@@ -104,6 +106,12 @@ public class PanelConsultas extends javax.swing.JPanel {
         jLabel27 = new javax.swing.JLabel();
         fecha = new com.toedter.calendar.JCalendar();
 
+        setBackground(new java.awt.Color(146, 206, 235));
+
+        jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
+
+        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Búsqueda de Información");
 
@@ -136,6 +144,7 @@ public class PanelConsultas extends javax.swing.JPanel {
             ex.printStackTrace();
         }
 
+        btnBuscar.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,12 +204,15 @@ public class PanelConsultas extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Identidad", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Búsqueda de Información");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("Nu. Expediente: ");
 
+        btnBuscar1.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscar1.setText("Buscar");
         btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,6 +291,8 @@ public class PanelConsultas extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Número de Expediente", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Búsqueda de Información");
 
@@ -287,6 +301,7 @@ public class PanelConsultas extends javax.swing.JPanel {
 
         CmbCarrera.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingeniera en Sistemas", "Ingeniera Civil", "Ingeniera Industrial", "Ingeniera Ambiental", "Arquitectura", "Medicina", "Cirugia Dental", "Enfermeria", "Psicologia", "Mercadotecnia", "Adm. de Empresas", "Finanzas", "Relaciones Internacionales", "Ciencias en Comunicacion", "Derecho", "Teologia", "Postgrado", "Otro" }));
 
+        btnBuscar2.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscar2.setText("Buscar");
         btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -367,6 +382,8 @@ public class PanelConsultas extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Carrera", jPanel4);
 
+        jPanel5.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setText("Búsqueda de Información");
 
@@ -397,6 +414,7 @@ public class PanelConsultas extends javax.swing.JPanel {
         tblDatos3.setEnabled(false);
         jScrollPane8.setViewportView(tblDatos3);
 
+        btnBuscar3.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscar3.setText("Buscar");
         btnBuscar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -455,6 +473,8 @@ public class PanelConsultas extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Género", jPanel5);
 
+        jPanel6.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Búsqueda de Información");
 
@@ -484,6 +504,7 @@ public class PanelConsultas extends javax.swing.JPanel {
         tblDatos4.setEnabled(false);
         jScrollPane9.setViewportView(tblDatos4);
 
+        btnBuscar4.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscar4.setText("Buscar");
         btnBuscar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -546,6 +567,8 @@ public class PanelConsultas extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Edad", jPanel6);
 
+        jPanel7.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setText("Búsqueda de Información");
 
@@ -566,6 +589,7 @@ public class PanelConsultas extends javax.swing.JPanel {
         tblDatos5.setEnabled(false);
         jScrollPane10.setViewportView(tblDatos5);
 
+        btnBuscar5.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscar5.setText("Buscar");
         btnBuscar5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

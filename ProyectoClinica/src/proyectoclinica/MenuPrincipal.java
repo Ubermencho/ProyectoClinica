@@ -43,6 +43,7 @@ public class MenuPrincipal extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel2.setText("¿Qué desea hacer?");
 
+        abrirATA.setBackground(new java.awt.Color(255, 255, 204));
         abrirATA.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         abrirATA.setText("Ingresar un paciente al ATA");
         abrirATA.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +52,7 @@ public class MenuPrincipal extends javax.swing.JPanel {
             }
         });
 
+        abrirExpediente.setBackground(new java.awt.Color(255, 255, 204));
         abrirExpediente.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         abrirExpediente.setText("Ingresar un nuevo expediente");
         abrirExpediente.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +61,7 @@ public class MenuPrincipal extends javax.swing.JPanel {
             }
         });
 
+        abrirConsultas.setBackground(new java.awt.Color(255, 255, 204));
         abrirConsultas.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         abrirConsultas.setText("Busqueda de información");
         abrirConsultas.addActionListener(new java.awt.event.ActionListener() {
@@ -81,11 +84,10 @@ public class MenuPrincipal extends javax.swing.JPanel {
                             .addComponent(abrirConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(226, 226, 226)
-                        .addComponent(jLabel2)))
-                .addContainerGap(248, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

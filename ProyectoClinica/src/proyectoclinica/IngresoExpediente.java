@@ -5,6 +5,7 @@
  */
 package proyectoclinica;
 
+import java.awt.Color;
 import java.awt.Event;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
@@ -284,6 +285,12 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jTextField6.setEnabled(false);
 
+        setBackground(new java.awt.Color(123, 200, 238));
+
+        jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
+
+        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
+
         txtDomicilio.setColumns(20);
         txtDomicilio.setRows(5);
         jScrollPane1.setViewportView(txtDomicilio);
@@ -300,16 +307,19 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel2.setText("Apellidos:");
 
+        rdbMasculino.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbMasculino);
         rdbMasculino.setText("Masculino");
 
         jLabel3.setText("# de identidad:");
 
+        rdbFemenino.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbFemenino);
         rdbFemenino.setText("Femenino");
 
         jLabel4.setText("Domicilio:");
 
+        rdbOtro.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbOtro);
         rdbOtro.setText("Otro");
 
@@ -399,7 +409,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel27)
@@ -450,6 +460,9 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Datos Personales", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
+
+        jPanel5.setBackground(new java.awt.Color(146, 206, 235));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Antropometría"));
         jPanel5.setName(""); // NOI18N
 
@@ -512,6 +525,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel6.setBackground(new java.awt.Color(146, 206, 235));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Signos Vitales"));
         jPanel6.setName(""); // NOI18N
 
@@ -590,6 +604,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        jPanel7.setBackground(new java.awt.Color(146, 206, 235));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Score"));
         jPanel7.setName(""); // NOI18N
 
@@ -634,6 +649,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel8.setBackground(new java.awt.Color(146, 206, 235));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Signos Vitales"));
         jPanel8.setName(""); // NOI18N
 
@@ -686,6 +702,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        btnCalcular.setBackground(new java.awt.Color(255, 255, 204));
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -710,7 +727,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -731,6 +748,8 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Examen Físico", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel19.setText("Diagnóstico:");
 
         txtDiagnostico.setColumns(20);
@@ -739,6 +758,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel28.setText("Cabeza:");
 
+        rdbNormal1.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup3.add(rdbNormal1);
         rdbNormal1.setText("Normal");
         rdbNormal1.addActionListener(new java.awt.event.ActionListener() {
@@ -747,6 +767,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado1.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup3.add(rdbAlterado1);
         rdbAlterado1.setText("Alterado");
         rdbAlterado1.addActionListener(new java.awt.event.ActionListener() {
@@ -759,6 +780,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel29.setText("ORL:");
 
+        rdbNormal2.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup4.add(rdbNormal2);
         rdbNormal2.setText("Normal");
         rdbNormal2.addActionListener(new java.awt.event.ActionListener() {
@@ -767,6 +789,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado2.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup4.add(rdbAlterado2);
         rdbAlterado2.setText("Alterado");
         rdbAlterado2.addActionListener(new java.awt.event.ActionListener() {
@@ -779,6 +802,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel31.setText("Cuello:");
 
+        rdbNormal3.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup5.add(rdbNormal3);
         rdbNormal3.setText("Normal");
         rdbNormal3.addActionListener(new java.awt.event.ActionListener() {
@@ -787,6 +811,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado3.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup5.add(rdbAlterado3);
         rdbAlterado3.setText("Alterado");
         rdbAlterado3.addActionListener(new java.awt.event.ActionListener() {
@@ -799,6 +824,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel32.setText("Respiratorio:");
 
+        rdbNormal4.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup6.add(rdbNormal4);
         rdbNormal4.setText("Normal");
         rdbNormal4.addActionListener(new java.awt.event.ActionListener() {
@@ -807,6 +833,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado4.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup6.add(rdbAlterado4);
         rdbAlterado4.setText("Alterado");
         rdbAlterado4.addActionListener(new java.awt.event.ActionListener() {
@@ -819,6 +846,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel34.setText("Corazón:");
 
+        rdbNormal5.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup7.add(rdbNormal5);
         rdbNormal5.setText("Normal");
         rdbNormal5.addActionListener(new java.awt.event.ActionListener() {
@@ -827,6 +855,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado5.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup7.add(rdbAlterado5);
         rdbAlterado5.setText("Alterado");
         rdbAlterado5.addActionListener(new java.awt.event.ActionListener() {
@@ -839,6 +868,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel35.setText("Abdomen:");
 
+        rdbNormal6.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup8.add(rdbNormal6);
         rdbNormal6.setText("Normal");
         rdbNormal6.addActionListener(new java.awt.event.ActionListener() {
@@ -847,6 +877,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado6.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup8.add(rdbAlterado6);
         rdbAlterado6.setText("Alterado");
         rdbAlterado6.addActionListener(new java.awt.event.ActionListener() {
@@ -859,6 +890,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel36.setText("Genitales:");
 
+        rdbNormal7.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup9.add(rdbNormal7);
         rdbNormal7.setText("Normal");
         rdbNormal7.addActionListener(new java.awt.event.ActionListener() {
@@ -867,6 +899,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado7.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup9.add(rdbAlterado7);
         rdbAlterado7.setText("Alterado");
         rdbAlterado7.addActionListener(new java.awt.event.ActionListener() {
@@ -879,6 +912,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel37.setText("Extremidades:");
 
+        rdbNormal8.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup10.add(rdbNormal8);
         rdbNormal8.setText("Normal");
         rdbNormal8.addActionListener(new java.awt.event.ActionListener() {
@@ -887,6 +921,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado8.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup10.add(rdbAlterado8);
         rdbAlterado8.setText("Alterado");
         rdbAlterado8.addActionListener(new java.awt.event.ActionListener() {
@@ -899,6 +934,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel38.setText("Piel:");
 
+        rdbNormal9.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup11.add(rdbNormal9);
         rdbNormal9.setText("Normal");
         rdbNormal9.addActionListener(new java.awt.event.ActionListener() {
@@ -907,6 +943,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado9.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup11.add(rdbAlterado9);
         rdbAlterado9.setText("Alterado");
         rdbAlterado9.addActionListener(new java.awt.event.ActionListener() {
@@ -919,6 +956,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel39.setText("Neurológico:");
 
+        rdbNormal10.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup12.add(rdbNormal10);
         rdbNormal10.setText("Normal");
         rdbNormal10.addActionListener(new java.awt.event.ActionListener() {
@@ -927,6 +965,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        rdbAlterado10.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup12.add(rdbAlterado10);
         rdbAlterado10.setText("Alterado");
         rdbAlterado10.addActionListener(new java.awt.event.ActionListener() {
@@ -947,7 +986,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane4))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel39)
@@ -962,12 +1001,6 @@ public class IngresoExpediente extends javax.swing.JPanel {
                             .addComponent(jLabel37))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(rdbNormal10)
-                                .addGap(18, 18, 18)
-                                .addComponent(rdbAlterado10)
-                                .addGap(6, 6, 6)
-                                .addComponent(txtValoracion10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(rdbNormal5)
                                 .addGap(18, 18, 18)
@@ -1012,19 +1045,26 @@ public class IngresoExpediente extends javax.swing.JPanel {
                                 .addComponent(rdbAlterado7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtValoracion7))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(rdbNormal9)
-                                .addGap(18, 18, 18)
-                                .addComponent(rdbAlterado9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtValoracion9, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(rdbNormal8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                                .addComponent(rdbAlterado8)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(rdbNormal10)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(rdbAlterado10))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(rdbNormal9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(rdbAlterado9))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(rdbNormal8)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(rdbAlterado8)))
                                 .addGap(6, 6, 6)
-                                .addComponent(txtValoracion8, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(174, 174, 174))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtValoracion8)
+                                    .addComponent(txtValoracion9)
+                                    .addComponent(txtValoracion10))))))
+                .addGap(180, 180, 180))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1098,6 +1138,8 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Valoración aparatos y sistemas", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel24.setText("Tratamiento:");
 
         txtTratamiento.setColumns(20);
@@ -1116,6 +1158,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel26.setText("Comentario:");
 
+        btnAceptar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptar.setText("Aceptar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1123,6 +1166,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        btnCerrar.setBackground(new java.awt.Color(255, 255, 204));
         btnCerrar.setText("Cerrar");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -1148,7 +1192,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                 .addComponent(btnAceptar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

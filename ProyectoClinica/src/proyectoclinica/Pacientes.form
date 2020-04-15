@@ -283,6 +283,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnBuscarMod">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
               <Events>
@@ -291,6 +294,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnAceptarMod">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Aceptar"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -300,6 +306,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnLimpiarMod">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar"/>
               </Properties>
             </Component>
@@ -442,6 +451,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnBuscarEliminar">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
               <Events>
@@ -543,6 +555,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnAceptarEliminar">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Aceptar"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -552,6 +567,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnLimpiarEliminar">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar"/>
               </Properties>
             </Component>

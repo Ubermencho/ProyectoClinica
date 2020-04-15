@@ -177,9 +177,9 @@ public class IngresoATA extends javax.swing.JPanel {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        setBackground(new java.awt.Color(6, 203, 240));
+        setBackground(new java.awt.Color(146, 206, 235));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 0));
+        jButton1.setBackground(new java.awt.Color(255, 255, 204));
         jButton1.setText("Ingresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +237,7 @@ public class IngresoATA extends javax.swing.JPanel {
             }
         });
 
-        btnVolver.setBackground(new java.awt.Color(255, 255, 0));
+        btnVolver.setBackground(new java.awt.Color(255, 255, 204));
         btnVolver.setText("Menu Principal");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -65,6 +65,7 @@ public class Reportes extends javax.swing.JPanel {
             }
         });
 
+
         PanelATA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PanelATA.setEnabled(false);
 
@@ -75,10 +76,12 @@ public class Reportes extends javax.swing.JPanel {
         btnAceptarATA.setText("Aceptar");
         btnAceptarATA.setEnabled(false);
         btnAceptarATA.addActionListener(new java.awt.event.ActionListener() {
+
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAceptarATAActionPerformed(evt);
             }
         });
+
 
         javax.swing.GroupLayout PanelATALayout = new javax.swing.GroupLayout(PanelATA);
         PanelATA.setLayout(PanelATALayout);
@@ -128,10 +131,12 @@ public class Reportes extends javax.swing.JPanel {
         btnAceptarExp.setText("Aceptar");
         btnAceptarExp.setEnabled(false);
         btnAceptarExp.addActionListener(new java.awt.event.ActionListener() {
+
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAceptarExpActionPerformed(evt);
             }
         });
+
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,6 +166,7 @@ public class Reportes extends javax.swing.JPanel {
                 .addComponent(btnAceptarExp)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
