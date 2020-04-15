@@ -5,6 +5,7 @@
  */
 package proyectoclinica;
 
+import java.awt.Color;
 import java.awt.Event;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
@@ -36,6 +37,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
     
     public IngresoExpediente() {
         initComponents();
+        jPanel1.setBackground(Color.cyan);
         InputMap map2 = txtNombre.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtApellido.getInputMap(JTextField.WHEN_FOCUSED);
@@ -686,6 +688,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        btnCalcular.setBackground(new java.awt.Color(255, 255, 204));
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1116,6 +1119,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
 
         jLabel26.setText("Comentario:");
 
+        btnAceptar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptar.setText("Aceptar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1123,6 +1127,7 @@ public class IngresoExpediente extends javax.swing.JPanel {
             }
         });
 
+        btnCerrar.setBackground(new java.awt.Color(255, 255, 204));
         btnCerrar.setText("Cerrar");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
