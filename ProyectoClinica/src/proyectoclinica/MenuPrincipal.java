@@ -37,6 +37,8 @@ public class MenuPrincipal extends javax.swing.JPanel {
         abrirExpediente = new javax.swing.JButton();
         abrirConsultas = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 0, 36)); // NOI18N
         jLabel1.setText("Bienvenido al Sistema Clinica Unicah");
 

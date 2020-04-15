@@ -121,10 +121,6 @@ Clinica Medica Campus Sagrado Corazon de Jesus]]></text>
 				<reportElement x="428" y="63" width="127" height="20" uuid="135bb557-fbcc-4062-ade6-f454a7bffbea"/>
 				<textFieldExpression><![CDATA[$F{Hora_Ingreso}]]></textFieldExpression>
 			</textField>
-			<image scaleImage="FillFrame">
-				<reportElement stretchType="RelativeToBandHeight" x="8" y="13" width="97" height="70" uuid="20a9bb53-3b8e-4f4f-9bc5-7ae2d51b4a77"/>
-				<imageExpression><![CDATA["Simbolo.gif"]]></imageExpression>
-			</image>
 		</band>
 	</pageHeader>
 	<columnHeader>

@@ -55,6 +55,8 @@ public class Reportes extends javax.swing.JPanel {
         txtIdentidadPac = new javax.swing.JFormattedTextField();
         btnAceptarExp = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel1.setText("Reportes Disponibles:");
 
         cmbReportes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pacientes por Carrera", "Medicamentos Usados", "Hoja ATA por fecha", "Expedientes" }));
@@ -65,10 +67,11 @@ public class Reportes extends javax.swing.JPanel {
             }
         });
 
-
+        PanelATA.setBackground(new java.awt.Color(146, 206, 235));
         PanelATA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PanelATA.setEnabled(false);
 
+        jCalendar1.setBackground(new java.awt.Color(146, 206, 235));
         jCalendar1.setEnabled(false);
 
         jLabel2.setText("Seleccione la Fecha de la Hoja ATA");
@@ -76,12 +79,10 @@ public class Reportes extends javax.swing.JPanel {
         btnAceptarATA.setText("Aceptar");
         btnAceptarATA.setEnabled(false);
         btnAceptarATA.addActionListener(new java.awt.event.ActionListener() {
-
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAceptarATAActionPerformed(evt);
             }
         });
-
 
         javax.swing.GroupLayout PanelATALayout = new javax.swing.GroupLayout(PanelATA);
         PanelATA.setLayout(PanelATALayout);
@@ -112,6 +113,7 @@ public class Reportes extends javax.swing.JPanel {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
+        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel3.setText("Ingrese la Identidad del Paciente:");
@@ -131,12 +133,10 @@ public class Reportes extends javax.swing.JPanel {
         btnAceptarExp.setText("Aceptar");
         btnAceptarExp.setEnabled(false);
         btnAceptarExp.addActionListener(new java.awt.event.ActionListener() {
-
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAceptarExpActionPerformed(evt);
             }
         });
-
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -166,7 +166,6 @@ public class Reportes extends javax.swing.JPanel {
                 .addComponent(btnAceptarExp)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
