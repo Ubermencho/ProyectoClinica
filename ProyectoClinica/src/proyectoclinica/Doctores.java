@@ -31,7 +31,13 @@ public class Doctores extends javax.swing.JPanel {
      */
     public Doctores() {
         initComponents();
-        
+        Imagen Imagen = new Imagen();
+        jPanel1.add(Imagen);
+        jPanel1.repaint();        
+        jPanel2.add(Imagen);
+        jPanel2.repaint();        
+        jPanel3.add(Imagen);
+        jPanel3.repaint();
         InputMap map2 = txtNombreAgregar.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtApellidoAgregar.getInputMap(JTextField.WHEN_FOCUSED);
@@ -148,7 +154,7 @@ public class Doctores extends javax.swing.JPanel {
                             .addComponent(txtNombreAgregar)
                             .addComponent(txtApellidoAgregar))
                         .addComponent(btnLimpiarAgregar)))
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addContainerGap(498, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +179,7 @@ public class Doctores extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarAgregar)
                     .addComponent(btnLimpiarAgregar))
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(253, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Agregar", jPanel1);
@@ -263,7 +269,7 @@ public class Doctores extends javax.swing.JPanel {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnLimpiarMod)
                             .addComponent(txtNombreMod, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addContainerGap(498, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,7 +296,7 @@ public class Doctores extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarMod)
                     .addComponent(btnLimpiarMod))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Modificar", jPanel2);
@@ -365,7 +371,7 @@ public class Doctores extends javax.swing.JPanel {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnLimpiarEliminar)
                             .addComponent(txtNombreEliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addContainerGap(498, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -392,7 +398,7 @@ public class Doctores extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarEliminar)
                     .addComponent(btnLimpiarEliminar))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminar", jPanel3);
