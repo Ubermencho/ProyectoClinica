@@ -31,7 +31,7 @@ public class Doctores extends javax.swing.JPanel {
      */
     public Doctores() {
         initComponents();
-        jPanel1.setBackground(Color.cyan);
+        
         InputMap map2 = txtNombreAgregar.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtApellidoAgregar.getInputMap(JTextField.WHEN_FOCUSED);
@@ -83,6 +83,12 @@ public class Doctores extends javax.swing.JPanel {
         spnEdadEliminar = new javax.swing.JSpinner();
         btnAceptarEliminar = new javax.swing.JButton();
         btnLimpiarEliminar = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(146, 206, 235));
+
+        jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
+
+        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
 
         jLabel1.setText("Identidad:");
 
@@ -171,6 +177,8 @@ public class Doctores extends javax.swing.JPanel {
         );
 
         jTabbedPane1.addTab("Agregar", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
 
         jLabel5.setText("Identidad:");
 
@@ -286,6 +294,8 @@ public class Doctores extends javax.swing.JPanel {
         );
 
         jTabbedPane1.addTab("Modificar", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(146, 206, 235));
 
         jLabel9.setText("Identidad:");
 

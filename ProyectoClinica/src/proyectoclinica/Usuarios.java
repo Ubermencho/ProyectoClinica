@@ -31,7 +31,7 @@ public class Usuarios extends javax.swing.JPanel {
      */
     public Usuarios() {
         initComponents();
-        jPanel1.setBackground(Color.cyan);
+        
         InputMap map2 = txtUsuarioAgregar.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtPassAgregar.getInputMap(JTextField.WHEN_FOCUSED);
@@ -84,6 +84,12 @@ public class Usuarios extends javax.swing.JPanel {
         btnBuscarEliminar = new javax.swing.JButton();
         rdbActivo = new javax.swing.JRadioButton();
         rdbInactivo = new javax.swing.JRadioButton();
+
+        setBackground(new java.awt.Color(146, 206, 235));
+
+        jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
+
+        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
 
         jLabel1.setText("Nombre de Usuario:");
 
@@ -175,6 +181,8 @@ public class Usuarios extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Agregar", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
+
         jButton3.setBackground(new java.awt.Color(255, 255, 204));
         jButton3.setText("Limpiar");
 
@@ -260,6 +268,8 @@ public class Usuarios extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Modificar", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(146, 206, 235));
+
         btnAceptarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
@@ -279,10 +289,12 @@ public class Usuarios extends javax.swing.JPanel {
             }
         });
 
+        rdbActivo.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbActivo);
         rdbActivo.setText("Activo");
         rdbActivo.setEnabled(false);
 
+        rdbInactivo.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbInactivo);
         rdbInactivo.setText("Inactivo");
         rdbInactivo.setEnabled(false);

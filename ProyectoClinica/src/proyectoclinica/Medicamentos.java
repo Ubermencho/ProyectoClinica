@@ -29,7 +29,7 @@ public class Medicamentos extends javax.swing.JPanel {
      */
     public Medicamentos() {
         initComponents();
-        jPanel1.setBackground(Color.cyan);
+        
         InputMap map2 = txtCodigoAgregar.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtDescripcionAgregar.getInputMap(JTextField.WHEN_FOCUSED);
@@ -82,6 +82,12 @@ public class Medicamentos extends javax.swing.JPanel {
         txtCodigoEliminar = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         btnBuscarEliminar = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(146, 206, 235));
+
+        jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
+
+        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
 
         jLabel1.setText("Descripción:");
 
@@ -146,6 +152,8 @@ public class Medicamentos extends javax.swing.JPanel {
         );
 
         jTabbedPane1.addTab("Agregar", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
 
         txtLimpiarMod.setBackground(new java.awt.Color(255, 255, 204));
         txtLimpiarMod.setText("Limpiar");
@@ -230,6 +238,8 @@ public class Medicamentos extends javax.swing.JPanel {
         );
 
         jTabbedPane1.addTab("Modificar", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(146, 206, 235));
 
         txtLimpiarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         txtLimpiarEliminar.setText("Limpiar");

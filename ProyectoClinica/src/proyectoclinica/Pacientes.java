@@ -26,7 +26,7 @@ public class Pacientes extends javax.swing.JPanel {
      */
     public Pacientes() {
         initComponents();
-        jPanel1.setBackground(Color.cyan);
+        
     }
     String sexo = "";
     /**
@@ -77,6 +77,12 @@ public class Pacientes extends javax.swing.JPanel {
         btnLimpiarEliminar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(146, 206, 235));
+
+        jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
+
+        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel1.setText("Nombres:");
 
         txtNombreMod.setEnabled(false);
@@ -88,14 +94,17 @@ public class Pacientes extends javax.swing.JPanel {
 
         jLabel5.setText("Sexo:");
 
+        rdbMasculinoMod.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbMasculinoMod);
         rdbMasculinoMod.setText("Masculino");
         rdbMasculinoMod.setEnabled(false);
 
+        rdbFemeninoMod.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbFemeninoMod);
         rdbFemeninoMod.setText("Femenino");
         rdbFemeninoMod.setEnabled(false);
 
+        rdbOtroMod.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbOtroMod);
         rdbOtroMod.setText("Otro");
         rdbOtroMod.setEnabled(false);
@@ -236,6 +245,8 @@ public class Pacientes extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Modificar", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
+
         jLabel4.setText("# de identidad:");
 
         try {
@@ -262,14 +273,17 @@ public class Pacientes extends javax.swing.JPanel {
 
         jLabel10.setText("Sexo:");
 
+        rdbMasculinoEliminar.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbMasculinoEliminar);
         rdbMasculinoEliminar.setText("Masculino");
         rdbMasculinoEliminar.setEnabled(false);
 
+        rdbFemeninoEliminar.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbFemeninoEliminar);
         rdbFemeninoEliminar.setText("Femenino");
         rdbFemeninoEliminar.setEnabled(false);
 
+        rdbOtroEliminar.setBackground(new java.awt.Color(146, 206, 235));
         buttonGroup1.add(rdbOtroEliminar);
         rdbOtroEliminar.setText("Otro");
         rdbOtroEliminar.setEnabled(false);
