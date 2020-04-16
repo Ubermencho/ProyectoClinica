@@ -19,7 +19,7 @@ public class DB {
       if (cnx == null) {
          try {
             Class.forName("com.mysql.jdbc.Driver");
-            cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/clinica_unicah", "root", "");
+            cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/clinica_unicah", "userClinica", "clinica");
          } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
          } catch (ClassNotFoundException ex) {
