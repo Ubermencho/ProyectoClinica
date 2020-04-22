@@ -197,14 +197,18 @@ public class MenuPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_abrirATAActionPerformed
 
     private void abrirExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirExpedienteActionPerformed
-        // TODO add your handling code here:
-        IngresoExpediente expediente = new IngresoExpediente();
-        expediente.setSize(924, 561);
-        
-        PanelPrincipal.removeAll();
-        PanelPrincipal.add(expediente);
-        PanelPrincipal.revalidate();
-        PanelPrincipal.repaint();
+        try {
+            // TODO add your handling code here:
+            IngresoExpediente expediente = new IngresoExpediente();
+            expediente.setSize(924, 561);
+            
+            PanelPrincipal.removeAll();
+            PanelPrincipal.add(expediente);
+            PanelPrincipal.revalidate();
+            PanelPrincipal.repaint();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_abrirExpedienteActionPerformed
 
     private void abrirConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirConsultasActionPerformed

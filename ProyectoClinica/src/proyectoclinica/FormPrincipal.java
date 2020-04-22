@@ -223,13 +223,17 @@ public class FormPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_MainMenuActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        IngresoExpediente expediente = new IngresoExpediente();
-        expediente.setSize(924, 561);
-        
-        PanelPrincipal.removeAll();
-        PanelPrincipal.add(expediente);
-        PanelPrincipal.revalidate();
-        PanelPrincipal.repaint();       
+        try {
+            IngresoExpediente expediente = new IngresoExpediente();
+            expediente.setSize(924, 561);
+            
+            PanelPrincipal.removeAll();
+            PanelPrincipal.add(expediente);
+            PanelPrincipal.revalidate();       
+            PanelPrincipal.repaint();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
