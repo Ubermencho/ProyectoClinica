@@ -7,7 +7,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="eb" green="ce" red="92" type="rgb"/>
+      <Color blue="f9" green="e8" red="c3" type="rgb"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -55,7 +55,7 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="eb" green="ce" red="92" type="rgb"/>
+              <Color blue="f9" green="e8" red="c3" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -174,9 +174,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnAceptarAgregar">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Aceptar"/>
               </Properties>
               <Events>
@@ -185,9 +182,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnLimpiarAgregar">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar"/>
               </Properties>
             </Component>
@@ -216,7 +210,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="eb" green="ce" red="92" type="rgb"/>
+              <Color blue="f9" green="e8" red="c3" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -297,17 +291,11 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnAceptarMod">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Aceptar"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -334,9 +322,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnBuscarMod">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
               <Events>
@@ -369,7 +354,7 @@
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="eb" green="ce" red="92" type="rgb"/>
+              <Color blue="f9" green="e8" red="c3" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -440,9 +425,6 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnAceptarEliminar">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Aceptar"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -459,9 +441,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnBuscarEliminar">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
               <Events>
@@ -471,7 +450,7 @@
             <Component class="javax.swing.JRadioButton" name="rdbActivo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="ce" red="92" type="rgb"/>
+                  <Color blue="f9" green="e8" red="c3" type="rgb"/>
                 </Property>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroup1"/>
@@ -483,7 +462,7 @@
             <Component class="javax.swing.JRadioButton" name="rdbInactivo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="ce" red="92" type="rgb"/>
+                  <Color blue="f9" green="e8" red="c3" type="rgb"/>
                 </Property>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroup1"/>

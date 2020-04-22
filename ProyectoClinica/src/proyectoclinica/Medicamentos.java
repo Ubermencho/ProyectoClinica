@@ -83,17 +83,16 @@ public class Medicamentos extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         btnBuscarEliminar = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(146, 206, 235));
+        setBackground(new java.awt.Color(195, 232, 249));
 
         jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
 
-        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel1.setBackground(new java.awt.Color(195, 232, 249));
 
         jLabel1.setText("Descripción:");
 
         jLabel2.setText("Tipo:");
 
-        btnAceptarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarAgregar.setText("Aceptar");
         btnAceptarAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +100,6 @@ public class Medicamentos extends javax.swing.JPanel {
             }
         });
 
-        txtLimpiarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         txtLimpiarAgregar.setText("Limpiar");
 
         jLabel7.setText("Código:");
@@ -153,12 +151,10 @@ public class Medicamentos extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Agregar", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel2.setBackground(new java.awt.Color(195, 232, 249));
 
-        txtLimpiarMod.setBackground(new java.awt.Color(255, 255, 204));
         txtLimpiarMod.setText("Limpiar");
 
-        btnAceptarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarMod.setText("Aceptar");
         btnAceptarMod.setEnabled(false);
         btnAceptarMod.addActionListener(new java.awt.event.ActionListener() {
@@ -177,7 +173,6 @@ public class Medicamentos extends javax.swing.JPanel {
 
         jLabel8.setText("Código:");
 
-        btnBuscarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarMod.setText("Buscar");
         btnBuscarMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,12 +234,10 @@ public class Medicamentos extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Modificar", jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel3.setBackground(new java.awt.Color(195, 232, 249));
 
-        txtLimpiarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         txtLimpiarEliminar.setText("Limpiar");
 
-        btnAceptarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
         btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +256,6 @@ public class Medicamentos extends javax.swing.JPanel {
 
         jLabel9.setText("Código:");
 
-        btnBuscarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarEliminar.setText("Buscar");
         btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

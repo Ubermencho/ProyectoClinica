@@ -26,9 +26,8 @@ public class FormPrincipal extends javax.swing.JFrame {
     public FormPrincipal() {
         initComponents();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icono.png")));
-        PanelPrincipal.setBackground(Color.cyan);
         MenuPrincipal mp = new MenuPrincipal();
-        mp.setSize(1380, 730);
+        mp.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(mp);
@@ -67,7 +66,9 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clinica UNICAH");
-        setExtendedState(MAXIMIZED_BOTH);
+        setPreferredSize(new java.awt.Dimension(924, 540));
+        setResizable(false);
+        setSize(new java.awt.Dimension(924, 550));
 
         PanelPrincipal.setBackground(new java.awt.Color(146, 206, 235));
 
@@ -75,11 +76,11 @@ public class FormPrincipal extends javax.swing.JFrame {
         PanelPrincipal.setLayout(PanelPrincipalLayout);
         PanelPrincipalLayout.setHorizontalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 924, Short.MAX_VALUE)
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
+            .addGap(0, 540, Short.MAX_VALUE)
         );
 
         Archivo.setText("Archivo");
@@ -199,7 +200,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         IngresoATA ata;
         try {
             ata = new IngresoATA();
-            ata.setSize(1380,730);
+            ata.setSize(924, 561);
           PanelPrincipal.removeAll();
           PanelPrincipal.add(ata);
           PanelPrincipal.revalidate();
@@ -212,7 +213,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void MainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainMenuActionPerformed
         // TODO add your handling code here:
         MenuPrincipal mp = new MenuPrincipal();
-        mp.setSize(1380, 730);
+        mp.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(mp);
@@ -223,7 +224,7 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         IngresoExpediente expediente = new IngresoExpediente();
-        expediente.setSize(1380,730);
+        expediente.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(expediente);
@@ -235,7 +236,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         PanelConsultas con;
         con = new PanelConsultas();
-        con.setSize(1380,730);
+        con.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(con);
@@ -259,7 +260,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         Doctores doc;
         doc = new Doctores();
-        doc.setSize(1380,730);
+        doc.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(doc);
@@ -270,7 +271,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         Pacientes px;
         px = new Pacientes();
-        px.setSize(1380,730);
+        px.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(px);
@@ -281,7 +282,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         Medicamentos med;
         med = new Medicamentos();
-        med.setSize(1380,730);
+        med.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(med);
@@ -292,7 +293,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         Usuarios user;
         user = new Usuarios();
-        user.setSize(1380,730);
+        user.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(user);
@@ -304,7 +305,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         Reportes rep;
          rep = new Reportes();
-        rep.setSize(1380,730);
+        rep.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(rep);

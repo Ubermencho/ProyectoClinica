@@ -85,11 +85,11 @@ public class Usuarios extends javax.swing.JPanel {
         rdbActivo = new javax.swing.JRadioButton();
         rdbInactivo = new javax.swing.JRadioButton();
 
-        setBackground(new java.awt.Color(146, 206, 235));
+        setBackground(new java.awt.Color(195, 232, 249));
 
         jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
 
-        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel1.setBackground(new java.awt.Color(195, 232, 249));
 
         jLabel1.setText("Nombre de Usuario:");
 
@@ -103,7 +103,6 @@ public class Usuarios extends javax.swing.JPanel {
             }
         });
 
-        btnAceptarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarAgregar.setText("Aceptar");
         btnAceptarAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +110,6 @@ public class Usuarios extends javax.swing.JPanel {
             }
         });
 
-        btnLimpiarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         btnLimpiarAgregar.setText("Limpiar");
 
         jLabel7.setText("Tipo Usuario:");
@@ -181,12 +179,10 @@ public class Usuarios extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Agregar", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel2.setBackground(new java.awt.Color(195, 232, 249));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 204));
         jButton3.setText("Limpiar");
 
-        btnAceptarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarMod.setText("Aceptar");
         btnAceptarMod.setEnabled(false);
         btnAceptarMod.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +197,6 @@ public class Usuarios extends javax.swing.JPanel {
 
         jLabel6.setText("Contraseña:");
 
-        btnBuscarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarMod.setText("Buscar");
         btnBuscarMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,9 +263,8 @@ public class Usuarios extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Modificar", jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel3.setBackground(new java.awt.Color(195, 232, 249));
 
-        btnAceptarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
         btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -281,7 +275,6 @@ public class Usuarios extends javax.swing.JPanel {
 
         jLabel8.setText("Nombre de Usuario:");
 
-        btnBuscarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarEliminar.setText("Buscar");
         btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -289,12 +282,12 @@ public class Usuarios extends javax.swing.JPanel {
             }
         });
 
-        rdbActivo.setBackground(new java.awt.Color(146, 206, 235));
+        rdbActivo.setBackground(new java.awt.Color(195, 232, 249));
         buttonGroup1.add(rdbActivo);
         rdbActivo.setText("Activo");
         rdbActivo.setEnabled(false);
 
-        rdbInactivo.setBackground(new java.awt.Color(146, 206, 235));
+        rdbInactivo.setBackground(new java.awt.Color(195, 232, 249));
         buttonGroup1.add(rdbInactivo);
         rdbInactivo.setText("Inactivo");
         rdbInactivo.setEnabled(false);

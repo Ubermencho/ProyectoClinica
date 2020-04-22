@@ -77,11 +77,11 @@ public class Pacientes extends javax.swing.JPanel {
         btnLimpiarEliminar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(146, 206, 235));
+        setBackground(new java.awt.Color(195, 232, 249));
 
         jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
 
-        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel1.setBackground(new java.awt.Color(195, 232, 249));
 
         jLabel1.setText("Nombres:");
 
@@ -94,17 +94,17 @@ public class Pacientes extends javax.swing.JPanel {
 
         jLabel5.setText("Sexo:");
 
-        rdbMasculinoMod.setBackground(new java.awt.Color(146, 206, 235));
+        rdbMasculinoMod.setBackground(new java.awt.Color(195, 232, 249));
         buttonGroup1.add(rdbMasculinoMod);
         rdbMasculinoMod.setText("Masculino");
         rdbMasculinoMod.setEnabled(false);
 
-        rdbFemeninoMod.setBackground(new java.awt.Color(146, 206, 235));
+        rdbFemeninoMod.setBackground(new java.awt.Color(195, 232, 249));
         buttonGroup1.add(rdbFemeninoMod);
         rdbFemeninoMod.setText("Femenino");
         rdbFemeninoMod.setEnabled(false);
 
-        rdbOtroMod.setBackground(new java.awt.Color(146, 206, 235));
+        rdbOtroMod.setBackground(new java.awt.Color(195, 232, 249));
         buttonGroup1.add(rdbOtroMod);
         rdbOtroMod.setText("Otro");
         rdbOtroMod.setEnabled(false);
@@ -135,7 +135,6 @@ public class Pacientes extends javax.swing.JPanel {
         cmbCarreraMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Definido", "Ingeniera en Sistemas", "Ingeniera Civil", "Ingeniera Industrial", "Ingeniera Ambiental", "Arquitectura", "Medicina", "Cirugia Dental", "Enfermeria", "Psicologia", "Mercadotecnia", "Adm. de Empresas", "Finanzas", "Relaciones Internacionales", "Ciencias en Comunicacion", "Derecho", "Teologia", "Postgrado", "Otro" }));
         cmbCarreraMod.setEnabled(false);
 
-        btnBuscarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarMod.setText("Buscar");
         btnBuscarMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +142,6 @@ public class Pacientes extends javax.swing.JPanel {
             }
         });
 
-        btnAceptarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarMod.setText("Aceptar");
         btnAceptarMod.setEnabled(false);
         btnAceptarMod.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +150,6 @@ public class Pacientes extends javax.swing.JPanel {
             }
         });
 
-        btnLimpiarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnLimpiarMod.setText("Limpiar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -245,7 +242,7 @@ public class Pacientes extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Modificar", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel2.setBackground(new java.awt.Color(195, 232, 249));
 
         jLabel4.setText("# de identidad:");
 
@@ -255,7 +252,6 @@ public class Pacientes extends javax.swing.JPanel {
             ex.printStackTrace();
         }
 
-        btnBuscarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarEliminar.setText("Buscar");
         btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,17 +269,17 @@ public class Pacientes extends javax.swing.JPanel {
 
         jLabel10.setText("Sexo:");
 
-        rdbMasculinoEliminar.setBackground(new java.awt.Color(146, 206, 235));
+        rdbMasculinoEliminar.setBackground(new java.awt.Color(195, 232, 249));
         buttonGroup1.add(rdbMasculinoEliminar);
         rdbMasculinoEliminar.setText("Masculino");
         rdbMasculinoEliminar.setEnabled(false);
 
-        rdbFemeninoEliminar.setBackground(new java.awt.Color(146, 206, 235));
+        rdbFemeninoEliminar.setBackground(new java.awt.Color(195, 232, 249));
         buttonGroup1.add(rdbFemeninoEliminar);
         rdbFemeninoEliminar.setText("Femenino");
         rdbFemeninoEliminar.setEnabled(false);
 
-        rdbOtroEliminar.setBackground(new java.awt.Color(146, 206, 235));
+        rdbOtroEliminar.setBackground(new java.awt.Color(195, 232, 249));
         buttonGroup1.add(rdbOtroEliminar);
         rdbOtroEliminar.setText("Otro");
         rdbOtroEliminar.setEnabled(false);
@@ -295,7 +291,6 @@ public class Pacientes extends javax.swing.JPanel {
         cmbCarreraEliminar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Definido", "Ingeniera en Sistemas", "Ingeniera Civil", "Ingeniera Industrial", "Ingeniera Ambiental", "Arquitectura", "Medicina", "Cirugia Dental", "Enfermeria", "Psicologia", "Mercadotecnia", "Adm. de Empresas", "Finanzas", "Relaciones Internacionales", "Ciencias en Comunicacion", "Derecho", "Teologia", "Postgrado", "Otro" }));
         cmbCarreraEliminar.setEnabled(false);
 
-        btnAceptarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
         btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -304,7 +299,6 @@ public class Pacientes extends javax.swing.JPanel {
             }
         });
 
-        btnLimpiarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnLimpiarEliminar.setText("Limpiar");
 
         jLabel12.setText("Carrera:");

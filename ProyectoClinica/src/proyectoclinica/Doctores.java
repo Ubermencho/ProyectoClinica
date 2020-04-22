@@ -31,13 +31,7 @@ public class Doctores extends javax.swing.JPanel {
      */
     public Doctores() {
         initComponents();
-        Imagen Imagen = new Imagen();
-        jPanel1.add(Imagen);
-        jPanel1.repaint();        
-        jPanel2.add(Imagen);
-        jPanel2.repaint();        
-        jPanel3.add(Imagen);
-        jPanel3.repaint();
+        
         InputMap map2 = txtNombreAgregar.getInputMap(JTextField.WHEN_FOCUSED);
         map2.put(KeyStroke.getKeyStroke(KeyEvent.VK_V, Event.CTRL_MASK), "null");
         InputMap map3 = txtApellidoAgregar.getInputMap(JTextField.WHEN_FOCUSED);
@@ -90,11 +84,11 @@ public class Doctores extends javax.swing.JPanel {
         btnAceptarEliminar = new javax.swing.JButton();
         btnLimpiarEliminar = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(146, 206, 235));
+        setBackground(new java.awt.Color(195, 232, 249));
 
         jTabbedPane1.setBackground(new java.awt.Color(62, 110, 133));
 
-        jPanel1.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel1.setBackground(new java.awt.Color(195, 232, 249));
 
         jLabel1.setText("Identidad:");
 
@@ -122,7 +116,6 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
-        btnAceptarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarAgregar.setText("Aceptar");
         btnAceptarAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +123,6 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
-        btnLimpiarAgregar.setBackground(new java.awt.Color(255, 255, 204));
         btnLimpiarAgregar.setText("Limpiar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -138,7 +130,7 @@ public class Doctores extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(242, 242, 242)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAceptarAgregar)
                     .addComponent(jLabel1)
@@ -150,16 +142,16 @@ public class Doctores extends javax.swing.JPanel {
                     .addComponent(spnEdadAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIdAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(txtIdAgregar)
                             .addComponent(txtNombreAgregar)
-                            .addComponent(txtApellidoAgregar))
+                            .addComponent(txtApellidoAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(btnLimpiarAgregar)))
-                .addContainerGap(498, Short.MAX_VALUE))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtIdAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,12 +171,12 @@ public class Doctores extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarAgregar)
                     .addComponent(btnLimpiarAgregar))
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Agregar", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel2.setBackground(new java.awt.Color(195, 232, 249));
 
         jLabel5.setText("Identidad:");
 
@@ -216,7 +208,6 @@ public class Doctores extends javax.swing.JPanel {
 
         spnEdadMod.setEnabled(false);
 
-        btnAceptarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarMod.setText("Aceptar");
         btnAceptarMod.setEnabled(false);
         btnAceptarMod.addActionListener(new java.awt.event.ActionListener() {
@@ -225,7 +216,6 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
-        btnLimpiarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnLimpiarMod.setText("Limpiar");
         btnLimpiarMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,7 +223,6 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
-        btnBuscarMod.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarMod.setText("Buscar");
         btnBuscarMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,7 +235,7 @@ public class Doctores extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(239, 239, 239)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -269,12 +258,12 @@ public class Doctores extends javax.swing.JPanel {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnLimpiarMod)
                             .addComponent(txtNombreMod, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(498, Short.MAX_VALUE))
+                .addContainerGap(269, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtIdMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -296,12 +285,12 @@ public class Doctores extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarMod)
                     .addComponent(btnLimpiarMod))
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Modificar", jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(146, 206, 235));
+        jPanel3.setBackground(new java.awt.Color(195, 232, 249));
 
         jLabel9.setText("Identidad:");
 
@@ -311,7 +300,6 @@ public class Doctores extends javax.swing.JPanel {
             ex.printStackTrace();
         }
 
-        btnBuscarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnBuscarEliminar.setText("Buscar");
         btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -331,7 +319,6 @@ public class Doctores extends javax.swing.JPanel {
 
         spnEdadEliminar.setEnabled(false);
 
-        btnAceptarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnAceptarEliminar.setText("Aceptar");
         btnAceptarEliminar.setEnabled(false);
         btnAceptarEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -340,7 +327,6 @@ public class Doctores extends javax.swing.JPanel {
             }
         });
 
-        btnLimpiarEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnLimpiarEliminar.setText("Limpiar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -348,7 +334,7 @@ public class Doctores extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(239, 239, 239)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -371,12 +357,12 @@ public class Doctores extends javax.swing.JPanel {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnLimpiarEliminar)
                             .addComponent(txtNombreEliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(498, Short.MAX_VALUE))
+                .addContainerGap(269, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(47, 47, 47)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(txtIdEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -398,7 +384,7 @@ public class Doctores extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptarEliminar)
                     .addComponent(btnLimpiarEliminar))
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminar", jPanel3);

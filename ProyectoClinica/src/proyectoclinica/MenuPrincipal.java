@@ -43,8 +43,10 @@ public class MenuPrincipal extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        abrirReportes = new javax.swing.JButton();
+        abrirMantenimiento = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(146, 206, 235));
+        setBackground(new java.awt.Color(195, 232, 249));
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 0, 24)); // NOI18N
         jLabel1.setText("Bienvenido al Sistema Clinica UNICAH");
@@ -52,7 +54,6 @@ public class MenuPrincipal extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
         jLabel2.setText("¿Qué desea hacer?");
 
-        abrirATA.setBackground(new java.awt.Color(255, 255, 204));
         abrirATA.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         abrirATA.setText("Ingresar un paciente al ATA");
         abrirATA.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +62,6 @@ public class MenuPrincipal extends javax.swing.JPanel {
             }
         });
 
-        abrirExpediente.setBackground(new java.awt.Color(255, 255, 204));
         abrirExpediente.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         abrirExpediente.setText("Ingresar un nuevo expediente");
         abrirExpediente.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +70,6 @@ public class MenuPrincipal extends javax.swing.JPanel {
             }
         });
 
-        abrirConsultas.setBackground(new java.awt.Color(255, 255, 204));
         abrirConsultas.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         abrirConsultas.setText("Busqueda de información");
         abrirConsultas.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +98,22 @@ public class MenuPrincipal extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Leelawadee UI", 0, 24)); // NOI18N
         jLabel5.setText("Campus Sagrado Corazón de Jesús");
 
+        abrirReportes.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+        abrirReportes.setLabel("Generar Reportes");
+        abrirReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrirReportesActionPerformed(evt);
+            }
+        });
+
+        abrirMantenimiento.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+        abrirMantenimiento.setText("Mantenimiento de Información");
+        abrirMantenimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrirMantenimientoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,56 +121,63 @@ public class MenuPrincipal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(206, 206, 206)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(abrirMantenimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(abrirConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(abrirExpediente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(abrirATA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(abrirReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel2)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jLabel5))))
+                                .addComponent(jLabel5))
+                            .addComponent(jLabel1)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(317, 317, 317)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(34, 34, 34)))))
-                .addContainerGap(308, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(abrirExpediente)
-                    .addComponent(abrirATA, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(abrirConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69))
+                        .addGap(146, 146, 146)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(jLabel4)))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(abrirATA, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(abrirExpediente, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(abrirConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addContainerGap())
+                        .addComponent(abrirATA, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(abrirExpediente, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(abrirConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(abrirReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(abrirMantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 22, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -164,7 +186,7 @@ public class MenuPrincipal extends javax.swing.JPanel {
         IngresoATA ata;
         try {
             ata = new IngresoATA();
-            ata.setSize(1380, 730);
+            ata.setSize(924, 561);
             PanelPrincipal.removeAll();
             PanelPrincipal.add(ata);
             PanelPrincipal.revalidate();
@@ -177,7 +199,7 @@ public class MenuPrincipal extends javax.swing.JPanel {
     private void abrirExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirExpedienteActionPerformed
         // TODO add your handling code here:
         IngresoExpediente expediente = new IngresoExpediente();
-        expediente.setSize(1380, 730);
+        expediente.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(expediente);
@@ -188,7 +210,7 @@ public class MenuPrincipal extends javax.swing.JPanel {
     private void abrirConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirConsultasActionPerformed
         // TODO add your handling code here:
         PanelConsultas pc = new PanelConsultas();
-        pc.setSize(1380, 730);
+        pc.setSize(924, 561);
         
         PanelPrincipal.removeAll();
         PanelPrincipal.add(pc);
@@ -196,11 +218,37 @@ public class MenuPrincipal extends javax.swing.JPanel {
         PanelPrincipal.repaint();
     }//GEN-LAST:event_abrirConsultasActionPerformed
 
+    private void abrirReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirReportesActionPerformed
+        // TODO add your handling code here:
+        Reportes rep;
+         rep = new Reportes();
+        rep.setSize(924, 561);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(rep);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_abrirReportesActionPerformed
+
+    private void abrirMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirMantenimientoActionPerformed
+        // TODO add your handling code here:
+        Doctores doc;
+        doc = new Doctores();
+        doc.setSize(924, 561);
+        
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(doc);
+        PanelPrincipal.revalidate();
+        PanelPrincipal.repaint();
+    }//GEN-LAST:event_abrirMantenimientoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton abrirATA;
     private javax.swing.JButton abrirConsultas;
     private javax.swing.JButton abrirExpediente;
+    private javax.swing.JButton abrirMantenimiento;
+    private javax.swing.JButton abrirReportes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
